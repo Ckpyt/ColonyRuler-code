@@ -1,0 +1,98 @@
+<?xml version="1.0" standalone="yes"?><ns1:resource xmlns:ns1="ExcelLoading">
+	<ns1:repetative>
+		<ns1:name>clay deposit</ns1:name>
+		<ns1:description>clay deposit</ns1:description>
+		<ns1:defaultX>-21.8</ns1:defaultX>
+		<ns1:defaultY>12.5</ns1:defaultY>
+		<ns1:maximum_in_territory>1000000</ns1:maximum_in_territory>
+		<ns1:growing_percent>0</ns1:growing_percent>
+	</ns1:repetative>
+	<ns1:repetative>
+		<ns1:name>stone deposit</ns1:name>
+		<ns1:description>stone deposit</ns1:description>
+		<ns1:defaultX>-14.8</ns1:defaultX>
+		<ns1:defaultY>12.5</ns1:defaultY>
+		<ns1:maximum_in_territory>1000000</ns1:maximum_in_territory>
+		<ns1:growing_percent>0</ns1:growing_percent>
+	</ns1:repetative>
+	<ns1:repetative>
+		<ns1:name>forest</ns1:name>
+		<ns1:description>forest</ns1:description>
+		<ns1:defaultX>13.2</ns1:defaultX>
+		<ns1:defaultY>12.5</ns1:defaultY>
+		<ns1:maximum_in_territory>1000000</ns1:maximum_in_territory>
+		<ns1:growing_percent>0.00016</ns1:growing_percent>
+	</ns1:repetative>
+	<ns1:repetative>
+		<ns1:name>wild fruit</ns1:name>
+		<ns1:description>wild fruit</ns1:description>
+		<ns1:defaultX>6.2</ns1:defaultX>
+		<ns1:defaultY>-7</ns1:defaultY>
+		<ns1:maximum_in_territory>10000</ns1:maximum_in_territory>
+		<ns1:growing_percent>0.003</ns1:growing_percent>
+	</ns1:repetative>
+	<ns1:repetative>
+		<ns1:name>swamp thing</ns1:name>
+		<ns1:description>swamp thing</ns1:description>
+		<ns1:defaultX>-21.8</ns1:defaultX>
+		<ns1:defaultY>-0.5</ns1:defaultY>
+		<ns1:maximum_in_territory>10000</ns1:maximum_in_territory>
+		<ns1:growing_percent>0.003</ns1:growing_percent>
+	</ns1:repetative>
+	<ns1:repetative>
+		<ns1:name>wild small animals</ns1:name>
+		<ns1:description>wild small animals</ns1:description>
+		<ns1:defaultX>-7.8</ns1:defaultX>
+		<ns1:defaultY>-13.5</ns1:defaultY>
+		<ns1:maximum_in_territory>1000</ns1:maximum_in_territory>
+		<ns1:growing_percent>0.03</ns1:growing_percent>
+	</ns1:repetative>
+	<ns1:repetative>
+		<ns1:name>wild big animals</ns1:name>
+		<ns1:description>wild big animals</ns1:description>
+		<ns1:defaultX>-10.8</ns1:defaultX>
+		<ns1:defaultY>-13.5</ns1:defaultY>
+		<ns1:maximum_in_territory>200</ns1:maximum_in_territory>
+		<ns1:growing_percent>0.003</ns1:growing_percent>
+	</ns1:repetative>
+	<ns1:repetative>
+		<ns1:name>wild predators</ns1:name>
+		<ns1:description>wild predators</ns1:description>
+		<ns1:defaultX>-4.8</ns1:defaultX>
+		<ns1:defaultY>-13.5</ns1:defaultY>
+		<ns1:maximum_in_territory>100</ns1:maximum_in_territory>
+		<ns1:growing_percent>0.003</ns1:growing_percent>
+	</ns1:repetative>
+	<ns1:repetative>
+		<ns1:name>territory</ns1:name>
+		<ns1:description>territory</ns1:description>
+		<ns1:defaultX>1</ns1:defaultX>
+		<ns1:defaultY>1</ns1:defaultY>
+		<ns1:maximum_in_territory>100000</ns1:maximum_in_territory>
+		<ns1:growing_percent>0</ns1:growing_percent>
+	</ns1:repetative>
+	<ns1:repetative>
+		<ns1:name>grain</ns1:name>
+		<ns1:description>grain</ns1:description>
+		<ns1:defaultX>1</ns1:defaultX>
+		<ns1:defaultY>1</ns1:defaultY>
+		<ns1:maximum_in_territory>0</ns1:maximum_in_territory>
+		<ns1:growing_percent>0</ns1:growing_percent>
+	</ns1:repetative>
+	<ns1:repetative>
+		<ns1:name>carrot</ns1:name>
+		<ns1:description>carrot</ns1:description>
+		<ns1:defaultX>1</ns1:defaultX>
+		<ns1:defaultY>1</ns1:defaultY>
+		<ns1:maximum_in_territory>0</ns1:maximum_in_territory>
+		<ns1:growing_percent>0</ns1:growing_percent>
+	</ns1:repetative>
+	<ns1:repetative>
+		<ns1:name>empty field</ns1:name>
+		<ns1:description>empty field</ns1:description>
+		<ns1:defaultX>1</ns1:defaultX>
+		<ns1:defaultY>1</ns1:defaultY>
+		<ns1:maximum_in_territory>0</ns1:maximum_in_territory>
+		<ns1:growing_percent>0</ns1:growing_percent>
+	</ns1:repetative>
+</ns1:resource>

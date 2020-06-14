@@ -1,0 +1,236 @@
+<?xml version="1.0" standalone="yes"?><ns1:materials xmlns:ns1="ExcelLoading">
+	<ns1:repetative>
+		<ns1:name>hunting</ns1:name>
+		<ns1:description>hunting</ns1:description>
+		<ns1:defaultX>-7.8</ns1:defaultX>
+		<ns1:defaultY>-7</ns1:defaultY>
+		<ns1:produce_per_person>raw food*4; bone*4; fur*4</ns1:produce_per_person>
+		<ns1:dependency>wild small animals *4| wild big animals| wild predators*2</ns1:dependency>
+		<ns1:dependency_cost>0</ns1:dependency_cost>
+		<ns1:final_cost>1</ns1:final_cost>
+		<ns1:container>1</ns1:container>
+		<ns1:container_type>light_storage</ns1:container_type>
+		<ns1:production_type>hunt</ns1:production_type>
+	</ns1:repetative>
+	<ns1:repetative>
+		<ns1:name>wild vegetables</ns1:name>
+		<ns1:description>wild vegetables</ns1:description>
+		<ns1:defaultX>-0.800000000000001</ns1:defaultX>
+		<ns1:defaultY>-7</ns1:defaultY>
+		<ns1:produce_per_person>1.3</ns1:produce_per_person>
+		<ns1:dependency>wild fruit</ns1:dependency>
+		<ns1:dependency_cost>0</ns1:dependency_cost>
+		<ns1:final_cost>0.769230769230769</ns1:final_cost>
+		<ns1:container>1</ns1:container>
+		<ns1:container_type>light_storage</ns1:container_type>
+		<ns1:production_type>harvesting &amp; food</ns1:production_type>
+	</ns1:repetative>
+	<ns1:repetative>
+		<ns1:name>raw food</ns1:name>
+		<ns1:description>raw food</ns1:description>
+		<ns1:defaultX>-7.8</ns1:defaultX>
+		<ns1:defaultY>-0.5</ns1:defaultY>
+		<ns1:produce_per_person>10</ns1:produce_per_person>
+		<ns1:dependency>hunting*9| wild vegetables*9,5</ns1:dependency>
+		<ns1:dependency_cost>8.21153846153846</ns1:dependency_cost>
+		<ns1:final_cost>0.921153846153846</ns1:final_cost>
+		<ns1:container>1</ns1:container>
+		<ns1:container_type>light_storage</ns1:container_type>
+		<ns1:production_type>butchering &amp; food</ns1:production_type>
+	</ns1:repetative>
+	<ns1:repetative>
+		<ns1:name>smoked food</ns1:name>
+		<ns1:description>smoked food</ns1:description>
+		<ns1:defaultX>-0.800000000000001</ns1:defaultX>
+		<ns1:defaultY>6</ns1:defaultY>
+		<ns1:produce_per_person>13</ns1:produce_per_person>
+		<ns1:dependency>hunting*5; firewood*2</ns1:dependency>
+		<ns1:dependency_cost>6.101</ns1:dependency_cost>
+		<ns1:final_cost>0.546230769230769</ns1:final_cost>
+		<ns1:container>1</ns1:container>
+		<ns1:container_type>light_storage</ns1:container_type>
+		<ns1:production_type>cooking &amp; food</ns1:production_type>
+	</ns1:repetative>
+	<ns1:repetative>
+		<ns1:name>soup</ns1:name>
+		<ns1:description>soup</ns1:description>
+		<ns1:defaultX>6.2</ns1:defaultX>
+		<ns1:defaultY>6</ns1:defaultY>
+		<ns1:produce_per_person>20</ns1:produce_per_person>
+		<ns1:dependency>wild vegetables*5; firewood*2</ns1:dependency>
+		<ns1:dependency_cost>4.94715384615385</ns1:dependency_cost>
+		<ns1:final_cost>0.297357692307692</ns1:final_cost>
+		<ns1:container>0.5</ns1:container>
+		<ns1:container_type>light_storage</ns1:container_type>
+		<ns1:production_type>cooking &amp; food</ns1:production_type>
+	</ns1:repetative>
+	<ns1:repetative>
+		<ns1:name>bone</ns1:name>
+		<ns1:description>bone</ns1:description>
+		<ns1:defaultX>13.2</ns1:defaultX>
+		<ns1:defaultY>-7.8</ns1:defaultY>
+		<ns1:produce_per_person>5</ns1:produce_per_person>
+		<ns1:dependency>hunting</ns1:dependency>
+		<ns1:dependency_cost>1</ns1:dependency_cost>
+		<ns1:final_cost>0.4</ns1:final_cost>
+		<ns1:container>1</ns1:container>
+		<ns1:container_type>light_storage</ns1:container_type>
+		<ns1:production_type>butchering</ns1:production_type>
+	</ns1:repetative>
+	<ns1:repetative>
+		<ns1:name>fur</ns1:name>
+		<ns1:description>fur</ns1:description>
+		<ns1:defaultX>-14.8</ns1:defaultX>
+		<ns1:defaultY>-13.5</ns1:defaultY>
+		<ns1:produce_per_person>5</ns1:produce_per_person>
+		<ns1:dependency>hunting</ns1:dependency>
+		<ns1:dependency_cost>1</ns1:dependency_cost>
+		<ns1:final_cost>0.4</ns1:final_cost>
+		<ns1:container>1</ns1:container>
+		<ns1:container_type>light_storage</ns1:container_type>
+		<ns1:production_type>butchering</ns1:production_type>
+	</ns1:repetative>
+	<ns1:repetative>
+		<ns1:name>stone</ns1:name>
+		<ns1:description>stone</ns1:description>
+		<ns1:defaultX>-7.8</ns1:defaultX>
+		<ns1:defaultY>6</ns1:defaultY>
+		<ns1:produce_per_person>1</ns1:produce_per_person>
+		<ns1:dependency>stone deposit</ns1:dependency>
+		<ns1:dependency_cost>0</ns1:dependency_cost>
+		<ns1:final_cost>1</ns1:final_cost>
+		<ns1:container>1</ns1:container>
+		<ns1:container_type>heavy_storage</ns1:container_type>
+		<ns1:production_type>harvesting</ns1:production_type>
+	</ns1:repetative>
+	<ns1:repetative>
+		<ns1:name>rods</ns1:name>
+		<ns1:description>rods</ns1:description>
+		<ns1:defaultX>-14.8</ns1:defaultX>
+		<ns1:defaultY>-0.5</ns1:defaultY>
+		<ns1:produce_per_person>5</ns1:produce_per_person>
+		<ns1:dependency>swamp thing</ns1:dependency>
+		<ns1:dependency_cost>0</ns1:dependency_cost>
+		<ns1:final_cost>0.2</ns1:final_cost>
+		<ns1:container>1</ns1:container>
+		<ns1:container_type>light_storage</ns1:container_type>
+		<ns1:production_type>harvesting</ns1:production_type>
+	</ns1:repetative>
+	<ns1:repetative>
+		<ns1:name>stick</ns1:name>
+		<ns1:description>stick</ns1:description>
+		<ns1:defaultX>6.2</ns1:defaultX>
+		<ns1:defaultY>-0.5</ns1:defaultY>
+		<ns1:produce_per_person>1</ns1:produce_per_person>
+		<ns1:dependency>0</ns1:dependency>
+		<ns1:dependency_cost>0</ns1:dependency_cost>
+		<ns1:final_cost>1</ns1:final_cost>
+		<ns1:container>1</ns1:container>
+		<ns1:container_type>light_storage</ns1:container_type>
+		<ns1:production_type>harvesting</ns1:production_type>
+	</ns1:repetative>
+	<ns1:repetative>
+		<ns1:name>log</ns1:name>
+		<ns1:description>log</ns1:description>
+		<ns1:defaultX>20.2</ns1:defaultX>
+		<ns1:defaultY>12.5</ns1:defaultY>
+		<ns1:produce_per_person>log*0,25; stick*3; firewood*2</ns1:produce_per_person>
+		<ns1:dependency>forest</ns1:dependency>
+		<ns1:dependency_cost>0</ns1:dependency_cost>
+		<ns1:final_cost>0.1</ns1:final_cost>
+		<ns1:container>10</ns1:container>
+		<ns1:container_type>heavy_storage</ns1:container_type>
+		<ns1:production_type>log_cutting</ns1:production_type>
+	</ns1:repetative>
+	<ns1:repetative>
+		<ns1:name>firewood</ns1:name>
+		<ns1:description>firewood</ns1:description>
+		<ns1:defaultX>1</ns1:defaultX>
+		<ns1:defaultY>1</ns1:defaultY>
+		<ns1:produce_per_person>10</ns1:produce_per_person>
+		<ns1:dependency>stick*9| log*0,1</ns1:dependency>
+		<ns1:dependency_cost>4.505</ns1:dependency_cost>
+		<ns1:final_cost>0.5505</ns1:final_cost>
+		<ns1:container>1</ns1:container>
+		<ns1:container_type>light_storage</ns1:container_type>
+		<ns1:production_type>harvesting</ns1:production_type>
+	</ns1:repetative>
+	<ns1:repetative>
+		<ns1:name>leather</ns1:name>
+		<ns1:description>leather</ns1:description>
+		<ns1:defaultX>-0.800000000000001</ns1:defaultX>
+		<ns1:defaultY>-13.5</ns1:defaultY>
+		<ns1:produce_per_person>1</ns1:produce_per_person>
+		<ns1:dependency>fur*0,5</ns1:dependency>
+		<ns1:dependency_cost>0.2</ns1:dependency_cost>
+		<ns1:final_cost>1.2</ns1:final_cost>
+		<ns1:container>1</ns1:container>
+		<ns1:container_type>light_storage</ns1:container_type>
+		<ns1:production_type>sewing</ns1:production_type>
+	</ns1:repetative>
+	<ns1:repetative>
+		<ns1:name>clay</ns1:name>
+		<ns1:description>clay</ns1:description>
+		<ns1:defaultX>-21.8</ns1:defaultX>
+		<ns1:defaultY>6</ns1:defaultY>
+		<ns1:produce_per_person>1</ns1:produce_per_person>
+		<ns1:dependency>clay deposit</ns1:dependency>
+		<ns1:dependency_cost>0</ns1:dependency_cost>
+		<ns1:final_cost>1</ns1:final_cost>
+		<ns1:container>1</ns1:container>
+		<ns1:container_type>heavy_storage</ns1:container_type>
+		<ns1:production_type>digging</ns1:production_type>
+	</ns1:repetative>
+	<ns1:repetative>
+		<ns1:name>brick</ns1:name>
+		<ns1:description>brick</ns1:description>
+		<ns1:defaultX>1</ns1:defaultX>
+		<ns1:defaultY>1</ns1:defaultY>
+		<ns1:produce_per_person>1</ns1:produce_per_person>
+		<ns1:dependency>stone*1,5| clay*1</ns1:dependency>
+		<ns1:dependency_cost>1.25</ns1:dependency_cost>
+		<ns1:final_cost>22.5</ns1:final_cost>
+		<ns1:container>1</ns1:container>
+		<ns1:container_type>heavy_storage</ns1:container_type>
+		<ns1:production_type>masonry</ns1:production_type>
+	</ns1:repetative>
+	<ns1:repetative>
+		<ns1:name>farm field</ns1:name>
+		<ns1:description>farm field</ns1:description>
+		<ns1:defaultX>1</ns1:defaultX>
+		<ns1:defaultY>1</ns1:defaultY>
+		<ns1:produce_per_person>0.1</ns1:produce_per_person>
+		<ns1:dependency>empty field*0,1| territory*0,1</ns1:dependency>
+		<ns1:dependency_cost>0</ns1:dependency_cost>
+		<ns1:final_cost>10</ns1:final_cost>
+		<ns1:container>1</ns1:container>
+		<ns1:container_type>territory</ns1:container_type>
+		<ns1:production_type>plowing</ns1:production_type>
+	</ns1:repetative>
+	<ns1:repetative>
+		<ns1:name>harvest carrots</ns1:name>
+		<ns1:description>harvest carrots</ns1:description>
+		<ns1:defaultX>1</ns1:defaultX>
+		<ns1:defaultY>1</ns1:defaultY>
+		<ns1:produce_per_person>empty field*0,1; carrot*5</ns1:produce_per_person>
+		<ns1:dependency>carrot field*0,1</ns1:dependency>
+		<ns1:dependency_cost>0</ns1:dependency_cost>
+		<ns1:final_cost>10</ns1:final_cost>
+		<ns1:container>1</ns1:container>
+		<ns1:container_type>territory</ns1:container_type>
+		<ns1:production_type>harvesting</ns1:production_type>
+	</ns1:repetative>
+	<ns1:repetative>
+		<ns1:name>harvest wheat</ns1:name>
+		<ns1:description>harvest wheat</ns1:description>
+		<ns1:defaultX>1</ns1:defaultX>
+		<ns1:defaultY>1</ns1:defaultY>
+		<ns1:produce_per_person>empty field*0,1; grain*7</ns1:produce_per_person>
+		<ns1:dependency>wheat field*0,1</ns1:dependency>
+		<ns1:dependency_cost>0</ns1:dependency_cost>
+		<ns1:final_cost>10</ns1:final_cost>
+		<ns1:container>1</ns1:container>
+		<ns1:container_type>territory</ns1:container_type>
+		<ns1:production_type>harvesting</ns1:production_type>
+	</ns1:repetative>
+</ns1:materials>

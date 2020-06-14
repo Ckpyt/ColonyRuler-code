@@ -1,0 +1,255 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:cmn="ExcelLoading" attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="ExcelLoading" >
+
+<xs:complexType name="Effect">
+	<xs:sequence>
+	  <xs:element type="xs:string" name="name"/>
+	  <xs:element type="xs:string" name="type"/>
+	</xs:sequence>
+</xs:complexType>
+
+<xs:element name="effect">
+	<xs:complexType>
+	  <xs:sequence>
+		<xs:element name="repetative" maxOccurs="unbounded" minOccurs="0" type="cmn:Effect"/>
+	  </xs:sequence>
+	</xs:complexType>
+</xs:element>
+
+<xs:complexType name="AbstractObject">
+	<xs:sequence>
+	  <xs:element type="xs:string" name="name"/>
+	  <xs:element type="xs:string" name="description"/>
+	  <xs:element type="xs:float" name="defaultX"/>
+	  <xs:element type="xs:float" name="defaultY"/>
+	</xs:sequence>
+</xs:complexType>
+
+
+
+<xs:complexType name="MineralResource">
+	<xs:complexContent> 
+		<xs:extension base="cmn:AbstractObject">
+			<xs:sequence>
+				<xs:element type="xs:decimal" name="maximum_in_territory"/>
+			</xs:sequence>
+		</xs:extension>
+	</xs:complexContent>
+</xs:complexType>
+
+<xs:element name="mineralResource">
+	<xs:complexType>
+	  <xs:sequence>
+		<xs:element name="repetative" maxOccurs="unbounded" minOccurs="0" type="cmn:MineralResource"/>
+	  </xs:sequence>
+	</xs:complexType>
+</xs:element>
+
+
+<xs:complexType name="Resource">
+	<xs:complexContent> 
+		<xs:extension base="cmn:MineralResource">
+			<xs:sequence>
+				<xs:element type="xs:float" name="growing_percent"/>
+			</xs:sequence>
+		</xs:extension>
+	</xs:complexContent>
+</xs:complexType>
+
+<xs:element name="resource">
+	<xs:complexType>
+	  <xs:sequence>
+		<xs:element name="repetative" maxOccurs="unbounded" minOccurs="0" type="cmn:Resource"/>
+	  </xs:sequence>
+	</xs:complexType>
+</xs:element>
+
+<xs:complexType name="AbstractAnimal">
+	<xs:complexContent> 
+		<xs:extension base="cmn:Resource">
+			<xs:sequence>
+			  <xs:element type="xs:string" name="butchering_per_person"/>
+			</xs:sequence>
+		</xs:extension>
+	</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="WildAnimalItem">
+	<xs:complexContent> 
+		<xs:extension base="cmn:AbstractAnimal">
+			<xs:sequence>
+				<xs:element type="xs:float" name="attack"/>
+				<xs:element type="xs:float" name="protection"/>
+				<xs:element type="xs:float" name="speed"/>
+				<xs:element type="xs:float" name="scary"/>
+				<xs:element type="xs:decimal" name="minimal_in_squadre"/>
+				<xs:element type="xs:decimal" name="maximum_in_squadre"/>
+			</xs:sequence>
+		</xs:extension>
+	</xs:complexContent>
+</xs:complexType>
+
+<xs:element name="wildAnimal">
+	<xs:complexType>
+	  <xs:sequence>
+		<xs:element name="repetative" maxOccurs="unbounded" minOccurs="0" type="cmn:WildAnimalItem"/>
+	  </xs:sequence>
+	</xs:complexType>
+</xs:element>
+
+<xs:complexType name="DomesticAnimalItem">
+	<xs:complexContent> 
+		<xs:extension base="cmn:AbstractAnimal">
+			<xs:sequence>
+				<xs:element type="xs:string" name="foodType"/>
+				<xs:element type="xs:string" name="storageType"/>
+				<xs:element type="xs:string" name="additionalProducts"/>
+				<xs:element type="xs:string" name="produce_per_person"/>
+			</xs:sequence>
+		</xs:extension>
+	</xs:complexContent>
+</xs:complexType>
+
+<xs:element name="domesticAnimal">
+	<xs:complexType>
+	  <xs:sequence>
+		<xs:element name="repetative" maxOccurs="unbounded" minOccurs="0" type="cmn:DomesticAnimalItem"/>
+	  </xs:sequence>
+	</xs:complexType>
+</xs:element>
+
+<xs:complexType name="AbstractItem">
+	<xs:complexContent> 
+		<xs:extension base="cmn:AbstractObject">
+			<xs:sequence>
+			  <xs:element type="xs:string" name="produce_per_person"/>
+			  <xs:element type="xs:string" name="dependency"/>
+			  <xs:element type="xs:float" name="dependency_cost"/>
+			  <xs:element type="xs:float" name="final_cost"/>
+			</xs:sequence>
+		</xs:extension>
+	</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="ScienceItem">
+	<xs:complexContent> 
+		<xs:extension base="cmn:AbstractItem">
+			<xs:sequence>
+				<xs:element type="xs:string" name="opens"/>
+				<xs:element type="xs:string" name="closes"/>
+			</xs:sequence>
+		</xs:extension>
+	</xs:complexContent>
+</xs:complexType>
+
+<xs:element name="science">
+	<xs:complexType>
+	  <xs:sequence>
+		<xs:element name="repetative" maxOccurs="unbounded" minOccurs="0" type="cmn:ScienceItem"/>
+	  </xs:sequence>
+	</xs:complexType>
+</xs:element>
+
+<xs:complexType name="MaterialItem">
+	<xs:complexContent>
+		<xs:extension base="cmn:AbstractItem">
+			<xs:sequence>
+			  <xs:element type="xs:float" name="container"/>
+              <xs:element type="xs:string" name="container_type"/>
+			  <xs:element type="xs:string" name="production_type"/>
+			</xs:sequence>
+		</xs:extension>
+	</xs:complexContent>
+</xs:complexType>
+
+<xs:element name="materials">
+	<xs:complexType>
+	  <xs:sequence>
+		<xs:element name="repetative" maxOccurs="unbounded" minOccurs="0" type="cmn:MaterialItem"/>
+	  </xs:sequence>
+	</xs:complexType>
+</xs:element>
+
+<xs:complexType name="Process">
+	<xs:complexContent>
+		<xs:extension base="cmn:MaterialItem">
+			<xs:sequence>
+              <xs:element type="xs:int" name="duration"/>
+			</xs:sequence>
+		</xs:extension>
+	</xs:complexContent>
+</xs:complexType>
+
+<xs:element name="process">
+	<xs:complexType>
+	  <xs:sequence>
+		<xs:element name="repetative" maxOccurs="unbounded" minOccurs="0" type="cmn:Process"/>
+	  </xs:sequence>
+	</xs:complexType>
+</xs:element>
+
+<xs:complexType name="ItemItem">
+	<xs:complexContent>
+		<xs:extension base="cmn:MaterialItem">
+			<xs:sequence>
+              <xs:element type="xs:float" name="bug"/>
+              <xs:element type="xs:string" name="critical"/>
+              <xs:element type="xs:float" name="bug_fixing_per_second"/>
+              <xs:element type="xs:float" name="effectivity"/>
+              <xs:element type="xs:float" name="increasing"/>
+              <xs:element type="xs:string" name="effect_type"/>
+			</xs:sequence>
+		</xs:extension>
+	</xs:complexContent>
+</xs:complexType>
+
+<xs:element name="items">
+	<xs:complexType>
+	  <xs:sequence>
+		<xs:element name="repetative" maxOccurs="unbounded" minOccurs="0" type="cmn:ItemItem"/>
+	  </xs:sequence>
+	</xs:complexType>
+</xs:element>
+
+<xs:complexType name="BuildingItem">
+	<xs:complexContent>
+		<xs:extension base="cmn:ItemItem">
+			<xs:sequence>
+              <xs:element type="xs:decimal" name="happy"/>
+			</xs:sequence>
+		</xs:extension>
+	</xs:complexContent>
+</xs:complexType>
+
+<xs:element name="buildings">
+	<xs:complexType>
+	  <xs:sequence>
+		<xs:element name="repetative" maxOccurs="unbounded" minOccurs="0" type="cmn:BuildingItem"/>
+	  </xs:sequence>
+	</xs:complexType>
+</xs:element>
+
+<xs:complexType name="ArmyItem">
+	<xs:complexContent>
+		<xs:extension base="cmn:MaterialItem">
+			<xs:sequence>
+              <xs:element type="xs:decimal" name="attack"/>
+			  <xs:element type="xs:decimal" name="protection"/>
+			  <xs:element type="xs:decimal" name="hits"/>
+			  <xs:element type="xs:decimal" name="distance"/>
+			  <xs:element type="xs:float" name="speed_per_second"/>
+			</xs:sequence>
+		</xs:extension>
+	</xs:complexContent>
+</xs:complexType>
+
+<xs:element name="army">
+	<xs:complexType>
+	  <xs:sequence>
+		<xs:element name="repetative" maxOccurs="unbounded" minOccurs="0" type="cmn:ArmyItem"/>
+	  </xs:sequence>
+	</xs:complexType>
+</xs:element>
+
+
+</xs:schema>

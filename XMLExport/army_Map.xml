@@ -1,0 +1,38 @@
+<?xml version="1.0" standalone="yes"?><ns1:army xmlns:ns1="ExcelLoading">
+	<ns1:repetative>
+		<ns1:name>spearman</ns1:name>
+		<ns1:description>spearman</ns1:description>
+		<ns1:defaultX>1</ns1:defaultX>
+		<ns1:defaultY>1</ns1:defaultY>
+		<ns1:produce_per_person>0.5</ns1:produce_per_person>
+		<ns1:dependency>stone spear; rod shield; bone armor</ns1:dependency>
+		<ns1:dependency_cost>42</ns1:dependency_cost>
+		<ns1:final_cost>86</ns1:final_cost>
+		<ns1:container>1</ns1:container>
+		<ns1:container_type>living</ns1:container_type>
+		<ns1:production_type>training</ns1:production_type>
+		<ns1:attack>15</ns1:attack>
+		<ns1:protection>5</ns1:protection>
+		<ns1:hits>40</ns1:hits>
+		<ns1:distance>1</ns1:distance>
+		<ns1:speed_per_second>3</ns1:speed_per_second>
+	</ns1:repetative>
+	<ns1:repetative>
+		<ns1:name>archer</ns1:name>
+		<ns1:description>archer</ns1:description>
+		<ns1:defaultX>1</ns1:defaultX>
+		<ns1:defaultY>1</ns1:defaultY>
+		<ns1:produce_per_person>0.5</ns1:produce_per_person>
+		<ns1:dependency>rod shield; leather shirt; bow</ns1:dependency>
+		<ns1:dependency_cost>70</ns1:dependency_cost>
+		<ns1:final_cost>142</ns1:final_cost>
+		<ns1:container>1</ns1:container>
+		<ns1:container_type>living</ns1:container_type>
+		<ns1:production_type>training</ns1:production_type>
+		<ns1:attack>10</ns1:attack>
+		<ns1:protection>0</ns1:protection>
+		<ns1:hits>30</ns1:hits>
+		<ns1:distance>15</ns1:distance>
+		<ns1:speed_per_second>3</ns1:speed_per_second>
+	</ns1:repetative>
+</ns1:army>

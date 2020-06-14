@@ -1,0 +1,92 @@
+<?xml version="1.0" standalone="yes"?><ns1:wildAnimal xmlns:ns1="ExcelLoading">
+	<ns1:repetative>
+		<ns1:name>bear</ns1:name>
+		<ns1:description>bear</ns1:description>
+		<ns1:defaultX>-12.4</ns1:defaultX>
+		<ns1:defaultY>-14</ns1:defaultY>
+		<ns1:maximum_in_territory>10</ns1:maximum_in_territory>
+		<ns1:growing_percent>0.01</ns1:growing_percent>
+		<ns1:butchering_per_person>raw food*10; bone*7; fur*4</ns1:butchering_per_person>
+		<ns1:attack>30</ns1:attack>
+		<ns1:protection>50</ns1:protection>
+		<ns1:speed>4</ns1:speed>
+		<ns1:scary>0</ns1:scary>
+		<ns1:minimal_in_squadre>1</ns1:minimal_in_squadre>
+		<ns1:maximum_in_squadre>3</ns1:maximum_in_squadre>
+	</ns1:repetative>
+	<ns1:repetative>
+		<ns1:name>boar</ns1:name>
+		<ns1:description>boar</ns1:description>
+		<ns1:defaultX>-10.5</ns1:defaultX>
+		<ns1:defaultY>-14</ns1:defaultY>
+		<ns1:maximum_in_territory>500</ns1:maximum_in_territory>
+		<ns1:growing_percent>0.04</ns1:growing_percent>
+		<ns1:butchering_per_person>raw food*6; bone*6; fur*4</ns1:butchering_per_person>
+		<ns1:attack>10</ns1:attack>
+		<ns1:protection>30</ns1:protection>
+		<ns1:speed>2</ns1:speed>
+		<ns1:scary>1</ns1:scary>
+		<ns1:minimal_in_squadre>1</ns1:minimal_in_squadre>
+		<ns1:maximum_in_squadre>5</ns1:maximum_in_squadre>
+	</ns1:repetative>
+	<ns1:repetative>
+		<ns1:name>wild hen</ns1:name>
+		<ns1:description>wild hen</ns1:description>
+		<ns1:defaultX>-8.6</ns1:defaultX>
+		<ns1:defaultY>-14</ns1:defaultY>
+		<ns1:maximum_in_territory>1000</ns1:maximum_in_territory>
+		<ns1:growing_percent>0.15</ns1:growing_percent>
+		<ns1:butchering_per_person>raw food*1; bone*1; feather*10</ns1:butchering_per_person>
+		<ns1:attack>1</ns1:attack>
+		<ns1:protection>2</ns1:protection>
+		<ns1:speed>2</ns1:speed>
+		<ns1:scary>10</ns1:scary>
+		<ns1:minimal_in_squadre>3</ns1:minimal_in_squadre>
+		<ns1:maximum_in_squadre>10</ns1:maximum_in_squadre>
+	</ns1:repetative>
+	<ns1:repetative>
+		<ns1:name>wild rabbit</ns1:name>
+		<ns1:description>wild rabbit</ns1:description>
+		<ns1:defaultX>-6.7</ns1:defaultX>
+		<ns1:defaultY>-14</ns1:defaultY>
+		<ns1:maximum_in_territory>1000</ns1:maximum_in_territory>
+		<ns1:growing_percent>0.07</ns1:growing_percent>
+		<ns1:butchering_per_person>raw food*2; bone*1; fur*1</ns1:butchering_per_person>
+		<ns1:attack>1</ns1:attack>
+		<ns1:protection>4</ns1:protection>
+		<ns1:speed>4</ns1:speed>
+		<ns1:scary>10</ns1:scary>
+		<ns1:minimal_in_squadre>5</ns1:minimal_in_squadre>
+		<ns1:maximum_in_squadre>10</ns1:maximum_in_squadre>
+	</ns1:repetative>
+	<ns1:repetative>
+		<ns1:name>wild cow</ns1:name>
+		<ns1:description>wild cow</ns1:description>
+		<ns1:defaultX>-4.8</ns1:defaultX>
+		<ns1:defaultY>-14</ns1:defaultY>
+		<ns1:maximum_in_territory>100</ns1:maximum_in_territory>
+		<ns1:growing_percent>0.02</ns1:growing_percent>
+		<ns1:butchering_per_person>raw food*10; bone*7; fur*10</ns1:butchering_per_person>
+		<ns1:attack>4</ns1:attack>
+		<ns1:protection>25</ns1:protection>
+		<ns1:speed>4</ns1:speed>
+		<ns1:scary>4</ns1:scary>
+		<ns1:minimal_in_squadre>3</ns1:minimal_in_squadre>
+		<ns1:maximum_in_squadre>10</ns1:maximum_in_squadre>
+	</ns1:repetative>
+	<ns1:repetative>
+		<ns1:name>wild hourse</ns1:name>
+		<ns1:description>wild hourse</ns1:description>
+		<ns1:defaultX>-2.9</ns1:defaultX>
+		<ns1:defaultY>-14</ns1:defaultY>
+		<ns1:maximum_in_territory>100</ns1:maximum_in_territory>
+		<ns1:growing_percent>0.02</ns1:growing_percent>
+		<ns1:butchering_per_person>raw food*7; bone*10; fur*10</ns1:butchering_per_person>
+		<ns1:attack>3</ns1:attack>
+		<ns1:protection>20</ns1:protection>
+		<ns1:speed>7</ns1:speed>
+		<ns1:scary>4</ns1:scary>
+		<ns1:minimal_in_squadre>2</ns1:minimal_in_squadre>
+		<ns1:maximum_in_squadre>7</ns1:maximum_in_squadre>
+	</ns1:repetative>
+</ns1:wildAnimal>

@@ -1,0 +1,102 @@
+<?xml version="1.0" standalone="yes"?><ns1:buildings xmlns:ns1="ExcelLoading">
+	<ns1:repetative>
+		<ns1:name>hut of branches</ns1:name>
+		<ns1:description>hut of branches</ns1:description>
+		<ns1:defaultX>-14.8</ns1:defaultX>
+		<ns1:defaultY>6</ns1:defaultY>
+		<ns1:produce_per_person>0.25</ns1:produce_per_person>
+		<ns1:dependency>rods*25</ns1:dependency>
+		<ns1:dependency_cost>5</ns1:dependency_cost>
+		<ns1:final_cost>24</ns1:final_cost>
+		<ns1:container>10</ns1:container>
+		<ns1:container_type>territory</ns1:container_type>
+		<ns1:production_type>building</ns1:production_type>
+		<ns1:bug>0.01</ns1:bug>
+		<ns1:critical>1 out 2000</ns1:critical>
+		<ns1:bug_fixing_per_second>1</ns1:bug_fixing_per_second>
+		<ns1:effectivity>100</ns1:effectivity>
+		<ns1:increasing>1</ns1:increasing>
+		<ns1:effect_type>living*1;maxHappy*1</ns1:effect_type>
+		<ns1:happy>1</ns1:happy>
+	</ns1:repetative>
+	<ns1:repetative>
+		<ns1:name>log barraks</ns1:name>
+		<ns1:description>log barraks</ns1:description>
+		<ns1:defaultX>13.2</ns1:defaultX>
+		<ns1:defaultY>-0.5</ns1:defaultY>
+		<ns1:produce_per_person>0.025</ns1:produce_per_person>
+		<ns1:dependency>log*1</ns1:dependency>
+		<ns1:dependency_cost>4</ns1:dependency_cost>
+		<ns1:final_cost>200</ns1:final_cost>
+		<ns1:container>25</ns1:container>
+		<ns1:container_type>territory</ns1:container_type>
+		<ns1:production_type>building</ns1:production_type>
+		<ns1:bug>0.002</ns1:bug>
+		<ns1:critical>1 out 5000</ns1:critical>
+		<ns1:bug_fixing_per_second>0.1</ns1:bug_fixing_per_second>
+		<ns1:effectivity>50</ns1:effectivity>
+		<ns1:increasing>6</ns1:increasing>
+		<ns1:effect_type>living*6;maxHappy*5</ns1:effect_type>
+		<ns1:happy>5</ns1:happy>
+	</ns1:repetative>
+	<ns1:repetative>
+		<ns1:name>log cabin</ns1:name>
+		<ns1:description>log cabin</ns1:description>
+		<ns1:defaultX>13.2</ns1:defaultX>
+		<ns1:defaultY>6</ns1:defaultY>
+		<ns1:produce_per_person>0.025</ns1:produce_per_person>
+		<ns1:dependency>log*1</ns1:dependency>
+		<ns1:dependency_cost>4</ns1:dependency_cost>
+		<ns1:final_cost>200</ns1:final_cost>
+		<ns1:container>25</ns1:container>
+		<ns1:container_type>territory</ns1:container_type>
+		<ns1:production_type>building</ns1:production_type>
+		<ns1:bug>0.002</ns1:bug>
+		<ns1:critical>1 out 5000</ns1:critical>
+		<ns1:bug_fixing_per_second>0.1</ns1:bug_fixing_per_second>
+		<ns1:effectivity>50</ns1:effectivity>
+		<ns1:increasing>2</ns1:increasing>
+		<ns1:effect_type>living*2;maxHappy*10</ns1:effect_type>
+		<ns1:happy>10</ns1:happy>
+	</ns1:repetative>
+	<ns1:repetative>
+		<ns1:name>Long house</ns1:name>
+		<ns1:description>Long house</ns1:description>
+		<ns1:defaultX>1</ns1:defaultX>
+		<ns1:defaultY>1</ns1:defaultY>
+		<ns1:produce_per_person>0.01</ns1:produce_per_person>
+		<ns1:dependency>log*1</ns1:dependency>
+		<ns1:dependency_cost>4</ns1:dependency_cost>
+		<ns1:final_cost>500</ns1:final_cost>
+		<ns1:container>50</ns1:container>
+		<ns1:container_type>territory</ns1:container_type>
+		<ns1:production_type>building</ns1:production_type>
+		<ns1:bug>0.002</ns1:bug>
+		<ns1:critical>1 out 5000</ns1:critical>
+		<ns1:bug_fixing_per_second>0.1</ns1:bug_fixing_per_second>
+		<ns1:effectivity>50</ns1:effectivity>
+		<ns1:increasing>30</ns1:increasing>
+		<ns1:effect_type>celebration*30;happy*2</ns1:effect_type>
+		<ns1:happy>2</ns1:happy>
+	</ns1:repetative>
+	<ns1:repetative>
+		<ns1:name>warehouse</ns1:name>
+		<ns1:description>warehouse</ns1:description>
+		<ns1:defaultX>20.2</ns1:defaultX>
+		<ns1:defaultY>6</ns1:defaultY>
+		<ns1:produce_per_person>0.02</ns1:produce_per_person>
+		<ns1:dependency>log*1</ns1:dependency>
+		<ns1:dependency_cost>4</ns1:dependency_cost>
+		<ns1:final_cost>250</ns1:final_cost>
+		<ns1:container>50</ns1:container>
+		<ns1:container_type>territory</ns1:container_type>
+		<ns1:production_type>building</ns1:production_type>
+		<ns1:bug>0.004</ns1:bug>
+		<ns1:critical>1 out 5000</ns1:critical>
+		<ns1:bug_fixing_per_second>0.1</ns1:bug_fixing_per_second>
+		<ns1:effectivity>25</ns1:effectivity>
+		<ns1:increasing>1000</ns1:increasing>
+		<ns1:effect_type>heavy_storage*1000</ns1:effect_type>
+		<ns1:happy>0</ns1:happy>
+	</ns1:repetative>
+</ns1:buildings>
