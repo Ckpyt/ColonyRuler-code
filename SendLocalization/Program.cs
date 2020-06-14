@@ -95,7 +95,7 @@ namespace SendLocalization
 
             var jsonText = File.ReadAllText(gameDir + "\\" + Localization.CLangListPath);
 
-            Localization.LanguagesList languages = JsonConvert.DeserializeObject<Localization.LanguagesList>(jsonText);
+            LanguagesList languages = JsonConvert.DeserializeObject<LanguagesList>(jsonText);
 
             gameDir += "\\Assets\\Resources\\";
             Directory.SetCurrentDirectory(gameDir);

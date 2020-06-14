@@ -34,7 +34,8 @@ Build/
 Library/
 obj/
 Packages/
-
+Temp/
+ProjectSettings/
 
 # Visual Studio 2015/2017 cache/options directory
 .vs/
@@ -102,6 +103,7 @@ StyleCopReport.xml
 *.psd
 *.meta
 *.prefab
+*.asset
 
 # Chutzpah Test files
 _Chutzpah*
