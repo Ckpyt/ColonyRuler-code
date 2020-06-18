@@ -21,7 +21,7 @@ public class NetworkManager : SubMenu
 
     private Queue<Request> m_request = new Queue<Request>();
     /// <summary> server answer </summary>
-    static byte[] _sAnswer;
+    static string _sAnswer;
     /// <summary> current request </summary>
     static UnityWebRequest _sCurrent;
 
@@ -36,7 +36,7 @@ public class NetworkManager : SubMenu
     /// The game thread cannot wait for an answer, it should be received by 
     /// Unity network subsystem called once per update cycle
     /// </summary>
-    public delegate void ReceiveAnswer(byte[] answer);
+    public delegate void ReceiveAnswer(string answer);
     public ReceiveAnswer m_onReceiveAnswer;
 
     // Start is called before the first frame update
@@ -94,10 +94,10 @@ public class NetworkManager : SubMenu
         else
         {
             // Show results as text
-            Debug.Log(request.downloadHandler.text);
+            //Debug.Log(request.downloadHandler.text);
 
             // and retrieve results as binary data
-            _sAnswer = request.downloadHandler.data;
+            _sAnswer = request.downloadHandler.text;
         }
 
     }
@@ -163,18 +163,21 @@ public class NetworkManager : SubMenu
         GetRequest(www, answ);
     }
 
-    public static string ByteToJson(byte[] arr)
+    public static string ByteToJson(string arr)
     {
-        var conv = Encoding.UTF8.GetString(arr, 0, arr.Length);
-        string tmp = conv.Replace("\\t", "");
+        string tmp = arr.Replace("\\t", "");
+        tmp = tmp.Replace("\\r", "");
         tmp = tmp.Replace("\\n", "");
-        conv = tmp.Replace("\\", "");
+        string conv = tmp.Replace("\\", "");
 
-        var start = conv.IndexOf('{');
-        var end = conv.IndexOf('}',conv.Length - 3);
-        if (start != -1 && end != -1)
-            conv = conv.Substring(start, end);
-        //Debug.Log(conv);
+        if (conv.Length > 3)
+        {
+            var start = conv.IndexOf('{');
+            var end = conv.IndexOf('}', conv.Length - 3);
+            if (start != -1 && end != -1)
+                conv = conv.Substring(start, end);
+        }
+        Debug.Log(conv);
         return conv;
     }
 

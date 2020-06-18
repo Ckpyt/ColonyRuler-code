@@ -62,9 +62,8 @@ public class Localization : ISerializationCallbackReceiver
         SCurrentLocalization.FirstLoad();
 #if !UNITY_WEBGL && !UNITY_ANDROID
         CombinePath();
-#endif
         SCurrentLocalization.Load();
-
+#endif
     }
 
     /// <summary>
@@ -91,29 +90,18 @@ public class Localization : ISerializationCallbackReceiver
 
         m_languages = JsonUtility.FromJson<LanguagesList>(File.ReadAllText(CLangListPath));
 #else
-        var ms = Camera.main.GetComponent<MainScript>();
-        var networking = ms.m_networking;
 
-        networking.GetLocalizationLanguages(delegate (byte[] answer)
+        if (m_languages == null || m_languages.m_languages == null)
         {
-            m_languages = JsonUtility.FromJson<LanguagesList>(NetworkManager.ByteToJson(answer));
+            var ms = Camera.main.GetComponent<MainScript>();
+            var networking = ms.m_networking;
 
-            string loc = SCurrentLocalization.m_languages.m_languages[SCurrentLocalization.m_currentLanguage];
-            networking.GetLocalization(loc, 1, delegate (byte[] answerUi)
+            networking.GetLocalizationLanguages(delegate (string answer)
             {
-                m_ui = JsonUtility.FromJson<UiLocalization>(NetworkManager.ByteToJson(answerUi));
+                m_languages = JsonUtility.FromJson<LanguagesList>(NetworkManager.ByteToJson(answer));
+                Load();
             });
-            networking.GetLocalization(loc, 2, delegate (byte[] answerItm)
-            {
-                m_items = JsonUtility.FromJson<ItemsLocalization>(NetworkManager.ByteToJson(answerItm));
-            });
-            networking.GetLocalization(loc, 3, delegate (byte[] answerHis)
-            {
-                m_history = JsonUtility.FromJson<HistoryLocalization>(NetworkManager.ByteToJson(answerHis));
-            });
-
-
-        });
+        }
 
 #endif
 
@@ -129,6 +117,30 @@ public class Localization : ISerializationCallbackReceiver
         {
 #if UNITY_WEBGL || UNITY_ANDROID
 
+            var ms = Camera.main.GetComponent<MainScript>();
+            var networking = ms.m_networking;
+            string loc = SCurrentLocalization.m_languages.m_languages[SCurrentLocalization.m_currentLanguage];
+            networking.GetLocalization(loc, 1, delegate (string answerUi)
+            {
+                m_ui = JsonUtility.FromJson<UiLocalization>(NetworkManager.ByteToJson(answerUi));
+            });
+            networking.GetLocalization(loc, 2, delegate (string answerItm)
+            {
+                m_items = new ItemsLocalization();
+                m_items = JsonUtility.FromJson<ItemsLocalization>(NetworkManager.ByteToJson(answerItm));
+
+                if (m_items?.m_itemList != null)
+                {
+                    m_items.m_itemDictionary = new Dictionary<string, string>();
+                    foreach (LocalizationItem itm in m_items.m_itemList)
+                        m_items.m_itemDictionary.Add(itm.m_name, itm.m_text);
+                }
+            });
+            networking.GetLocalization(loc, 3, delegate (string answerHis)
+            {
+                m_history = JsonUtility.FromJson<HistoryLocalization>(NetworkManager.ByteToJson(answerHis));
+                m_onLanguageChanged?.Invoke();
+            });
 #else
             Console.WriteLine("UnityWebGL does not works");
             var hisAss = Resources.Load<TextAsset>(m_sHistoryFullPath);
@@ -164,6 +176,10 @@ public class Localization : ISerializationCallbackReceiver
         foreach (AbstractObject itm in AbstractObject.m_sEverything)
             m_items.m_itemList.Add(new LocalizationItem(itm.m_name, itm.m_text));
 
+        m_items.m_itemDictionary = new Dictionary<string, string>();
+        foreach (LocalizationItem itm in m_items.m_itemList)
+            m_items.m_itemDictionary.Add(itm.m_name, itm.m_text);
+
         CombinePath();
         File.WriteAllText(m_sHistoryFullPath + ".json", JsonUtility.ToJson(m_history));
         File.WriteAllText(m_sItemsFullPath + ".json", JsonUtility.ToJson(m_items));
@@ -184,20 +200,27 @@ public class Localization : ISerializationCallbackReceiver
     /// <param name="newLang"> index on language list </param>
     public void ChangeLanguage(int newLang)
     {
-        m_currentLanguage = newLang;
-        Awake();
-
-        if (m_items?.m_itemList != null)
+        if (newLang != m_currentLanguage)
         {
+            m_currentLanguage = newLang;
+            Awake();
+            Load();
+
+            
+
+            Camera.main.GetComponent<MainScript>().ChangeLanguage();
+
+#if UNITY_WEBGL || UNITY_ANDROID
+#else
             m_items.m_itemDictionary = new Dictionary<string, string>();
             foreach (LocalizationItem itm in m_items.m_itemList)
                 m_items.m_itemDictionary.Add(itm.m_name, itm.m_text);
+            m_onLanguageChanged?.Invoke();
+#endif
+
         }
-
-        Camera.main.GetComponent<MainScript>().ChangeLanguage();
-
-        m_onLanguageChanged?.Invoke();
-
+        else
+            m_onLanguageChanged?.Invoke();
     }
 
     /// <summary>

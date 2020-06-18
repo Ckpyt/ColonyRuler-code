@@ -46,7 +46,7 @@ public class MainScript : MonoBehaviour
     /// <summary> Link to main menu panel</summary>
     public GameObject m_mainMenuPanel = null;
     /// <summary> is game started and initialized? </summary>
-    public bool m_isItInitialized = false;
+    public static bool m_isItInitialized = false;
 
     // Start is called before the first frame update
     void Start()
@@ -148,7 +148,7 @@ public class MainScript : MonoBehaviour
         Localization.GetLocalization().FirstLoad();
         Localization.GetLocalization().ChangeLanguage(Localization.GetLocalization().m_currentLanguage);
         AbstractObject.ClearUnparsed();
-        AbstractObject.DoWork();
+
         Debug.Log("loading finished");
     }
 
@@ -190,9 +190,12 @@ public class MainScript : MonoBehaviour
     /// </summary>
     public void GameInitialization()
     {
+
         if (m_sAllItems == null)
             m_sAllItems = new List<GameObject>();
         m_mainMenuPanel.SetActive(false);
+        MainMenu.m_sActiveMenu = null;
+
         transform.position = new Vector3(0, 0, -10);
         _range = 30f;
         GameObject rightPanel = Instantiate(m_rightGamePanelPrefab);
@@ -248,7 +251,7 @@ public class MainScript : MonoBehaviour
         Button settings = lft.transform.Find("Settings").gameObject.GetComponent<Button>();
         settings.onClick.AddListener(ShowMainMenu);
         TimeScript.m_isItPaused = false;
-        m_isItInitialized = true;
+        
     }
 
     /// <summary>
@@ -256,10 +259,11 @@ public class MainScript : MonoBehaviour
     /// </summary>
     public void StartGame()
     {
+        m_isItInitialized = false;
         GameInitialization();
-
         Loading();
         PlaceOpenedItems(AbstractObject.GetOpennedItems());
+        m_isItInitialized = true;
     }
 
     /// <summary>

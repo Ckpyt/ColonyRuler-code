@@ -109,6 +109,7 @@ namespace XMLExport
         /// <param name="DestPath"> there are xml files </param>
         static void ExportJson(string DestPath)
         {
+
             ReadFile(DestPath + itmsMap, "items"); 
             ReadFile(DestPath + ArmyMap, "army"); 
             ReadFile(DestPath + buildingsMap, "buildings");
@@ -119,6 +120,9 @@ namespace XMLExport
             ReadFile(DestPath + processMap, "process");
             ReadFile(DestPath + wildAnimalMap, "wildAnimal");
             ReadFile(DestPath + domesticAnimalMap, "domesticAnimal");
+
+            localizItems.m_itemList.Add(new LocalizationItem("Population", "Population"));
+            localizItems.m_itemList.Add(new LocalizationItem("People", "People"));
 
             localizItems.Sort();
             string json = JsonConvert.SerializeObject(localizItems);

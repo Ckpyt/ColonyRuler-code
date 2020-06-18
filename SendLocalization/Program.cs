@@ -11,7 +11,7 @@ namespace SendLocalization
     class Program
     {
         private static int _salt;
-        private static string _siteName = "https://ckpyt.com/";
+        private static string _siteName = "https://ckpyt.com";
         static async Task Main()
         {
             await GetSalt();

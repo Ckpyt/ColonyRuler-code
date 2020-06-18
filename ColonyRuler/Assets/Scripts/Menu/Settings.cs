@@ -65,7 +65,7 @@ public class Settings
     /// </summary>
     static void SettingsLoad(string json)
     {
-        if (json.Length > 0)
+        if (json.Length > 4)
         {
             _sSettings = JsonUtility.FromJson<Settings>(json);
             Localization.GetLocalization().ChangeLanguage(_sSettings.m_localization.m_currentLanguage);
@@ -84,15 +84,9 @@ public class Settings
     /// Event of reciving answer from server
     /// </summary>
     /// <param name="answer"> answered string for loading settings </param>
-    static void Load(Byte[] answer)
+    static void Load(string answer)
     {
-        if (answer != null && answer.Length > 2)
-        {
-            string json = Encoding.UTF8.GetString(answer);
-            json = json.Replace("\\", "");
-            json = json.Remove(json.Length - 2, 2).Remove(0, 1);
-            SettingsLoad(json);
-        }
+        SettingsLoad(NetworkManager.ByteToJson(answer));
     }
 
     /// <summary>

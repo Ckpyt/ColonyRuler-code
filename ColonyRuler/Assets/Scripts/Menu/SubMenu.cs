@@ -25,7 +25,8 @@ public class SubMenu : MonoBehaviour
     /// <param name="previous"></param>
     public virtual void ShowMenu(GameObject previous = null)
     {
-        if (previous == null) previous = MainMenu.m_sActiveMenu;
+        if (previous == null && MainMenu.m_sActiveMenu != null && MainMenu.m_sActiveMenu.activeSelf) 
+            previous = MainMenu.m_sActiveMenu;
         m_previous = previous;
         previous?.SetActive(false);
         gameObject.SetActive(true);
@@ -40,5 +41,6 @@ public class SubMenu : MonoBehaviour
         gameObject.SetActive(false);
         m_previous?.SetActive(true);
         MainMenu.m_sActiveMenu = m_previous;
+        m_previous = null;
     }
 }

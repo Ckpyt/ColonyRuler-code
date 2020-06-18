@@ -135,7 +135,7 @@ public class TimeScript : MonoBehaviour
     void Update()
     {
         try { 
-            if (!m_isItPaused && !m_sIsItPaused)
+            if (!m_isItPaused && !m_sIsItPaused && MainScript.m_isItInitialized)
             {
                 Localization loc = Localization.GetLocalization();
                 Text txt = m_timeText;

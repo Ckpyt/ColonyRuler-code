@@ -194,13 +194,10 @@ public class Save : SubMenu
     /// receive file names from server.
     /// </summary>
     /// <param name="res"> answer </param>
-    void ResiveFilename(byte[] res)
+    void ResiveFilename(string res)
     {
         string[] filenames = null;
-        string txt = "";
-        if (res != null && res.Length > 0)
-            txt = System.Text.Encoding.UTF8.GetString(res);
-        txt = txt.Replace("\"", "");
+        string txt = res.Replace("\"", "");
         filenames = txt.Split(',');
         MakeList(filenames);
     }
@@ -398,7 +395,7 @@ public class Save : SubMenu
         }
         else
         {
-            if (!_ms.m_isItInitialized)
+            if (!MainScript.m_isItInitialized)
                 _ms.StartGame();
             Load();
         }

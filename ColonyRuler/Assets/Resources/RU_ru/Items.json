@@ -153,6 +153,9 @@
             "m_name": "pig food",
             "m_text": "помои"
         }, {
+			"m_name": "Population",
+			"m_text": "Население"
+		}, {
             "m_name": "primitive arrow",
             "m_text": "простая стрела"
         }, {

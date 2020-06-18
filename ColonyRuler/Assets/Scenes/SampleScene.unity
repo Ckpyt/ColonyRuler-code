@@ -2345,7 +2345,6 @@ MonoBehaviour:
   m_toolTipText: {fileID: 0}
   m_gameMenuPanel: {fileID: 22419146}
   m_mainMenuPanel: {fileID: 1881745583}
-  m_isItInitialized: 0
 --- !u!114 &414163433
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6200,8 +6199,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70b688c46b140fa4abddf8bdd6bbde12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_savePanel: {fileID: 0}
-  m_settingsPanel: {fileID: 0}
+  m_savePanel: {fileID: 1995819355}
+  m_settingsPanel: {fileID: 301690246}
   m_newGame: {fileID: 305668026}
   m_resumeGame: {fileID: 0}
   m_saveGame: {fileID: 0}
