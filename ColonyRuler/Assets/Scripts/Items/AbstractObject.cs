@@ -116,6 +116,8 @@ public class AbstractObject
     /// </summary>
     public virtual void ChangeLanguage()
     {
+        if (m_name[0] == '-') return; //blocked item
+        
         try
         {
             Localization loc = Localization.GetLocalization();

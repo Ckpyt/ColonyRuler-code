@@ -108,6 +108,16 @@ public class Localization : ISerializationCallbackReceiver
     }
 
     /// <summary>
+    /// filling m_items.m_itemDictionary from description list
+    /// </summary>
+    void FillItemDictionary()
+    {
+        m_items.m_itemDictionary = new Dictionary<string, string>();
+        foreach (LocalizationItem itm in m_items.m_itemList)
+            m_items.m_itemDictionary.Add(itm.m_name, itm.m_text);
+    }
+
+    /// <summary>
     /// Load current localization
     /// Part of ISerializationCallbackReceiver
     /// </summary>
@@ -131,9 +141,7 @@ public class Localization : ISerializationCallbackReceiver
 
                 if (m_items?.m_itemList != null)
                 {
-                    m_items.m_itemDictionary = new Dictionary<string, string>();
-                    foreach (LocalizationItem itm in m_items.m_itemList)
-                        m_items.m_itemDictionary.Add(itm.m_name, itm.m_text);
+                    FillItemDictionary();
                 }
             });
             networking.GetLocalization(loc, 3, delegate (string answerHis)
@@ -147,6 +155,7 @@ public class Localization : ISerializationCallbackReceiver
             m_history = JsonUtility.FromJson<HistoryLocalization>(hisAss.text);
             var itmAss = Resources.Load<TextAsset>(m_sItemsFullPath);
             m_items = JsonUtility.FromJson<ItemsLocalization>(itmAss.text);
+            FillItemDictionary();
             var uiAss = Resources.Load<TextAsset>(m_sUiFullPath);
             m_ui = JsonUtility.FromJson<UiLocalization>(uiAss.text);
 #endif
