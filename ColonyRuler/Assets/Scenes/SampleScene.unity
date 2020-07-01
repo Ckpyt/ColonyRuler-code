@@ -2535,8 +2535,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'Hello, UserName!
 
-    If you are not loggined into the site, everyone
-    can use your save game.'
+    If you are not loggined into the site, everyone can use your save game.'
 --- !u!222 &447896183
 CanvasRenderer:
   m_ObjectHideFlags: 0
