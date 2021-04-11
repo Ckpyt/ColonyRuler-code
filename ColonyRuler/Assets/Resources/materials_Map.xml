@@ -311,4 +311,43 @@
 		<ns1:container_type>light_storage</ns1:container_type>
 		<ns1:production_type>sewing</ns1:production_type>
 	</ns1:repetative>
+	<ns1:repetative>
+		<ns1:name>egg</ns1:name>
+		<ns1:description>egg</ns1:description>
+		<ns1:defaultX>1</ns1:defaultX>
+		<ns1:defaultY>1</ns1:defaultY>
+		<ns1:produce_per_person>1</ns1:produce_per_person>
+		<ns1:dependency/>
+		<ns1:dependency_cost>0</ns1:dependency_cost>
+		<ns1:final_cost>0.1</ns1:final_cost>
+		<ns1:container>1</ns1:container>
+		<ns1:container_type>light_storage</ns1:container_type>
+		<ns1:production_type>cooking &amp; animal_food</ns1:production_type>
+	</ns1:repetative>
+	<ns1:repetative>
+		<ns1:name>milk</ns1:name>
+		<ns1:description>milk</ns1:description>
+		<ns1:defaultX>1</ns1:defaultX>
+		<ns1:defaultY>1</ns1:defaultY>
+		<ns1:produce_per_person>1</ns1:produce_per_person>
+		<ns1:dependency/>
+		<ns1:dependency_cost>0</ns1:dependency_cost>
+		<ns1:final_cost>0.1</ns1:final_cost>
+		<ns1:container>1</ns1:container>
+		<ns1:container_type>light_storage</ns1:container_type>
+		<ns1:production_type>cooking &amp; animal_food</ns1:production_type>
+	</ns1:repetative>
+	<ns1:repetative>
+		<ns1:name>wool</ns1:name>
+		<ns1:description>wool</ns1:description>
+		<ns1:defaultX>1</ns1:defaultX>
+		<ns1:defaultY>1</ns1:defaultY>
+		<ns1:produce_per_person>1</ns1:produce_per_person>
+		<ns1:dependency/>
+		<ns1:dependency_cost>0</ns1:dependency_cost>
+		<ns1:final_cost>1</ns1:final_cost>
+		<ns1:container>1</ns1:container>
+		<ns1:container_type>light_storage</ns1:container_type>
+		<ns1:production_type>sewing</ns1:production_type>
+	</ns1:repetative>
 </ns1:materials>

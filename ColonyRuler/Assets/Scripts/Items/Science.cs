@@ -51,7 +51,7 @@ class Science : GameAbstractItem
 
     /// <summary>
     /// Researching.
-    /// Does not used tools yet, DependecyCount decreasing to zero durong the process
+    /// Does not used tools yet, DependecyCount decreasing to zero during the process
     /// </summary>
     /// <param name="worked"> not used </param>
     public override void Working(long worked)
@@ -192,7 +192,7 @@ class Science : GameAbstractItem
     }
 
     /// <summary>
-    /// Complite research process
+    /// Complete research process
     /// </summary>
     public override bool Upgrade()
     {

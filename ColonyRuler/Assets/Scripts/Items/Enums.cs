@@ -87,7 +87,7 @@ public static class ContainerTypeMethods
                 return ContainerType.heavy;
             case "territory":
                 return ContainerType.territory;
-            case "big_animmal":
+            case "big_animal":
                 return ContainerType.bigAnimals;
             case "small_animal":
                 return ContainerType.smallAnimals;

@@ -1,15 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31129.286
-MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{B20A68AF-E167-AB07-0971-A483BB884BD5}"
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "ColonyRuler\Assembly-CSharp.csproj", "{B20A68AF-E167-AB07-0971-A483BB884BD5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor", "Assembly-CSharp-Editor.csproj", "{53121A47-52F1-83A9-94B4-5DC5543A5BE7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor", "ColonyRuler\Assembly-CSharp-Editor.csproj", "{53121A47-52F1-83A9-94B4-5DC5543A5BE7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XMLExport", "..\XMLExport\XMLExport.csproj", "{71D3B9D6-87FF-4252-B352-0B5587F53342}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XMLExport", "XMLExport\XMLExport.csproj", "{71D3B9D6-87FF-4252-B352-0B5587F53342}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SendLocalization", "..\SendLocalization\SendLocalization.csproj", "{DEB6700E-8D7E-4C37-8D6F-D7BCF623EAD5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SendLocalization", "SendLocalization\SendLocalization.csproj", "{DEB6700E-8D7E-4C37-8D6F-D7BCF623EAD5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -36,8 +34,5 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {BCC5CC8D-B243-4A4D-969D-B463F46F92BA}
 	EndGlobalSection
 EndGlobal

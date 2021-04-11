@@ -78,6 +78,7 @@ namespace ExcelLoading {
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(ItemItem))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(BuildingItem))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(Process))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Traps))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(ScienceItem))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(MineralResource))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(Resource))]
@@ -146,6 +147,7 @@ namespace ExcelLoading {
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(ItemItem))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(BuildingItem))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(Process))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Traps))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(ScienceItem))]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
@@ -208,6 +210,7 @@ namespace ExcelLoading {
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(ItemItem))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(BuildingItem))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(Process))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Traps))]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -451,6 +454,39 @@ namespace ExcelLoading {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="ExcelLoading")]
+    public partial class Traps : MaterialItem {
+        
+        private string trap_typeField;
+        
+        private string chance_to_killField;
+        
+        /// <remarks/>
+        public string trap_type {
+            get {
+                return this.trap_typeField;
+            }
+            set {
+                this.trap_typeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string chance_to_kill {
+            get {
+                return this.chance_to_killField;
+            }
+            set {
+                this.chance_to_killField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="ExcelLoading")]
     public partial class ScienceItem : AbstractItem {
         
         private string opensField;
@@ -564,7 +600,7 @@ namespace ExcelLoading {
         
         private string additionalProductsField;
         
-        private string produce_per_personField;
+        private float produce_per_personField;
         
         /// <remarks/>
         public string foodType {
@@ -597,7 +633,7 @@ namespace ExcelLoading {
         }
         
         /// <remarks/>
-        public string produce_per_person {
+        public float produce_per_person {
             get {
                 return this.produce_per_personField;
             }
@@ -626,6 +662,10 @@ namespace ExcelLoading {
         private decimal minimal_in_squadreField;
         
         private decimal maximum_in_squadreField;
+        
+        private string tamed_toField;
+        
+        private float chance_to_tameField;
         
         /// <remarks/>
         public float attack {
@@ -684,6 +724,26 @@ namespace ExcelLoading {
             }
             set {
                 this.maximum_in_squadreField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string tamed_to {
+            get {
+                return this.tamed_toField;
+            }
+            set {
+                this.tamed_toField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public float chance_to_tame {
+            get {
+                return this.chance_to_tameField;
+            }
+            set {
+                this.chance_to_tameField = value;
             }
         }
     }
@@ -817,6 +877,29 @@ namespace ExcelLoading {
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("repetative")]
         public MaterialItem[] repetative {
+            get {
+                return this.repetativeField;
+            }
+            set {
+                this.repetativeField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="ExcelLoading")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="ExcelLoading", IsNullable=false)]
+    public partial class traps {
+        
+        private Traps[] repetativeField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("repetative")]
+        public Traps[] repetative {
             get {
                 return this.repetativeField;
             }

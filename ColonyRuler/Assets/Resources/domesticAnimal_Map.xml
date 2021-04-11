@@ -12,4 +12,69 @@
 		<ns1:additionalProducts/>
 		<ns1:produce_per_person>10</ns1:produce_per_person>
 	</ns1:repetative>
+	<ns1:repetative>
+		<ns1:name>rabbit</ns1:name>
+		<ns1:description>rabbit</ns1:description>
+		<ns1:defaultX>1</ns1:defaultX>
+		<ns1:defaultY>1</ns1:defaultY>
+		<ns1:maximum_in_territory>1</ns1:maximum_in_territory>
+		<ns1:growing_percent>0.4</ns1:growing_percent>
+		<ns1:butchering_per_person>raw food*2; bone*1; fur*1</ns1:butchering_per_person>
+		<ns1:foodType>straw*1</ns1:foodType>
+		<ns1:storageType>small_animal</ns1:storageType>
+		<ns1:additionalProducts/>
+		<ns1:produce_per_person>20</ns1:produce_per_person>
+	</ns1:repetative>
+	<ns1:repetative>
+		<ns1:name>hen</ns1:name>
+		<ns1:description>hen</ns1:description>
+		<ns1:defaultX>1</ns1:defaultX>
+		<ns1:defaultY>1</ns1:defaultY>
+		<ns1:maximum_in_territory>1</ns1:maximum_in_territory>
+		<ns1:growing_percent>0.1</ns1:growing_percent>
+		<ns1:butchering_per_person>raw food*1; bone*1; feather*10</ns1:butchering_per_person>
+		<ns1:foodType>grain*1</ns1:foodType>
+		<ns1:storageType>small_animal</ns1:storageType>
+		<ns1:additionalProducts>egg*1</ns1:additionalProducts>
+		<ns1:produce_per_person>20</ns1:produce_per_person>
+	</ns1:repetative>
+	<ns1:repetative>
+		<ns1:name>cow</ns1:name>
+		<ns1:description>cow</ns1:description>
+		<ns1:defaultX>1</ns1:defaultX>
+		<ns1:defaultY>1</ns1:defaultY>
+		<ns1:maximum_in_territory>2</ns1:maximum_in_territory>
+		<ns1:growing_percent>0.02</ns1:growing_percent>
+		<ns1:butchering_per_person>raw food*10; bone*7; fur*10</ns1:butchering_per_person>
+		<ns1:foodType>straw*5</ns1:foodType>
+		<ns1:storageType>big_animal</ns1:storageType>
+		<ns1:additionalProducts>milk*1</ns1:additionalProducts>
+		<ns1:produce_per_person>40</ns1:produce_per_person>
+	</ns1:repetative>
+	<ns1:repetative>
+		<ns1:name>horse</ns1:name>
+		<ns1:description>horse</ns1:description>
+		<ns1:defaultX>1</ns1:defaultX>
+		<ns1:defaultY>1</ns1:defaultY>
+		<ns1:maximum_in_territory>2</ns1:maximum_in_territory>
+		<ns1:growing_percent>0.02</ns1:growing_percent>
+		<ns1:butchering_per_person>raw food*7; bone*10; fur*10</ns1:butchering_per_person>
+		<ns1:foodType>straw*5</ns1:foodType>
+		<ns1:storageType>big_animal</ns1:storageType>
+		<ns1:additionalProducts/>
+		<ns1:produce_per_person>40</ns1:produce_per_person>
+	</ns1:repetative>
+	<ns1:repetative>
+		<ns1:name>sheep</ns1:name>
+		<ns1:description>sheep</ns1:description>
+		<ns1:defaultX>1</ns1:defaultX>
+		<ns1:defaultY>1</ns1:defaultY>
+		<ns1:maximum_in_territory>10</ns1:maximum_in_territory>
+		<ns1:growing_percent>0.05</ns1:growing_percent>
+		<ns1:butchering_per_person>raw food*6; bone*4; fur*2; wool*10</ns1:butchering_per_person>
+		<ns1:foodType>straw*2</ns1:foodType>
+		<ns1:storageType>big_animal</ns1:storageType>
+		<ns1:additionalProducts/>
+		<ns1:produce_per_person>20</ns1:produce_per_person>
+	</ns1:repetative>
 </ns1:domesticAnimal>

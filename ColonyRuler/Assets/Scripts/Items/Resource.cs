@@ -11,7 +11,7 @@ public class Resource : MineralResource
     public float m_growingPercent = 0;
 
     /// <summary> maximum in territory, depends on territory size </summary>
-    int _currentMax = 0;
+    public int m_currentMax = 0;
 
     /// <summary>
     /// How many items could be produced.
@@ -28,12 +28,12 @@ public class Resource : MineralResource
     /// <param name="worked"> not used </param>
     public override void Working(long worked = 0)
     {
-        _currentMax = ((int)m_maxCount * Storage.m_storage.m_territory) / Storage.m_storage.m_territoryMax;
+        m_currentMax = ((int)m_maxCount * Storage.m_storage.m_territory) / Storage.m_storage.m_territoryMax;
         float newCount = m_count + m_count * m_growingPercent;
-        if (newCount < _currentMax)
+        if (newCount < m_currentMax)
             m_count = newCount;
         else
-            m_count = _currentMax;
+            m_count = m_currentMax;
 
         if (m_count < 0.1)
             m_count = 0.1f;
@@ -50,7 +50,7 @@ public class Resource : MineralResource
         ExcelLoading.Resource repRes = repItm as ExcelLoading.Resource;
         Resource res = itm as Resource;
         res.m_growingPercent = repRes.growing_percent;
-        res._currentMax = (int)res.m_maxCount;
+        res.m_currentMax = (int)res.m_maxCount;
 
         return MineralResource.Parse(itm, repItm);
     }

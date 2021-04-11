@@ -289,6 +289,8 @@ public class Save : SubMenu
         CopyItems(gm.m_allScience);
         CopyItems(gm.m_allResources);
         CopyItems(gm.m_allProcesses);
+        CopyItems(gm.m_allWildAnimals);
+        CopyItems(gm.m_allDomestic);
 
         AbstractObject.m_sEverything[AbstractObject.m_sEverything.Count - 1].
             Copy(gm.m_population);

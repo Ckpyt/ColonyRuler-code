@@ -24,6 +24,8 @@ class Hunting : GameMaterial
         float attack = 1f;
         float protection = 0;
         float distance = 10;
+
+        //calc attributes
         foreach(var tool in m_tools)
         {
             foreach(var effectPair in tool.m_toolLink.m_effects)
@@ -44,6 +46,7 @@ class Hunting : GameMaterial
                 }
             }
         }
+
         if (attackDistance > distance)
             distance = attackDistance;
 

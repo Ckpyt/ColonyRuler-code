@@ -30,6 +30,9 @@ class Game
     public List<Army> m_allArmy = new List<Army>();
     public List<Resource> m_allResources = new List<Resource>();
     public List<Process> m_allProcesses = new List<Process>();
+    public List<WildAnimal> m_allWildAnimals = new List<WildAnimal>();
+    public List<DomesticAnimal> m_allDomestic = new List<DomesticAnimal>();
+
     /// <summary> where is ony one population </summary>
     public Population m_population = null;
     #endregion
@@ -62,6 +65,8 @@ class Game
                 case nameof(Army): m_allArmy.Add(itm as Army); break;
                 case nameof(Resource): m_allResources.Add(itm as Resource); break;
                 case nameof(Process): m_allProcesses.Add(itm as Process); break;
+                case nameof(WildAnimal): m_allWildAnimals.Add(itm as WildAnimal); break;
+                case nameof(DomesticAnimal): m_allDomestic.Add(itm as DomesticAnimal); break;
             }
 
         foreach (GameObject go in MainScript.m_sAllItems)

@@ -52,6 +52,7 @@ namespace XMLExport
         const string processMap = "\\process_map.xml";
         const string wildAnimalMap = "\\wildAnimal_map.xml";
         const string domesticAnimalMap = "\\domesticAnimal_map.xml";
+        const string trapsMap = "\\traps_map.xml";
 
         static ItemsLocalization localizItems = new ItemsLocalization();
         /// <summary>
@@ -120,6 +121,7 @@ namespace XMLExport
             ReadFile(DestPath + processMap, "process");
             ReadFile(DestPath + wildAnimalMap, "wildAnimal");
             ReadFile(DestPath + domesticAnimalMap, "domesticAnimal");
+            ReadFile(DestPath + trapsMap, "traps");
 
             localizItems.m_itemList.Add(new LocalizationItem("Population", "Population"));
             localizItems.m_itemList.Add(new LocalizationItem("People", "People"));
@@ -185,6 +187,8 @@ namespace XMLExport
             test<wildAnimal>(filename);
             filename = DestPath + domesticAnimalMap;
             test<domesticAnimal>(filename);
+            filename = DestPath + trapsMap;
+            test<traps>(filename);
         }
 
         /// <summary>

@@ -10,14 +10,14 @@ using UnityEngine;
 [Serializable]
 public class DependencyCount
 {
-    /// <summary> list of ingridients </summary>
+    /// <summary> list of ingredients </summary>
     [NonSerialized]
     public List<AbstractObject> m_dependency = new List<AbstractObject>();
 
     /// <summary> 
-    /// list of ingridient's count. 
+    /// list of ingredients' count. 
     /// Could be changed only on Science.
-    /// Should be divided becouse of serilization 
+    /// Should be divided because of serialization 
     /// </summary>
     public List<float> m_value = new List<float>();
 }
@@ -25,6 +25,8 @@ public class DependencyCount
 /// <summary>
 /// Abstract item. 
 /// Contain a recipe and final results.
+/// All the exceptions could happens because of wrong formula in the excel file.
+/// So, exceptions should be shown only in the debugger.
 /// </summary>
 [Serializable]
 public class GameAbstractItem : AbstractObject
@@ -97,12 +99,21 @@ public class GameAbstractItem : AbstractObject
                     }
                     catch (Exception ex)
                     {
-                        Debug.Log(ex.Message);
+                        Debug.Log( "Object float parsing error:" + dependency[i] + " " +  ex.Message);
+                        return null;
                     }
                 }
 
-                while (str[0] == ' ')
-                    str = str.Substring(1);
+                try
+                {
+                    while (str.Length > 1 && str[0] == ' ')
+                        str = str.Substring(1);
+
+                }catch(Exception ex)
+                {
+                    Debug.Log("Object splitting substrings error:" + dependency[i] + " " + ex.Message);
+                    return null;
+                }
 
                 foreach (AbstractObject dependMat in m_sEverything)
                 {
@@ -149,9 +160,9 @@ public class GameAbstractItem : AbstractObject
                 else
                     mat.m_producePerPerson = ParseDependencyCounts(prod);
             }
-            catch (Exception ex)
+            catch (Exception ex) //error in the excel file.
             {
-                Debug.Log(ex);
+                Debug.Log("Object parsing error:" + mat.m_name + " " + ex.Message);
             }
         }
     }

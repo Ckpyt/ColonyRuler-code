@@ -92,7 +92,7 @@
                     <xs:element type="xs:string" name="foodType"/>
                     <xs:element type="xs:string" name="storageType"/>
                     <xs:element type="xs:string" name="additionalProducts"/>
-                    <xs:element type="xs:string" name="produce_per_person"/>
+                    <xs:element type="xs:float" name="produce_per_person"/>
                 </xs:sequence>
             </xs:extension>
         </xs:complexContent>

@@ -162,8 +162,10 @@ public class GameMaterial : GameAbstractItem
 
     /// <summary>
     /// One cycle of working.
-    /// If we have 1 tool1, 2 tool2 and 4 workers, it will works 3 times:
-    /// 1 - with 1 tool1 and 1 tool2, second - with 1 tool2, third - 2 with no tools
+    /// If we have 1 tool1, 1 tool2, 2 tool3 and 4 workers, it works 3 times:
+    /// first:  1 worker with 1 tool1, 1 tool2 and 1 tool3,
+    /// second: 1 worker with 1 tool2,
+    /// third:  2 workers with no tools
     /// Tools should be sorted by tools count from smaller to bigger count
     /// </summary>
     /// <param name="worked"> how many workers have work here </param>
@@ -174,10 +176,10 @@ public class GameMaterial : GameAbstractItem
     {
         float effect = 1;
         float mulEffect = 1;
-        while (startIndex < m_tools.Count && (long)m_tools[startIndex].m_toolsCount == worked)
+        while (startIndex < m_tools.Count && (long)m_tools[startIndex].m_toolsCount == worked) //moving to the first unused tool
             startIndex++;
 
-
+        //calculate effects of tools
         for (int it = startIndex; it < m_tools.Count; it++)
         {
             var tool = m_tools[it];
@@ -189,11 +191,12 @@ public class GameMaterial : GameAbstractItem
 
         float maxWorkers = CountMaxWorkers(effect, mulEffect);
 
+        //current amount of workers with tools
         long wrks = m_workers < maxWorkers ? m_workers : (int)maxWorkers;
         wrks -= worked;
         if (wrks < 1) return worked;
 
-        long depWorks = wrks;
+        //long depWorks = wrks;
 
         long toolsMax = wrks;
         if (startIndex < m_tools.Count)
@@ -202,8 +205,10 @@ public class GameMaterial : GameAbstractItem
 
         wrks = wrks < toolsMax ? wrks : toolsMax;
         
+        
         if (m_dependencyCount != null && m_dependencyCount.Length > 0 && !m_isItFix)
         {
+            //current amount of workers depends on the resources count
             for (int iL = 0; iL < m_dependencyCount.Length; iL++)
             {
                 int count = 0;
@@ -221,8 +226,9 @@ public class GameMaterial : GameAbstractItem
                 wrks = wrks < count ? wrks : count;
             }
 
-            depWorks = wrks > 0 ? wrks : depWorks;
+            //depWorks = wrks > 0 ? wrks : depWorks;
 
+            //consume resources
             for (int iL = 0; iL < m_dependencyCount.Length; iL++)
             {
                 long depWrks = wrks;
@@ -240,6 +246,7 @@ public class GameMaterial : GameAbstractItem
             }
         }
 
+        //working
         for (int i = startIndex; i < m_tools.Count; i++)
             m_tools[i].ToolUsed((long)wrks);
 
@@ -290,6 +297,7 @@ public class GameMaterial : GameAbstractItem
             }
         }
 
+        //finishing the working cycle
         worked += wrks;
         if ((wrks > 0 || wrks == toolsMax) && worked < m_workers && startIndex < m_tools.Count)
             return WorkingWithTools(worked, ++startIndex, producePerPerson);
@@ -340,7 +348,7 @@ public class GameMaterial : GameAbstractItem
     /// <summary>
     /// working of workers.
     /// </summary>
-    /// <param name="worked"> how many workers had work on this day </param>
+    /// <param name="worked"> how many workers has been workng this day </param>
     public override void Working(long worked)
     {
         if (m_workers > 0 && worked < m_workers)
@@ -388,7 +396,8 @@ public class GameMaterial : GameAbstractItem
 
         foreach (var rep in itms.repetative)
         {
-            if (rep.name == "hunting")
+            //the special ability, works different
+            if (rep.name == "hunting") 
                 Parse(new Hunting(), rep);
             else
                 Parse(new GameMaterial(), rep);
