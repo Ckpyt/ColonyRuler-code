@@ -72,7 +72,7 @@ public class Buildings : Items
         }
         catch (KeyNotFoundException kex)
         {
-            Debug.Log("Building " + bld.m_name + " does not contain living effects" + kex.Message);
+            Debug.Log("Building " + bld.m_name + " does not contain living effects " + kex.Message);
         }
         return itm;
     }

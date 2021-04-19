@@ -86,7 +86,7 @@ public class NetworkManager : SubMenu
         _sCurrent = request;
         yield return request.SendWebRequest();
 
-        if (request.isNetworkError || request.isHttpError)
+        if (request.result == UnityWebRequest.Result.ConnectionError || request.result == UnityWebRequest.Result.ProtocolError)
         {
             _sAnswer = null;
             Debug.Log(request.error);

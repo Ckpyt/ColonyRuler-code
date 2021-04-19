@@ -73,7 +73,7 @@ public class Tooltips : MonoBehaviour
     }
 
     /// <summary>
-    /// Event of destroing object. Called by Unity
+    /// Event of destroying object. Called by Unity
     /// </summary>
     public void OnDestroy()
     {

@@ -17,7 +17,9 @@ class Science : GameAbstractItem
     /// <summary> How many materials reguared to complite research. used for understanding research procegress </summary>
     [NonSerialized]
     public float m_maxCount = 0;
-
+    /// <summary> learning tips. Should be shown after reserching </summary>
+    [NonSerialized]
+    string m_tips;
     /// <summary>
     /// Copy from loaded item.
     /// shouldn't copy non-serialized fields

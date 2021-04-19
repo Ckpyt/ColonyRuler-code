@@ -42,17 +42,28 @@ namespace XMLExport
     /// </summary>
     class Program
     {
-        const string itmsMap = "\\items_map.xml";
-        const string ArmyMap = "\\army_map.xml";
-        const string buildingsMap = "\\buildings_map.xml";
-        const string materialsMap = "\\materials_map.xml";
-        const string scienceMap = "\\science_map.xml";
-        const string resourceMap = "\\resource_map.xml";
-        const string mineralResourceMap = "\\mineralResource_map.xml";
-        const string processMap = "\\process_map.xml";
-        const string wildAnimalMap = "\\wildAnimal_map.xml";
-        const string domesticAnimalMap = "\\domesticAnimal_map.xml";
-        const string trapsMap = "\\traps_map.xml";
+        public const string itmsMap = "\\items_map.xml";
+        public const string ArmyMap = "\\army_map.xml";
+        public const string buildingsMap = "\\buildings_map.xml";
+        public const string materialsMap = "\\materials_map.xml";
+        public const string scienceMap = "\\science_map.xml";
+        public const string resourceMap = "\\resource_map.xml";
+        public const string mineralResourceMap = "\\mineralResource_map.xml";
+        public const string processMap = "\\process_map.xml";
+        public const string wildAnimalMap = "\\wildAnimal_map.xml";
+        public const string domesticAnimalMap = "\\domesticAnimal_map.xml";
+        public const string trapsMap = "\\traps_map.xml";
+
+        public const string gameFolder = "\\ColonyRuler\\Assets\\Scripts\\XMLScripts";
+        const string filename = "ColonyRuler.xlsm";
+
+        public static string LocateXMLFile()
+        {
+            string curDir = Directory.GetCurrentDirectory();
+            while (!File.Exists(curDir + "\\" + filename))
+                curDir = Directory.GetParent(curDir).FullName;
+            return curDir;
+        }
 
         static ItemsLocalization localizItems = new ItemsLocalization();
         /// <summary>
@@ -61,10 +72,7 @@ namespace XMLExport
         /// <param name="args"></param>
         static void Main(string[] args)
         {
-            string curDir = Directory.GetCurrentDirectory();
-            string filename = "ColonyRuler.xlsm";
-            while (!File.Exists(curDir + "\\" + filename))
-                curDir = Directory.GetParent(curDir).FullName;
+            string curDir = LocateXMLFile();
 
             DeleteFiles("*.xml", curDir);
 
@@ -80,6 +88,16 @@ namespace XMLExport
                 if (map.IsExportable)
                 {
                     map.ExportXml(out data);
+                    //fixing with Russian Excel
+                    const string wrongName = "карта";
+                    string lastName = map.Name.Substring(map.Name.Length - wrongName.Length);
+                    if(lastName == wrongName)
+                    {
+                        string name = map.Name.Substring(0, map.Name.Length - wrongName.Length);
+                        name += "Map";
+                        map.Name = name;
+                    }
+
                     StreamWriter file = new StreamWriter(curDir + "\\" + map.Name + ".xml");
                     file.Write(data);
                     file.Flush();
@@ -95,7 +113,7 @@ namespace XMLExport
             DeleteFiles("*.meta", DestPath);
 
             CopyFiles("*.xml", DestPath, curDir);
-            CopyFiles("*.cs", curDir + "\\ColonyRuler\\Assets\\Scripts\\XMLScripts", curDir);
+            CopyFiles("*.cs", curDir + gameFolder, curDir);
 
             FullTesting(DestPath);
             ExportJson(DestPath);

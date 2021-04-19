@@ -60,15 +60,25 @@ public class WildAnimal : AbstractAnimal
             ani.m_maxInSquadre = decimal.ToInt32(aniRep.maximum_in_squadre);
             ani.m_chanceToTame = aniRep.chance_to_tame;
 
-            //link to domesticAnimal
-            ani.m_tamedTo = DomesticAnimal.GetAnimal(aniRep.tamed_to);
-
             _sAllWildAnimal.Add(ani);
         }
         else
             Debug.Log("WildAnimal.Parse: critical parse error");
 
         return AbstractAnimal.Parse(mat, rep);
+    }
+
+    public void ParseDependency(ExcelLoading.AbstractObject rep)
+    {
+        try
+        {
+            ExcelLoading.WildAnimalItem aniRep = rep as ExcelLoading.WildAnimalItem;
+            if(aniRep.tamed_to.Length > 0 && aniRep.tamed_to[0] != '-')
+                m_tamedTo = DomesticAnimal.GetAnimal(aniRep.tamed_to);
+        }catch(Exception e)
+        {
+            Debug.LogException(e);
+        }
     }
 
     public override void Copy(AbstractObject source)

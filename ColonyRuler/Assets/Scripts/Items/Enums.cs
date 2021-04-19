@@ -130,7 +130,7 @@ class Productions
         {
             prods = m_sAllProductions[effectName];
         }
-        catch (KeyNotFoundException ex)
+        catch (KeyNotFoundException) //ordinary situation
         {
             prods = new Productions();
             m_sAllProductions[effectName] = prods;
@@ -140,7 +140,7 @@ class Productions
     }
 
     /// <summary>
-    /// Add production into dictonary by ItemsEffect.name
+    /// Add production into dictionary by ItemsEffect.name
     /// </summary>
     /// <param name="prod"> production </param>
     public static void AddProduction(GameAbstractItem prod, string effectName)

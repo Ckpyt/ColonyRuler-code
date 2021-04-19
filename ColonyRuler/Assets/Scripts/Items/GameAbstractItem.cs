@@ -142,8 +142,14 @@ public class GameAbstractItem : AbstractObject
         {
             var rep = m_sUnparsed[it] as ExcelLoading.AbstractItem;
             var mat = m_sEverything[it] as GameAbstractItem;
+            WildAnimal wild = m_sEverything[it] as WildAnimal;
+            if (wild != null)
+                wild.ParseDependency(m_sUnparsed[it]);
+
             if (mat == null) continue;
             var prod = rep.produce_per_person;
+
+            
 
             try
             {

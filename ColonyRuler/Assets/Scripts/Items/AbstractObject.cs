@@ -131,7 +131,7 @@ public class AbstractObject
         catch (Exception ex)
         {
             m_text = m_name;
-            Debug.Log("AbstractObject \"" + m_name + "\":ChangeLanguage exception: " + ex.Message);
+            Debug.LogError("AbstractObject \"" + m_name + "\":ChangeLanguage exception: " + ex.Message);
         }
 
         if (m_thisObject != null)
@@ -204,7 +204,7 @@ public class AbstractObject
         {
             try
             {
-                AbstractObject mat = m_sEverything[i] as AbstractObject;
+                AbstractObject mat = m_sEverything[i];
                 mat.Working();
             }
             catch (Exception ex)
@@ -267,20 +267,20 @@ public class AbstractObject
     public virtual string GetCountString() { return m_count.ToString("F"); }
 
     /// <summary>
-    /// Prodtucivity of this item in text mode. Could be overloaded by children
+    /// Productivity of this item in text mode. Could be overloaded by children
     /// </summary>
     /// <returns> m_productivity </returns>
     public virtual string GetProductivityString() { return m_productivity.ToString("F"); }
 
     /// <summary>
-    /// How many damaged items here in text mode. Could be overloaded by children
+    /// How many damaged items here in text mode. Should be overloaded by children where it used
     /// </summary>
     /// <returns></returns>
     public virtual string GetDamagedString() { return ""; }
 
     /// <summary>
     /// change production icon in IconScript.
-    /// Could be overloaded by children.
+    /// Should be overloaded by children where it used.
     /// </summary>
     /// <param name="render"> render </param>
     /// <param name="isc"> target </param>
@@ -291,7 +291,7 @@ public class AbstractObject
 
     /// <summary>
     /// Open item after research.
-    /// Could be changed by children
+    /// Should be changed by children
     /// </summary>
     public virtual void OpenItem()
     {

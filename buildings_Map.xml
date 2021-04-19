@@ -5,9 +5,9 @@
 		<ns1:defaultX>-14.8</ns1:defaultX>
 		<ns1:defaultY>6</ns1:defaultY>
 		<ns1:produce_per_person>0.25</ns1:produce_per_person>
-		<ns1:dependency>rods*25</ns1:dependency>
-		<ns1:dependency_cost>5</ns1:dependency_cost>
-		<ns1:final_cost>24</ns1:final_cost>
+		<ns1:dependency>rods*25; stick*25</ns1:dependency>
+		<ns1:dependency_cost>30</ns1:dependency_cost>
+		<ns1:final_cost>124</ns1:final_cost>
 		<ns1:container>10</ns1:container>
 		<ns1:container_type>territory</ns1:container_type>
 		<ns1:production_type>building</ns1:production_type>

@@ -30,7 +30,7 @@
 		<ns1:scary>1</ns1:scary>
 		<ns1:minimal_in_squadre>1</ns1:minimal_in_squadre>
 		<ns1:maximum_in_squadre>5</ns1:maximum_in_squadre>
-		<ns1:tamed_to>pig</ns1:tamed_to>
+		<ns1:tamed_to>-pig</ns1:tamed_to>
 		<ns1:chance_to_tame>0.05</ns1:chance_to_tame>
 	</ns1:repetative>
 	<ns1:repetative>
@@ -40,14 +40,14 @@
 		<ns1:defaultY>-14</ns1:defaultY>
 		<ns1:maximum_in_territory>1000</ns1:maximum_in_territory>
 		<ns1:growing_percent>0.15</ns1:growing_percent>
-		<ns1:butchering_per_person>raw food*1; bone*1; feather*10</ns1:butchering_per_person>
+		<ns1:butchering_per_person>raw food*1; bone*1; -feather*10</ns1:butchering_per_person>
 		<ns1:attack>1</ns1:attack>
 		<ns1:protection>2</ns1:protection>
 		<ns1:speed>2</ns1:speed>
 		<ns1:scary>10</ns1:scary>
 		<ns1:minimal_in_squadre>3</ns1:minimal_in_squadre>
 		<ns1:maximum_in_squadre>10</ns1:maximum_in_squadre>
-		<ns1:tamed_to>hen</ns1:tamed_to>
+		<ns1:tamed_to>-hen</ns1:tamed_to>
 		<ns1:chance_to_tame>1</ns1:chance_to_tame>
 	</ns1:repetative>
 	<ns1:repetative>
@@ -64,7 +64,7 @@
 		<ns1:scary>10</ns1:scary>
 		<ns1:minimal_in_squadre>5</ns1:minimal_in_squadre>
 		<ns1:maximum_in_squadre>10</ns1:maximum_in_squadre>
-		<ns1:tamed_to>rabbit</ns1:tamed_to>
+		<ns1:tamed_to>-rabbit</ns1:tamed_to>
 		<ns1:chance_to_tame>0.75</ns1:chance_to_tame>
 	</ns1:repetative>
 	<ns1:repetative>
@@ -81,7 +81,7 @@
 		<ns1:scary>4</ns1:scary>
 		<ns1:minimal_in_squadre>3</ns1:minimal_in_squadre>
 		<ns1:maximum_in_squadre>10</ns1:maximum_in_squadre>
-		<ns1:tamed_to>cow</ns1:tamed_to>
+		<ns1:tamed_to>-cow</ns1:tamed_to>
 		<ns1:chance_to_tame>0.25</ns1:chance_to_tame>
 	</ns1:repetative>
 	<ns1:repetative>
@@ -98,14 +98,14 @@
 		<ns1:scary>4</ns1:scary>
 		<ns1:minimal_in_squadre>2</ns1:minimal_in_squadre>
 		<ns1:maximum_in_squadre>7</ns1:maximum_in_squadre>
-		<ns1:tamed_to>horse</ns1:tamed_to>
+		<ns1:tamed_to>-horse</ns1:tamed_to>
 		<ns1:chance_to_tame>0.1</ns1:chance_to_tame>
 	</ns1:repetative>
 	<ns1:repetative>
 		<ns1:name>wild sheep</ns1:name>
 		<ns1:description>wild sheep</ns1:description>
-		<ns1:defaultX>1</ns1:defaultX>
-		<ns1:defaultY>1</ns1:defaultY>
+		<ns1:defaultX>-14.3</ns1:defaultX>
+		<ns1:defaultY>-14</ns1:defaultY>
 		<ns1:maximum_in_territory>500</ns1:maximum_in_territory>
 		<ns1:growing_percent>0.04</ns1:growing_percent>
 		<ns1:butchering_per_person>raw food*6; bone*6; fur*4</ns1:butchering_per_person>
@@ -115,7 +115,7 @@
 		<ns1:scary>6</ns1:scary>
 		<ns1:minimal_in_squadre>2</ns1:minimal_in_squadre>
 		<ns1:maximum_in_squadre>10</ns1:maximum_in_squadre>
-		<ns1:tamed_to>sheep</ns1:tamed_to>
+		<ns1:tamed_to>-sheep</ns1:tamed_to>
 		<ns1:chance_to_tame>0.25</ns1:chance_to_tame>
 	</ns1:repetative>
 </ns1:wildAnimal>

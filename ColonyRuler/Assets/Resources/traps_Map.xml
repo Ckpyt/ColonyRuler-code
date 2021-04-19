@@ -1,11 +1,11 @@
 <?xml version="1.0" standalone="yes"?><ns1:traps xmlns:ns1="ExcelLoading">
 	<ns1:repetative>
-		<ns1:name> rope trap</ns1:name>
+		<ns1:name> -rope trap</ns1:name>
 		<ns1:description> rope trap</ns1:description>
 		<ns1:defaultX>1</ns1:defaultX>
 		<ns1:defaultY>1</ns1:defaultY>
 		<ns1:produce_per_person>2</ns1:produce_per_person>
-		<ns1:dependency>straw rope*2</ns1:dependency>
+		<ns1:dependency>-straw rope*2</ns1:dependency>
 		<ns1:dependency_cost>7</ns1:dependency_cost>
 		<ns1:final_cost>4</ns1:final_cost>
 		<ns1:container>1</ns1:container>

@@ -2,7 +2,7 @@
 /// <summary>
 /// Current territory. 
 /// Now only one object in the game, on the next stage it should be one in each zone
-/// !!!Move functional here from Storage!!!
+/// TODO:Move functional here from Storage
 /// </summary>
 public class Territory : Resource
 {

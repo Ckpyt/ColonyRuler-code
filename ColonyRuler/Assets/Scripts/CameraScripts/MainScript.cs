@@ -138,7 +138,7 @@ public class MainScript : MonoBehaviour
         //Debug.Log("all items amount:" + GameAbstractItem.ItemsCount());
         Science.Load("science_map");
         //Debug.Log("all items amount:" + GameAbstractItem.ItemsCount());
-        //DomesticAnimal.Load("domesticAnimal_map");
+        DomesticAnimal.Load("domesticAnimal_map");
         //Debug.Log("all items amount:" + GameAbstractItem.ItemsCount());
         WildAnimal.Load("wildAnimal_map");
         //Debug.Log("all items amount:" + GameAbstractItem.ItemsCount());

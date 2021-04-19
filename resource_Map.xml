@@ -24,7 +24,7 @@
 		<ns1:growing_percent>0.003</ns1:growing_percent>
 	</ns1:repetative>
 	<ns1:repetative>
-		<ns1:name>grass</ns1:name>
+		<ns1:name>-grass</ns1:name>
 		<ns1:description>grass</ns1:description>
 		<ns1:defaultX>1</ns1:defaultX>
 		<ns1:defaultY>1</ns1:defaultY>

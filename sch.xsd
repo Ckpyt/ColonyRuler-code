@@ -122,6 +122,7 @@
                 <xs:sequence>
                     <xs:element type="xs:string" name="opens"/>
                     <xs:element type="xs:string" name="closes"/>
+                    <xs:element type="xs:string" name="tips"/>
                 </xs:sequence>
             </xs:extension>
         </xs:complexContent>
@@ -241,4 +242,25 @@
             </xs:sequence>
         </xs:complexType>
     </xs:element>
+
+    <xs:complexType name="LearningTip">
+        <xs:complexContent>
+            <xs:extension base="cmn:AbstractObject">
+                <xs:sequence>
+                    <xs:element type="xs:string" name="TargetIcon"/>			
+                    <xs:element type="xs:string" name="NextTip"/>
+                    <xs:element type="xs:string" name="YellowStartPoint"/>
+                    <xs:element type="xs:string" name="YellowEndPoint"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:element name="AllTips">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="repetative" maxOccurs="unbounded" minOccurs="0" type="cmn:LearningTip"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
 </xs:schema>

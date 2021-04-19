@@ -168,7 +168,7 @@
 		<ns1:bug_fixing_per_second>1</ns1:bug_fixing_per_second>
 		<ns1:effectivity>100</ns1:effectivity>
 		<ns1:increasing>5</ns1:increasing>
-		<ns1:effect_type>happy*3</ns1:effect_type>
+		<ns1:effect_type>happy*3;protection*2</ns1:effect_type>
 	</ns1:repetative>
 	<ns1:repetative>
 		<ns1:name>leather shoe</ns1:name>
@@ -187,7 +187,7 @@
 		<ns1:bug_fixing_per_second>1</ns1:bug_fixing_per_second>
 		<ns1:effectivity>100</ns1:effectivity>
 		<ns1:increasing>2</ns1:increasing>
-		<ns1:effect_type>happy*2</ns1:effect_type>
+		<ns1:effect_type>happy*2; protection*1</ns1:effect_type>
 	</ns1:repetative>
 	<ns1:repetative>
 		<ns1:name>leather pants</ns1:name>
@@ -206,7 +206,7 @@
 		<ns1:bug_fixing_per_second>1</ns1:bug_fixing_per_second>
 		<ns1:effectivity>100</ns1:effectivity>
 		<ns1:increasing>3</ns1:increasing>
-		<ns1:effect_type>happy*2</ns1:effect_type>
+		<ns1:effect_type>happy*2;protection*2</ns1:effect_type>
 	</ns1:repetative>
 	<ns1:repetative>
 		<ns1:name>stone statue</ns1:name>
@@ -399,12 +399,12 @@
 		<ns1:effect_type>happy*2</ns1:effect_type>
 	</ns1:repetative>
 	<ns1:repetative>
-		<ns1:name>primitive arrow</ns1:name>
+		<ns1:name>-primitive arrow</ns1:name>
 		<ns1:description>primitive arrow</ns1:description>
 		<ns1:defaultX>1</ns1:defaultX>
 		<ns1:defaultY>1</ns1:defaultY>
 		<ns1:produce_per_person>5</ns1:produce_per_person>
-		<ns1:dependency>feather*1; stick*0,5</ns1:dependency>
+		<ns1:dependency>-feather*1; stick*0,5</ns1:dependency>
 		<ns1:dependency_cost>1.5</ns1:dependency_cost>
 		<ns1:final_cost>0.5</ns1:final_cost>
 		<ns1:container>0.1</ns1:container>

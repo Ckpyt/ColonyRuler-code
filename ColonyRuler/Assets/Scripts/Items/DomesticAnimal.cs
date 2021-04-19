@@ -77,7 +77,7 @@ public class DomesticAnimal : AbstractAnimal
 
 
     /// <summary>
-    /// Open item aftr researching
+    /// Open item after researching
     /// </summary>
     public override void OpenItem()
     {

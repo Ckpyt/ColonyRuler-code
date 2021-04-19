@@ -493,6 +493,8 @@ namespace ExcelLoading {
         
         private string closesField;
         
+        private string tipsField;
+        
         /// <remarks/>
         public string opens {
             get {
@@ -510,6 +512,16 @@ namespace ExcelLoading {
             }
             set {
                 this.closesField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string tips {
+            get {
+                return this.tipsField;
+            }
+            set {
+                this.tipsField = value;
             }
         }
     }
