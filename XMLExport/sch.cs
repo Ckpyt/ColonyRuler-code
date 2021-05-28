@@ -72,6 +72,7 @@ namespace ExcelLoading {
     }
     
     /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(LearningTip))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(AbstractItem))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(MaterialItem))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(ArmyItem))]
@@ -137,6 +138,87 @@ namespace ExcelLoading {
             }
             set {
                 this.defaultYField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="ExcelLoading")]
+    public partial class LearningTip : AbstractObject {
+        
+        private string targetIconField;
+        
+        private string targetObjectField;
+        
+        private string nextTipField;
+        
+        private string yellowPositionVectorField;
+        
+        private string yellowSizeVectorField;
+        
+        private bool isItUIField;
+        
+        /// <remarks/>
+        public string targetIcon {
+            get {
+                return this.targetIconField;
+            }
+            set {
+                this.targetIconField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string targetObject {
+            get {
+                return this.targetObjectField;
+            }
+            set {
+                this.targetObjectField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string nextTip {
+            get {
+                return this.nextTipField;
+            }
+            set {
+                this.nextTipField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string yellowPositionVector {
+            get {
+                return this.yellowPositionVectorField;
+            }
+            set {
+                this.yellowPositionVectorField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string yellowSizeVector {
+            get {
+                return this.yellowSizeVectorField;
+            }
+            set {
+                this.yellowSizeVectorField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public bool isItUI {
+            get {
+                return this.isItUIField;
+            }
+            set {
+                this.isItUIField = value;
             }
         }
     }
@@ -1004,6 +1086,29 @@ namespace ExcelLoading {
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("repetative")]
         public ArmyItem[] repetative {
+            get {
+                return this.repetativeField;
+            }
+            set {
+                this.repetativeField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="ExcelLoading")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="ExcelLoading", IsNullable=false)]
+    public partial class AllTips {
+        
+        private LearningTip[] repetativeField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("repetative")]
+        public LearningTip[] repetative {
             get {
                 return this.repetativeField;
             }

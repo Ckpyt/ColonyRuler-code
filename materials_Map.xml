@@ -4,7 +4,7 @@
 		<ns1:description>hunting</ns1:description>
 		<ns1:defaultX>-7.8</ns1:defaultX>
 		<ns1:defaultY>-7</ns1:defaultY>
-		<ns1:produce_per_person>raw food*4; bone*4; fur*4</ns1:produce_per_person>
+		<ns1:produce_per_person>clean vegetables*4; bone*4; fur*4</ns1:produce_per_person>
 		<ns1:dependency>boar| bear| wild hen| wild rabbit| wild cow| wild hourse</ns1:dependency>
 		<ns1:dependency_cost>0</ns1:dependency_cost>
 		<ns1:final_cost>1</ns1:final_cost>
@@ -26,8 +26,8 @@
 		<ns1:production_type>harvesting &amp; food</ns1:production_type>
 	</ns1:repetative>
 	<ns1:repetative>
-		<ns1:name>raw food</ns1:name>
-		<ns1:description>raw food</ns1:description>
+		<ns1:name>clean vegetables</ns1:name>
+		<ns1:description>clean vegetables</ns1:description>
 		<ns1:defaultX>-7.8</ns1:defaultX>
 		<ns1:defaultY>-0.5</ns1:defaultY>
 		<ns1:produce_per_person>10</ns1:produce_per_person>
@@ -121,7 +121,7 @@
 		<ns1:description>stick</ns1:description>
 		<ns1:defaultX>6.2</ns1:defaultX>
 		<ns1:defaultY>-0.5</ns1:defaultY>
-		<ns1:produce_per_person>1</ns1:produce_per_person>
+		<ns1:produce_per_person>2.5</ns1:produce_per_person>
 		<ns1:dependency>0</ns1:dependency>
 		<ns1:dependency_cost>0</ns1:dependency_cost>
 		<ns1:final_cost>1</ns1:final_cost>
@@ -278,7 +278,7 @@
 		<ns1:defaultX>1</ns1:defaultX>
 		<ns1:defaultY>1</ns1:defaultY>
 		<ns1:produce_per_person>10</ns1:produce_per_person>
-		<ns1:dependency>wild vegetables*1 |raw food*1 |carrot*2| smoked food*1| soup*1</ns1:dependency>
+		<ns1:dependency>wild vegetables*1 |clean vegetables*1 |carrot*2| smoked food*1| soup*1</ns1:dependency>
 		<ns1:dependency_cost>0</ns1:dependency_cost>
 		<ns1:final_cost>0.1</ns1:final_cost>
 		<ns1:container>1</ns1:container>

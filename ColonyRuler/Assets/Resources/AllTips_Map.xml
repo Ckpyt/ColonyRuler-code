@@ -1,42 +1,119 @@
 <?xml version="1.0" standalone="yes"?><ns1:AllTips xmlns:ns1="ExcelLoading">
 	<ns1:repetative>
 		<ns1:name>tip1</ns1:name>
-		<ns1:description>1111</ns1:description>
+		<ns1:description>Hello! This is the learning tips. You can skip them, but I recommend you to read it if you are playing in the first time. 
+There is a lot of mechanics and some of them quite complicated.</ns1:description>
 		<ns1:defaultX>6.2</ns1:defaultX>
 		<ns1:defaultY>6</ns1:defaultY>
-		<ns1:TargetIcon>People</ns1:TargetIcon>
-		<ns1:NextTip>tip2</ns1:NextTip>
-		<ns1:YellowStartPoint>0;0</ns1:YellowStartPoint>
-		<ns1:YellowEndPoint>1;1</ns1:YellowEndPoint>
+		<ns1:targetIcon/>
+		<ns1:targetObject/>
+		<ns1:nextTip>tip2</ns1:nextTip>
+		<ns1:yellowPositionVector/>
+		<ns1:yellowSizeVector/>
+		<ns1:isItUI>false</ns1:isItUI>
 	</ns1:repetative>
 	<ns1:repetative>
 		<ns1:name>tip2</ns1:name>
-		<ns1:description>2222</ns1:description>
-		<ns1:defaultX>-0.800000000000001</ns1:defaultX>
-		<ns1:defaultY>-7</ns1:defaultY>
-		<ns1:TargetIcon>People</ns1:TargetIcon>
-		<ns1:NextTip>tip3</ns1:NextTip>
-		<ns1:YellowStartPoint>0;0</ns1:YellowStartPoint>
-		<ns1:YellowEndPoint>1;1</ns1:YellowEndPoint>
+		<ns1:description>It is your people. By clicking on this icon, you can find all of their needs and consumptions. 
+Right now, they need just some food, but after some researching, needs rise.</ns1:description>
+		<ns1:defaultX>6.2</ns1:defaultX>
+		<ns1:defaultY>6</ns1:defaultY>
+		<ns1:targetIcon>People</ns1:targetIcon>
+		<ns1:targetObject/>
+		<ns1:nextTip>tip3</ns1:nextTip>
+		<ns1:yellowPositionVector/>
+		<ns1:yellowSizeVector/>
+		<ns1:isItUI>false</ns1:isItUI>
 	</ns1:repetative>
 	<ns1:repetative>
 		<ns1:name>tip3</ns1:name>
-		<ns1:description>3333</ns1:description>
-		<ns1:defaultX>-28.8</ns1:defaultX>
-		<ns1:defaultY>-7</ns1:defaultY>
-		<ns1:TargetIcon>People</ns1:TargetIcon>
-		<ns1:NextTip>tip4</ns1:NextTip>
-		<ns1:YellowStartPoint>0;0</ns1:YellowStartPoint>
-		<ns1:YellowEndPoint>1;1</ns1:YellowEndPoint>
+		<ns1:description>Number of people also displayed on this panel</ns1:description>
+		<ns1:defaultX>6.2</ns1:defaultX>
+		<ns1:defaultY>6</ns1:defaultY>
+		<ns1:targetIcon>PopulationValue</ns1:targetIcon>
+		<ns1:targetObject/>
+		<ns1:nextTip>tip4</ns1:nextTip>
+		<ns1:yellowPositionVector/>
+		<ns1:yellowSizeVector/>
+		<ns1:isItUI>true</ns1:isItUI>
 	</ns1:repetative>
 	<ns1:repetative>
 		<ns1:name>tip4</ns1:name>
-		<ns1:description>4444</ns1:description>
-		<ns1:defaultX>1</ns1:defaultX>
-		<ns1:defaultY>1</ns1:defaultY>
-		<ns1:TargetIcon>People</ns1:TargetIcon>
-		<ns1:NextTip/>
-		<ns1:YellowStartPoint>0;0</ns1:YellowStartPoint>
-		<ns1:YellowEndPoint>1;1</ns1:YellowEndPoint>
+		<ns1:description>Higher you can find the current date and the game speed.</ns1:description>
+		<ns1:defaultX>6.2</ns1:defaultX>
+		<ns1:defaultY>6</ns1:defaultY>
+		<ns1:targetIcon>TimeText</ns1:targetIcon>
+		<ns1:targetObject/>
+		<ns1:nextTip>tip5</ns1:nextTip>
+		<ns1:yellowPositionVector/>
+		<ns1:yellowSizeVector/>
+		<ns1:isItUI>true</ns1:isItUI>
+	</ns1:repetative>
+	<ns1:repetative>
+		<ns1:name>tip5</ns1:name>
+		<ns1:description>Here is your free workers that can be assigned to any job.</ns1:description>
+		<ns1:defaultX>6.2</ns1:defaultX>
+		<ns1:defaultY>6</ns1:defaultY>
+		<ns1:targetIcon>WorkersValue</ns1:targetIcon>
+		<ns1:targetObject/>
+		<ns1:nextTip>tip6</ns1:nextTip>
+		<ns1:yellowPositionVector/>
+		<ns1:yellowSizeVector/>
+		<ns1:isItUI>true</ns1:isItUI>
+	</ns1:repetative>
+	<ns1:repetative>
+		<ns1:name>tip6</ns1:name>
+		<ns1:description>Right now all the people collecting wild vegetables.
+Let's have a look on the structure closer</ns1:description>
+		<ns1:defaultX>6.2</ns1:defaultX>
+		<ns1:defaultY>6</ns1:defaultY>
+		<ns1:targetIcon>wild vegetables</ns1:targetIcon>
+		<ns1:targetObject/>
+		<ns1:nextTip>tip7</ns1:nextTip>
+		<ns1:yellowPositionVector/>
+		<ns1:yellowSizeVector/>
+		<ns1:isItUI>false</ns1:isItUI>
+	</ns1:repetative>
+	<ns1:repetative>
+		<ns1:name>tip7</ns1:name>
+		<ns1:description>This is the number of workers assigned on this job</ns1:description>
+		<ns1:defaultX>6.2</ns1:defaultX>
+		<ns1:defaultY>6</ns1:defaultY>
+		<ns1:targetIcon>wild vegetables</ns1:targetIcon>
+		<ns1:targetObject/>
+		<ns1:nextTip>tip8</ns1:nextTip>
+		<ns1:yellowPositionVector>-0,45;0,5</ns1:yellowPositionVector>
+		<ns1:yellowSizeVector>1;1</ns1:yellowSizeVector>
+		<ns1:isItUI>false</ns1:isItUI>
+	</ns1:repetative>
+	<ns1:repetative>
+		<ns1:name>tip8</ns1:name>
+		<ns1:description>This is the current stock quantity and warehouse size.</ns1:description>
+		<ns1:defaultX>6.2</ns1:defaultX>
+		<ns1:defaultY>6</ns1:defaultY>
+		<ns1:targetIcon>wild vegetables</ns1:targetIcon>
+		<ns1:targetObject>Storage</ns1:targetObject>
+		<ns1:nextTip>tip9</ns1:nextTip>
+		<ns1:yellowPositionVector>-0,41;-0,2</ns1:yellowPositionVector>
+		<ns1:yellowSizeVector>2,1;0,4</ns1:yellowSizeVector>
+		<ns1:isItUI>false</ns1:isItUI>
+	</ns1:repetative>
+	<ns1:repetative>
+		<ns1:name>tip9</ns1:name>
+		<ns1:description>This is the productivity of the current items: if it is positive, amount is rising, if it is negative, amount is decreasing.
+Based on the productivity, the arrow colors are changing: 
+If source materials are rising, arrows are green. 
+if source materials are going down, arrows are red.
+If source materials are constant, arrows are white.
+You can find this information on the color legend
+</ns1:description>
+		<ns1:defaultX>6.2</ns1:defaultX>
+		<ns1:defaultY>6</ns1:defaultY>
+		<ns1:targetIcon>wild vegetables</ns1:targetIcon>
+		<ns1:targetObject>Productivity</ns1:targetObject>
+		<ns1:nextTip/>
+		<ns1:yellowPositionVector>-1,1;-0,35</ns1:yellowPositionVector>
+		<ns1:yellowSizeVector>2,1;0,4</ns1:yellowSizeVector>
+		<ns1:isItUI>false</ns1:isItUI>
 	</ns1:repetative>
 </ns1:AllTips>

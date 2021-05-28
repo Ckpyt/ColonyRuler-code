@@ -10,7 +10,7 @@ using UnityEngine;
 class Game
 {
     /// <summary>
-    /// Used for store coordinats of IconScript
+    /// Used for store coordinates of IconScript
     /// IconScript cannot be serialized as a children of MonoBehaviour
     /// </summary>
     [Serializable]
@@ -33,11 +33,11 @@ class Game
     public List<WildAnimal> m_allWildAnimals = new List<WildAnimal>();
     public List<DomesticAnimal> m_allDomestic = new List<DomesticAnimal>();
 
-    /// <summary> where is ony one population </summary>
+    /// <summary> where is only one population </summary>
     public Population m_population = null;
     #endregion
 
-    /// <summary> list of all icon's coordinats </summary>
+    /// <summary> list of all icon's coordinates </summary>
     public List<GameIcon> m_allGameIcons = new List<GameIcon>();
 
     /// <summary> current time speed </summary>
@@ -46,6 +46,9 @@ class Game
     public int m_day = 0;
     /// <summary> current year </summary>
     public int m_year = 0;
+
+    /// <summary> wants the layer tooltips?</summary>
+    public bool m_canShowTooltips = true;
 
     /// <summary>
     /// Save the game to the json string.
@@ -82,6 +85,8 @@ class Game
         m_speed = tsc.m_speed;
         m_day = tsc.m_day;
         m_year = tsc.m_year;
+
+        m_canShowTooltips = LearningTip.s_canShow;
 
         string json = JsonUtility.ToJson(this);
         return json;

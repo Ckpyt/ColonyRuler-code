@@ -149,8 +149,6 @@ public class GameAbstractItem : AbstractObject
             if (mat == null) continue;
             var prod = rep.produce_per_person;
 
-            
-
             try
             {
                 if (rep.dependency.Length > 2)

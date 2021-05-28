@@ -27,6 +27,10 @@ public class MainScript : MonoBehaviour
     public GameObject m_leftGamePanelPrefab = null;
     /// <summary> Link to right panel prefab. For creating right panel</summary>
     public GameObject m_rightGamePanelPrefab = null;
+    /// <summary> Link to Learning Tip prefab. For creating learning tips</summary>
+    public GameObject m_LearingTipPrefab = null;
+    /// <summary> Link to outline prefab. For creating rectangle around a gameObject</summary>
+    public GameObject m_OutlinePrefab = null;
     /// <summary> Link to Canvas of Main camera. Only one in the game</summary>
     public Canvas m_mainCanvas = null;
     /// <summary> collection of all game objects of icons</summary>
@@ -142,6 +146,9 @@ public class MainScript : MonoBehaviour
         //Debug.Log("all items amount:" + GameAbstractItem.ItemsCount());
         WildAnimal.Load("wildAnimal_map");
         //Debug.Log("all items amount:" + GameAbstractItem.ItemsCount());
+
+        LearningTip.Load("AllTips_Map");
+
         GameAbstractItem.ParseDependency();
         Population ppl = new Population {m_people = GetComponent<People>(), m_isItOpen = 1};
         AbstractObject.m_sEverything.Add(ppl);
@@ -150,6 +157,7 @@ public class MainScript : MonoBehaviour
         AbstractObject.ClearUnparsed();
 
         Debug.Log("loading finished");
+
     }
 
 
@@ -251,7 +259,7 @@ public class MainScript : MonoBehaviour
         Button settings = lft.transform.Find("Settings").gameObject.GetComponent<Button>();
         settings.onClick.AddListener(ShowMainMenu);
         TimeScript.m_isItPaused = false;
-        
+
     }
 
     /// <summary>
@@ -264,6 +272,8 @@ public class MainScript : MonoBehaviour
         Loading();
         PlaceOpenedItems(AbstractObject.GetOpennedItems());
         m_isItInitialized = true;
+
+        LearningTip.CreateTip("tip1");
     }
 
     /// <summary>

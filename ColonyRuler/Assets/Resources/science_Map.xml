@@ -5,7 +5,7 @@
 		<ns1:defaultX>-7.8</ns1:defaultX>
 		<ns1:defaultY>6</ns1:defaultY>
 		<ns1:produce_per_person>2</ns1:produce_per_person>
-		<ns1:dependency>raw food*35</ns1:dependency>
+		<ns1:dependency>clean vegetables*35</ns1:dependency>
 		<ns1:dependency_cost>32.2403846153846</ns1:dependency_cost>
 		<ns1:final_cost>49.7403846153846</ns1:final_cost>
 		<ns1:opens>stone, stone axe, stone hummer, stone spear, advenced stone cutting, buildings, hand pottery, stone deposit</ns1:opens>
@@ -18,7 +18,7 @@
 		<ns1:defaultX>-0.800000000000001</ns1:defaultX>
 		<ns1:defaultY>6</ns1:defaultY>
 		<ns1:produce_per_person>2</ns1:produce_per_person>
-		<ns1:dependency>raw food*70</ns1:dependency>
+		<ns1:dependency>clean vegetables*70</ns1:dependency>
 		<ns1:dependency_cost>64.4807692307692</ns1:dependency_cost>
 		<ns1:final_cost>99.4807692307692</ns1:final_cost>
 		<ns1:opens>clay, rough plate, rough pot, ceramic figure, coocked food, clay deposit</ns1:opens>
@@ -31,7 +31,7 @@
 		<ns1:defaultX>-14.8</ns1:defaultX>
 		<ns1:defaultY>-0.5</ns1:defaultY>
 		<ns1:produce_per_person>2</ns1:produce_per_person>
-		<ns1:dependency>raw food*106</ns1:dependency>
+		<ns1:dependency>clean vegetables*106</ns1:dependency>
 		<ns1:dependency_cost>97.6423076923077</ns1:dependency_cost>
 		<ns1:final_cost>150.642307692308</ns1:final_cost>
 		<ns1:opens>wicker basket, -celebrations, hunters, rods, hut of branches, swamp thing, farming</ns1:opens>
@@ -57,7 +57,7 @@
 		<ns1:defaultX>-0.800000000000001</ns1:defaultX>
 		<ns1:defaultY>-13.5</ns1:defaultY>
 		<ns1:produce_per_person>2</ns1:produce_per_person>
-		<ns1:dependency>raw food*70; stone knife*30</ns1:dependency>
+		<ns1:dependency>clean vegetables*70; stone knife*30</ns1:dependency>
 		<ns1:dependency_cost>154.480769230769</ns1:dependency_cost>
 		<ns1:final_cost>189.480769230769</ns1:final_cost>
 		<ns1:opens>leather cloth, leather braslete, -celebrations, fur, leather</ns1:opens>
@@ -83,7 +83,7 @@
 		<ns1:defaultX>1</ns1:defaultX>
 		<ns1:defaultY>1</ns1:defaultY>
 		<ns1:produce_per_person>2</ns1:produce_per_person>
-		<ns1:dependency>raw food*151; leather*60</ns1:dependency>
+		<ns1:dependency>clean vegetables*151; leather*60</ns1:dependency>
 		<ns1:dependency_cost>205.094230769231</ns1:dependency_cost>
 		<ns1:final_cost>310.594230769231</ns1:final_cost>
 		<ns1:opens>basket drum, Long house</ns1:opens>
@@ -109,7 +109,7 @@
 		<ns1:defaultX>13.2</ns1:defaultX>
 		<ns1:defaultY>6</ns1:defaultY>
 		<ns1:produce_per_person>1</ns1:produce_per_person>
-		<ns1:dependency>stone axe*75;raw food*52</ns1:dependency>
+		<ns1:dependency>stone axe*75;clean vegetables*52</ns1:dependency>
 		<ns1:dependency_cost>272.9</ns1:dependency_cost>
 		<ns1:final_cost>399.9</ns1:final_cost>
 		<ns1:opens>log, log barraks, Long house, warehouse, family cabin, forest, primitive farming tools</ns1:opens>

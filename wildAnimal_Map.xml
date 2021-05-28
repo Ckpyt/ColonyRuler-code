@@ -6,7 +6,7 @@
 		<ns1:defaultY>-14</ns1:defaultY>
 		<ns1:maximum_in_territory>10</ns1:maximum_in_territory>
 		<ns1:growing_percent>0.01</ns1:growing_percent>
-		<ns1:butchering_per_person>raw food*10; bone*7; fur*4</ns1:butchering_per_person>
+		<ns1:butchering_per_person>clean vegetables*10; bone*7; fur*4</ns1:butchering_per_person>
 		<ns1:attack>30</ns1:attack>
 		<ns1:protection>50</ns1:protection>
 		<ns1:speed>4</ns1:speed>
@@ -23,7 +23,7 @@
 		<ns1:defaultY>-14</ns1:defaultY>
 		<ns1:maximum_in_territory>500</ns1:maximum_in_territory>
 		<ns1:growing_percent>0.04</ns1:growing_percent>
-		<ns1:butchering_per_person>raw food*6; bone*6; fur*4</ns1:butchering_per_person>
+		<ns1:butchering_per_person>clean vegetables*6; bone*6; fur*4</ns1:butchering_per_person>
 		<ns1:attack>10</ns1:attack>
 		<ns1:protection>30</ns1:protection>
 		<ns1:speed>2</ns1:speed>
@@ -40,7 +40,7 @@
 		<ns1:defaultY>-14</ns1:defaultY>
 		<ns1:maximum_in_territory>1000</ns1:maximum_in_territory>
 		<ns1:growing_percent>0.15</ns1:growing_percent>
-		<ns1:butchering_per_person>raw food*1; bone*1; -feather*10</ns1:butchering_per_person>
+		<ns1:butchering_per_person>clean vegetables*1; bone*1; -feather*10</ns1:butchering_per_person>
 		<ns1:attack>1</ns1:attack>
 		<ns1:protection>2</ns1:protection>
 		<ns1:speed>2</ns1:speed>
@@ -57,7 +57,7 @@
 		<ns1:defaultY>-14</ns1:defaultY>
 		<ns1:maximum_in_territory>1000</ns1:maximum_in_territory>
 		<ns1:growing_percent>0.07</ns1:growing_percent>
-		<ns1:butchering_per_person>raw food*2; bone*1; fur*1</ns1:butchering_per_person>
+		<ns1:butchering_per_person>clean vegetables*2; bone*1; fur*1</ns1:butchering_per_person>
 		<ns1:attack>1</ns1:attack>
 		<ns1:protection>4</ns1:protection>
 		<ns1:speed>4</ns1:speed>
@@ -74,7 +74,7 @@
 		<ns1:defaultY>-14</ns1:defaultY>
 		<ns1:maximum_in_territory>100</ns1:maximum_in_territory>
 		<ns1:growing_percent>0.02</ns1:growing_percent>
-		<ns1:butchering_per_person>raw food*10; bone*7; fur*10</ns1:butchering_per_person>
+		<ns1:butchering_per_person>clean vegetables*10; bone*7; fur*10</ns1:butchering_per_person>
 		<ns1:attack>4</ns1:attack>
 		<ns1:protection>25</ns1:protection>
 		<ns1:speed>4</ns1:speed>
@@ -91,7 +91,7 @@
 		<ns1:defaultY>-14</ns1:defaultY>
 		<ns1:maximum_in_territory>100</ns1:maximum_in_territory>
 		<ns1:growing_percent>0.02</ns1:growing_percent>
-		<ns1:butchering_per_person>raw food*7; bone*10; fur*10</ns1:butchering_per_person>
+		<ns1:butchering_per_person>clean vegetables*7; bone*10; fur*10</ns1:butchering_per_person>
 		<ns1:attack>3</ns1:attack>
 		<ns1:protection>20</ns1:protection>
 		<ns1:speed>7</ns1:speed>
@@ -108,7 +108,7 @@
 		<ns1:defaultY>-14</ns1:defaultY>
 		<ns1:maximum_in_territory>500</ns1:maximum_in_territory>
 		<ns1:growing_percent>0.04</ns1:growing_percent>
-		<ns1:butchering_per_person>raw food*6; bone*6; fur*4</ns1:butchering_per_person>
+		<ns1:butchering_per_person>clean vegetables*6; bone*6; fur*4</ns1:butchering_per_person>
 		<ns1:attack>4</ns1:attack>
 		<ns1:protection>10</ns1:protection>
 		<ns1:speed>7</ns1:speed>

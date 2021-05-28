@@ -126,7 +126,7 @@ public class IconScript : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
     public static GameObject PlaceNewGameobject(float x, float y, AbstractObject itm)
     {
         MainScript ms = Camera.main.GetComponent<MainScript>();
-        GameObject go = GameObject.Instantiate(ms.m_iconPrefab);
+        GameObject go = Instantiate(ms.m_iconPrefab);
         go.name = itm.m_name;
         IconScript isc = go.GetComponent<IconScript>();
         isc.m_ms = ms;

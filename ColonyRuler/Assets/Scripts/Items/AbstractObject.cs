@@ -8,6 +8,8 @@ using UnityEngine;
 /// <summary>
 /// Root of all game data.
 /// AbstractObject -> resource -> Territory
+/// AbstractObject -> resource -> AbstractAnimal -> WildAnimal
+/// AbstractObject -> resource -> AbstractAnimal -> DomesticAnimal
 /// AbstractObject -> GameAbstractItem -> Science
 /// AbstractObject -> GameAbstractItem -> GameMaterial -> Process
 /// AbstractObject -> GameAbstractItem -> GameMaterial -> Science
@@ -200,6 +202,7 @@ public class AbstractObject
                 Debug.LogError("AbstractObject: DoWork 1:" + ex.Message);
             }
         }
+
         for (int i = 0; i < m_sEverything.Count; i++)
         {
             try
@@ -213,9 +216,23 @@ public class AbstractObject
                 Camera.main.GetComponent<TimeScript>().m_timeTxt = ex.Message;
             }
         }
+
         foreach (var itm in m_sEverything)
             if (itm.m_isItOpen > 0)
                 itm.CalcProductivity();
+    }
+
+    /// <summary>
+    /// returns null if there is no name
+    /// </summary>
+    /// <param name="name"></param>
+    /// <returns></returns>
+    public static AbstractObject GetByName(string name)
+    {
+        foreach (var obj in m_sEverything)
+            if (obj.m_name == name)
+                return obj;
+        return null;
     }
 
     /// <summary>
