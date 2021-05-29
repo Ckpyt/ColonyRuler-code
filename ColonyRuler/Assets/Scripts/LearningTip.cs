@@ -236,6 +236,7 @@ class LearningTip: MonoBehaviour
                     var rect = thisObj.m_targetObject.transform as RectTransform;
                     rectB = rect.rect;
                     rectB.center = (Vector2)thisObj.m_targetObject.transform.position;
+
                 }
                 else
                 {

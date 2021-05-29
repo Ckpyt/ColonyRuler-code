@@ -92,9 +92,9 @@ Let's have a look on the structure closer</ns1:description>
 		<ns1:defaultX>6.2</ns1:defaultX>
 		<ns1:defaultY>6</ns1:defaultY>
 		<ns1:targetIcon>wild vegetables</ns1:targetIcon>
-		<ns1:targetObject>Storage</ns1:targetObject>
+		<ns1:targetObject>ItemCount</ns1:targetObject>
 		<ns1:nextTip>tip9</ns1:nextTip>
-		<ns1:yellowPositionVector>-0,41;-0,2</ns1:yellowPositionVector>
+		<ns1:yellowPositionVector>-1,1;-0,35</ns1:yellowPositionVector>
 		<ns1:yellowSizeVector>2,1;0,4</ns1:yellowSizeVector>
 		<ns1:isItUI>false</ns1:isItUI>
 	</ns1:repetative>

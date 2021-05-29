@@ -5468,12 +5468,22 @@ PrefabInstance:
       objectReference: {fileID: 1995819355}
     - target: {fileID: 8076361763960804674, guid: d46340c440786da4ca3e0c6f90238e1e,
         type: 3}
+      propertyPath: m_savePanel
+      value: 
+      objectReference: {fileID: 1995819355}
+    - target: {fileID: 8076361763960804674, guid: d46340c440786da4ca3e0c6f90238e1e,
+        type: 3}
       propertyPath: m_resumeGame
       value: 
       objectReference: {fileID: 1399033625}
     - target: {fileID: 8076361763960804674, guid: d46340c440786da4ca3e0c6f90238e1e,
         type: 3}
       propertyPath: m_SettingsPanel
+      value: 
+      objectReference: {fileID: 301690246}
+    - target: {fileID: 8076361763960804674, guid: d46340c440786da4ca3e0c6f90238e1e,
+        type: 3}
+      propertyPath: m_settingsPanel
       value: 
       objectReference: {fileID: 301690246}
     - target: {fileID: 8076361763960804674, guid: d46340c440786da4ca3e0c6f90238e1e,
