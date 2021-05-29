@@ -72,6 +72,7 @@
     <Compile Include="Assets\Scripts\Menu\SubMenu.cs" />
     <Compile Include="Assets\Scripts\CameraScripts\Outline.cs" />
     <Compile Include="Assets\Scripts\Items\Army.cs" />
+    <Compile Include="Assets\Scripts\Menu\HidingPanel.cs" />
     <Compile Include="Assets\Scripts\CameraScripts\MainScript.cs" />
     <Compile Include="Assets\Scripts\CameraScripts\People.cs" />
     <Compile Include="Assets\Scripts\CustButton.cs" />

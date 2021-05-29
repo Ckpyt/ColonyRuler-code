@@ -338,14 +338,21 @@ public class AbstractObject
     /// <returns> container of all items in the file </returns>
     public static T Load<T>(string filename) where T : new()
     {
-        TextAsset resorce = Resources.Load(filename) as TextAsset;
-        if (resorce == null)
-            throw new Exception("the resource is not available:" + filename);
+        try
+        {
+            TextAsset resorce = Resources.Load(filename) as TextAsset;
+            if (resorce == null)
+                throw new Exception("the resource is not available:" + filename);
 
-        XmlSerializer x = new XmlSerializer(typeof(T));
-        TextReader reader = new StringReader(resorce.text);
+            XmlSerializer x = new XmlSerializer(typeof(T));
+            TextReader reader = new StringReader(resorce.text);
 
-        return (T)x.Deserialize(reader);
+            return (T)x.Deserialize(reader);
+        }catch(Exception ex)
+        {
+            Debug.LogException(ex);
+            return default(T);
+        }
     }
 
     /// <summary>

@@ -86,7 +86,7 @@ class Game
         m_day = tsc.m_day;
         m_year = tsc.m_year;
 
-        m_canShowTooltips = LearningTip.s_canShow;
+        m_canShowTooltips = LearningTip.m_sCanShow;
 
         string json = JsonUtility.ToJson(this);
         return json;

@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 /// 
-/// Here and everywhere else, I have some naming rules:
+/// Here and everywhere else, I'm using some naming rules:
 /// m_ - public member
 /// _ - private member
 /// _c - constant
@@ -209,6 +209,8 @@ public class MainScript : MonoBehaviour
         GameObject rightPanel = Instantiate(m_rightGamePanelPrefab);
         GameObject leftPanel = Instantiate(m_leftGamePanelPrefab);
         rightPanel.transform.SetParent(m_mainCanvas.transform);
+        GameObject rootRightPanel = rightPanel.transform.Find("Root").gameObject;
+
         leftPanel.transform.SetParent(m_mainCanvas.transform);
         m_toolTipText = leftPanel.transform.Find("TooltipText").gameObject.GetComponent<Text>();
 
@@ -216,35 +218,36 @@ public class MainScript : MonoBehaviour
 
         pl.m_publicEmoji = leftPanel.transform.Find("Emoji").GetComponent<Image>();
         pl.m_hungry = leftPanel.transform.Find("Hungry").gameObject.GetComponent<Image>();
-        pl.m_peopleText = leftPanel.transform.Find("PopulationValue").
+        var leftColorPanel = leftPanel.transform.Find("ImageTimeText");
+        pl.m_peopleText = leftColorPanel.transform.Find("PopulationValue").
             gameObject.GetComponent<Text>();
-        pl.m_workersText = leftPanel.transform.Find("WorkersValue").
+        pl.m_workersText = leftColorPanel.transform.Find("WorkersValue").
             gameObject.GetComponent<Text>();
 
         CameraScript csc = CheckComponent<CameraScript>();
         TimeScript tsc = CheckComponent<TimeScript>();
         TimeScript.m_isItPaused = true;
-        tsc.m_timeText = leftPanel.transform.Find("TimeText").GetComponent<Text>();
+        tsc.m_timeText = leftColorPanel.transform.Find("TimeText").GetComponent<Text>();
         tsc.Initialization(leftPanel);
         pl.m_timeScr = tsc;
 
         Storage str = CheckComponent<Storage>();
-        str.m_territoryText = rightPanel.transform.Find("TerritoryValue").
+        str.m_territoryText = rootRightPanel.transform.Find("TerritoryValue").
             gameObject.GetComponent<Text>();
-        str.m_heavyText = rightPanel.transform.Find("HeavyStorageValue").
+        str.m_heavyText = rootRightPanel.transform.Find("HeavyStorageValue").
             gameObject.GetComponent<Text>();
-        str.m_lightText = rightPanel.transform.Find("LightStorageValue").
+        str.m_lightText = rootRightPanel.transform.Find("LightStorageValue").
             gameObject.GetComponent<Text>();
-        str.m_livingText = rightPanel.transform.Find("LivingSpaceValue").
+        str.m_livingText = rootRightPanel.transform.Find("LivingSpaceValue").
             gameObject.GetComponent<Text>();
 
-        str.m_territoryObject = rightPanel.transform.Find("TerritoryText").
+        str.m_territoryObject = rootRightPanel.transform.Find("TerritoryText").
             gameObject.GetComponent<Text>();
-        str.m_heavyObject = rightPanel.transform.Find("HeavyStorageText").
+        str.m_heavyObject = rootRightPanel.transform.Find("HeavyStorageText").
             gameObject.GetComponent<Text>();
-        str.m_lightObject = rightPanel.transform.Find("LightStorageText").
+        str.m_lightObject = rootRightPanel.transform.Find("LightStorageText").
             gameObject.GetComponent<Text>();
-        str.m_livingObject = rightPanel.transform.Find("LivingSpaceText").
+        str.m_livingObject = rootRightPanel.transform.Find("LivingSpaceText").
             gameObject.GetComponent<Text>();
         str.m_people = pl;
         pl.m_storage = str;

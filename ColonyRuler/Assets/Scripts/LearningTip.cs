@@ -39,19 +39,21 @@ class LearningTip: MonoBehaviour
         public bool m_isItUI;
     }
 
-    static Dictionary<string, LearningTipData> s_allTips;
+    static Dictionary<string, LearningTipData> _sAllTips;
 
     /// <summary> if a player does not want to see tooltips, they should not be shown</summary>
-    public static bool s_canShow = true;
+    public static bool m_sCanShow = true;
 
-    public static string s_lastTip = "";
+    public static string m_sLastTip = "";
 
-    LearningTipData m_data;
+    LearningTipData _data;
 
     /// <summary> for preventing double-clicks </summary>
-    bool isItUnclicked = true;
+    bool _isItUnclicked = true;
+
     /// <summary> target object for showing yellow outline. Could be null </summary>
-    GameObject m_targetObject = null;
+    GameObject _targetObject = null;
+
     /// <summary> Toggle for preventing showing tips </summary>
     public GameObject m_showTips = null;
 
@@ -68,7 +70,7 @@ class LearningTip: MonoBehaviour
     /// </summary>
     public static void Load(string filename)
     {
-        s_allTips = new Dictionary<string, LearningTipData>();
+        _sAllTips = new Dictionary<string, LearningTipData>();
 
         var uparsedTips = AbstractObject.Load<ExcelLoading.AllTips>(filename);
         foreach(var source in uparsedTips.repetative)
@@ -91,18 +93,18 @@ class LearningTip: MonoBehaviour
                     AbstractObject.FloatParse(sizeVector[0]),
                     AbstractObject.FloatParse(sizeVector[1])
                     );
-            s_allTips.Add(tipData.m_name, tipData);
+            _sAllTips.Add(tipData.m_name, tipData);
         }
 
         //making previous link
-        foreach(var tipPair in s_allTips)
+        foreach(var tipPair in _sAllTips)
         {
             var tip = tipPair.Value;
             if (tip.m_next != null && tip.m_next.Length > 0)
             {
-                var nextTip = s_allTips[tip.m_next];
+                var nextTip = _sAllTips[tip.m_next];
                 if (nextTip.m_previous == null || nextTip.m_previous.Length == 0)
-                    s_allTips[tip.m_next].m_previous = tip.m_name;
+                    _sAllTips[tip.m_next].m_previous = tip.m_name;
                 else
                     throw new Exception("tip '" + nextTip + "' has previous tip:" + nextTip.m_previous);
 
@@ -129,7 +131,7 @@ class LearningTip: MonoBehaviour
             SetTargetObject(obj, newPath, nextObj ?? parent);
         }
         else
-            obj.m_targetObject = nextObj.gameObject;
+            obj._targetObject = nextObj.gameObject;
 
     }
 
@@ -147,7 +149,7 @@ class LearningTip: MonoBehaviour
     public void OnShowTip()
     {
         var tg = m_showTips.GetComponent<Toggle>();
-        s_canShow = tg.isOn;
+        m_sCanShow = tg.isOn;
 
     }
 
@@ -158,14 +160,14 @@ class LearningTip: MonoBehaviour
     /// <param name="forseShow">is it should be shown without the "can show" param?</param>
     public static void CreateTip(string name, bool forseShow = false)
     {
-        if (s_canShow == false && forseShow == false) return;
+        if (m_sCanShow == false && forseShow == false) return;
 
         LearningTipData data;
         MainScript ms = Camera.main.GetComponent<MainScript>();
 
         try
         {
-            data = s_allTips[name];
+            data = _sAllTips[name];
         }
         catch ( KeyNotFoundException)
         {
@@ -196,7 +198,7 @@ class LearningTip: MonoBehaviour
         Camera.main.transform.position = coord;
 
         LearningTip thisObj = LearningTipObj.GetComponent<LearningTip>();
-        thisObj.m_data = data;
+        thisObj._data = data;
 
         var Canvas = LearningTipObj.transform.Find("Canvas tips");
 
@@ -210,7 +212,7 @@ class LearningTip: MonoBehaviour
         SetButton(Canvas, "OkButton",   thisObj.OnClose, !(data.m_next != null && data.m_next.Length > 0));
 
         var toggle = thisObj.m_showTips.GetComponent<Toggle>();
-        toggle.isOn = s_canShow;
+        toggle.isOn = m_sCanShow;
         toggle.onValueChanged.AddListener(delegate { thisObj.OnShowTip(); });
         
 
@@ -220,28 +222,28 @@ class LearningTip: MonoBehaviour
             if (depend != null)
                 SetTargetObject(thisObj, data.m_targetObject, depend.m_thisObject.transform);
             else
-                thisObj.m_targetObject = dependency;
+                thisObj._targetObject = dependency;
 
             Rect rectB = new Rect();
 
             if (data.m_yellowBox != null && data.m_yellowBox.width > 0)
             {
                 rectB = data.m_yellowBox;
-                rectB.center += (Vector2)thisObj.m_targetObject.transform.position;
+                rectB.center += (Vector2)thisObj._targetObject.transform.position;
             }
             else
             {
                 if (data.m_isItUI)
                 {
-                    var rect = thisObj.m_targetObject.transform as RectTransform;
+                    var rect = thisObj._targetObject.transform as RectTransform;
                     rectB = rect.rect;
-                    rectB.center = (Vector2)thisObj.m_targetObject.transform.position;
+                    rectB.center = thisObj._targetObject.transform.position;
 
                 }
                 else
                 {
-                    var render = thisObj.m_targetObject.GetComponent<Renderer>();
-                    rectB.size = (Vector2)render.bounds.size;//* render.transform.localScale;
+                    var render = thisObj._targetObject.GetComponent<Renderer>();
+                    rectB.size = render.bounds.size;
                     rectB.center = render.bounds.center;
                 }
             }
@@ -249,7 +251,7 @@ class LearningTip: MonoBehaviour
             data.m_outline = Instantiate(ms.m_OutlinePrefab).GetComponent<Outline>();
             data.m_outline.transform.position = new Vector3();
             data.m_outline.m_OutlineRect = rectB;
-            data.m_outline.mb_IsItCanvas = thisObj.m_data.m_isItUI;
+            data.m_outline.mb_IsItCanvas = thisObj._data.m_isItUI;
         }
         //var outline = thisObj.m_targetObject.AddComponent<Outline>();
         //outline.OutlineMode = Outline.Mode.OutlineAll;
@@ -261,10 +263,10 @@ class LearningTip: MonoBehaviour
     public void OnClose()
     {
     
-        if (m_data.m_outline != null)
+        if (_data.m_outline != null)
         {
-            Destroy(m_data.m_outline.gameObject);
-            Destroy(m_targetObject.GetComponent<Outline>());
+            Destroy(_data.m_outline.gameObject);
+            //Destroy(_targetObject.GetComponent<Outline>());
         }
         gameObject.SetActive(false);
         Destroy(gameObject);
@@ -275,11 +277,11 @@ class LearningTip: MonoBehaviour
     /// </summary>
     public void OnNext()
     {
-        if (isItUnclicked)
+        if (_isItUnclicked)
         {
-            CreateTip(m_data.m_next, true);
+            CreateTip(_data.m_next, true);
             OnClose();
-            isItUnclicked = false;
+            _isItUnclicked = false;
         }
     }
 
@@ -288,11 +290,11 @@ class LearningTip: MonoBehaviour
     /// </summary>
     public void OnPrevious()
     {
-        if (isItUnclicked)
+        if (_isItUnclicked)
         {
-            CreateTip(m_data.m_previous, true);
+            CreateTip(_data.m_previous, true);
             OnClose();
-            isItUnclicked = false;
+            _isItUnclicked = false;
         }
     }
 }

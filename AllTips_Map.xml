@@ -39,7 +39,7 @@ Right now, they need just some food, but after some researching, needs rise.</ns
 	</ns1:repetative>
 	<ns1:repetative>
 		<ns1:name>tip4</ns1:name>
-		<ns1:description>Higher you can find the current date and the game speed.</ns1:description>
+		<ns1:description>Higher you can find the current date and the game speed. </ns1:description>
 		<ns1:defaultX>6.2</ns1:defaultX>
 		<ns1:defaultY>6</ns1:defaultY>
 		<ns1:targetIcon>TimeText</ns1:targetIcon>
@@ -51,55 +51,68 @@ Right now, they need just some food, but after some researching, needs rise.</ns
 	</ns1:repetative>
 	<ns1:repetative>
 		<ns1:name>tip5</ns1:name>
+		<ns1:description>This is the time managament menu. 
+Here, you can decrease, increase the game speed or pause/unpause it.</ns1:description>
+		<ns1:defaultX>6.2</ns1:defaultX>
+		<ns1:defaultY>6</ns1:defaultY>
+		<ns1:targetIcon>TimePlus</ns1:targetIcon>
+		<ns1:targetObject/>
+		<ns1:nextTip>tip6</ns1:nextTip>
+		<ns1:yellowPositionVector>-45;-15</ns1:yellowPositionVector>
+		<ns1:yellowSizeVector>90;30</ns1:yellowSizeVector>
+		<ns1:isItUI>true</ns1:isItUI>
+	</ns1:repetative>
+	<ns1:repetative>
+		<ns1:name>tip6</ns1:name>
 		<ns1:description>Here is your free workers that can be assigned to any job.</ns1:description>
 		<ns1:defaultX>6.2</ns1:defaultX>
 		<ns1:defaultY>6</ns1:defaultY>
 		<ns1:targetIcon>WorkersValue</ns1:targetIcon>
 		<ns1:targetObject/>
-		<ns1:nextTip>tip6</ns1:nextTip>
+		<ns1:nextTip>tip7</ns1:nextTip>
 		<ns1:yellowPositionVector/>
 		<ns1:yellowSizeVector/>
 		<ns1:isItUI>true</ns1:isItUI>
 	</ns1:repetative>
 	<ns1:repetative>
-		<ns1:name>tip6</ns1:name>
+		<ns1:name>tip7</ns1:name>
 		<ns1:description>Right now all the people collecting wild vegetables.
 Let's have a look on the structure closer</ns1:description>
 		<ns1:defaultX>6.2</ns1:defaultX>
 		<ns1:defaultY>6</ns1:defaultY>
 		<ns1:targetIcon>wild vegetables</ns1:targetIcon>
 		<ns1:targetObject/>
-		<ns1:nextTip>tip7</ns1:nextTip>
+		<ns1:nextTip>tip8</ns1:nextTip>
 		<ns1:yellowPositionVector/>
 		<ns1:yellowSizeVector/>
 		<ns1:isItUI>false</ns1:isItUI>
 	</ns1:repetative>
 	<ns1:repetative>
-		<ns1:name>tip7</ns1:name>
+		<ns1:name>tip8</ns1:name>
 		<ns1:description>This is the number of workers assigned on this job</ns1:description>
 		<ns1:defaultX>6.2</ns1:defaultX>
 		<ns1:defaultY>6</ns1:defaultY>
 		<ns1:targetIcon>wild vegetables</ns1:targetIcon>
 		<ns1:targetObject/>
-		<ns1:nextTip>tip8</ns1:nextTip>
+		<ns1:nextTip>tip9</ns1:nextTip>
 		<ns1:yellowPositionVector>-0,45;0,5</ns1:yellowPositionVector>
 		<ns1:yellowSizeVector>1;1</ns1:yellowSizeVector>
 		<ns1:isItUI>false</ns1:isItUI>
 	</ns1:repetative>
 	<ns1:repetative>
-		<ns1:name>tip8</ns1:name>
+		<ns1:name>tip9</ns1:name>
 		<ns1:description>This is the current stock quantity and warehouse size.</ns1:description>
 		<ns1:defaultX>6.2</ns1:defaultX>
 		<ns1:defaultY>6</ns1:defaultY>
 		<ns1:targetIcon>wild vegetables</ns1:targetIcon>
 		<ns1:targetObject>ItemCount</ns1:targetObject>
-		<ns1:nextTip>tip9</ns1:nextTip>
+		<ns1:nextTip>tip10</ns1:nextTip>
 		<ns1:yellowPositionVector>-1,1;-0,35</ns1:yellowPositionVector>
 		<ns1:yellowSizeVector>2,1;0,4</ns1:yellowSizeVector>
 		<ns1:isItUI>false</ns1:isItUI>
 	</ns1:repetative>
 	<ns1:repetative>
-		<ns1:name>tip9</ns1:name>
+		<ns1:name>tip10</ns1:name>
 		<ns1:description>This is the productivity of the current items: if it is positive, amount is rising, if it is negative, amount is decreasing.
 Based on the productivity, the arrow colors are changing: 
 If source materials are rising, arrows are green. 

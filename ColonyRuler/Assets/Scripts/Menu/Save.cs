@@ -333,7 +333,7 @@ public class Save : SubMenu
         tsc.m_year = gm.m_year;
         tsc.m_speed = gm.m_speed;
 
-        LearningTip.s_canShow = gm.m_canShowTooltips;
+        LearningTip.m_sCanShow = gm.m_canShowTooltips;
 
         gameObject.SetActive(false);
     }
