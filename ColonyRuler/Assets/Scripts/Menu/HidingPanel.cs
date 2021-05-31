@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,8 +12,9 @@ public class HidingPanel : MonoBehaviour
 
     /// <summary> panel to hide / unhide </summary>
     public GameObject m_panel;
+    /// <summary> moving еру button from hidden to unhidden position of the panel  </summary>
     public Vector2 m_deltaPosition;
-    public bool m_isItEnabled = true;
+    public bool m_isItUnhiden= true;
 
     // Start is called before the first frame update
     void Start()
@@ -21,16 +22,17 @@ public class HidingPanel : MonoBehaviour
         
     }
 
-    public void OnCliick()
+    public void OnClick()
     {
-        m_isItEnabled = !m_isItEnabled;
-        m_panel.SetActive(m_isItEnabled);
+        m_isItUnhiden = !m_isItUnhiden;
+        m_panel.SetActive(m_isItUnhiden);
 
-        int delta = 1 * Convert.ToInt32(m_isItEnabled);
+        int delta = 1 * Convert.ToInt32(m_isItUnhiden);
         int deltaPos = -1; //deltaPos can be -1 or 1
         deltaPos += delta + delta;
         float y = m_deltaPosition.y * deltaPos;
-        Vector3 pos = new Vector3(m_deltaPosition.x, y, 0);
+        float x = m_deltaPosition.x * deltaPos;
+        Vector3 pos = new Vector3(x, y, 0);
         transform.position = transform.position + pos;
         transform.eulerAngles = new Vector3(0, 0, transform.eulerAngles.z + 180);
     }

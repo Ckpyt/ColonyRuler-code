@@ -26,15 +26,15 @@ public class ArrowScript : MonoBehaviour
     /// <summary> Tools could have the same end and start coordinates </summary>
     bool _isItHimself = false;
     /// <summary> Red color, indicates m_productivity in m_from is below zero </summary>
-    static Color _sArrowRed = new Color(1, 0, 0);
+    public static Color _sArrowMaterialsNotEnough = new Color(1, 0, 0);
     /// <summary> Green color, indicates normal production </summary>
-    static Color _sArrowGreen = new Color(0, 1, 0);
+    public static Color _sArrowMaterialsEnough = new Color(0, 1, 0);
     /// <summary> White color, indicates where is no production </summary>
-    static Color _sArrowWhite = new Color(1, 1, 1);
-    /// <summary> Yellow color, indicate tools arrow </summary>
-    static Color _sArrowYellow = new Color(1, 1, 0);
-    /// <summary> blue color, indicate where is not enough tools </summary>
-    static Color _sArrowBlue = new Color(0, 0.727f, 1);
+    public static Color _sArrowMaterialsNotUsed = new Color(1, 1, 1);
+    /// <summary> Blue color, indicate tools arrow </summary>
+    public static Color _sArrowToolsNotEnough = new Color(1, 1, 0);
+    /// <summary> Yellow color, indicate where is not enough tools </summary>
+    public static Color _sArrowToolsEnough = new Color(0, 0.727f, 1);
     /// <summary> all arrows in the game </summary>
     static List<GameObject> _sAllArrows = new List<GameObject>();
     /// <summary> Arrow render </summary>
@@ -249,9 +249,9 @@ public class ArrowScript : MonoBehaviour
             body3.transform.localScale = new Vector3(1.51f, 1f, 1f);
             body2.transform.localEulerAngles = new Vector3(0, 0, 90);
             _arrowBody2 = body2.GetComponent<SpriteRenderer>();
-            _arrowBody2.color = _sArrowBlue;
+            _arrowBody2.color = _sArrowToolsEnough;
             _arrowBody3 = body3.GetComponent<SpriteRenderer>();
-            _arrowBody3.color = _sArrowBlue;
+            _arrowBody3.color = _sArrowToolsEnough;
             transform.parent = m_from.transform;
             transform.localEulerAngles = new Vector3(0, 0, 90);
             transform.localPosition = new Vector3(-0.5f, -2.41f, -200f);
@@ -331,9 +331,9 @@ public class ArrowScript : MonoBehaviour
                 {
                     Color clr = rend.color;
                     if(m_from.m_thisItem.m_count > 0)
-                        clr = _sArrowBlue;
+                        clr = _sArrowToolsEnough;
                     else
-                        clr = _sArrowYellow;
+                        clr = _sArrowToolsNotEnough;
                     if (!clr.Equals(rend.color))
                     {
                         if (_isItHimself)
@@ -347,11 +347,11 @@ public class ArrowScript : MonoBehaviour
 
                 }   
                 else if (itm != null && (itm.m_workers == 0))
-                    rend.color = _sArrowWhite;
+                    rend.color = _sArrowMaterialsNotUsed;
                 else if (matFrom != null && matFrom.m_productivity < 0)
-                    rend.color = _sArrowRed;
+                    rend.color = _sArrowMaterialsNotEnough;
                 else
-                    rend.color = _sArrowGreen;
+                    rend.color = _sArrowMaterialsEnough;
 
 
                 rendBody.color = rend.color;

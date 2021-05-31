@@ -102,6 +102,7 @@
     <Compile Include="Assets\Scripts\Items\DomesticAnimal.cs" />
     <Compile Include="Assets\Scripts\Items\WildAnimal.cs" />
     <Compile Include="Assets\Scripts\NewBehaviourScript.cs" />
+    <Compile Include="Assets\Scripts\Menu\ArrowLegend.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Resources\science_Map.xml" />

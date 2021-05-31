@@ -27,6 +27,8 @@ public class MainScript : MonoBehaviour
     public GameObject m_leftGamePanelPrefab = null;
     /// <summary> Link to right panel prefab. For creating right panel</summary>
     public GameObject m_rightGamePanelPrefab = null;
+    /// <summary> Link to arrow legend panel prefab.</summary>
+    public GameObject m_arrowLegendPanelPrefab = null;
     /// <summary> Link to Learning Tip prefab. For creating learning tips</summary>
     public GameObject m_LearingTipPrefab = null;
     /// <summary> Link to outline prefab. For creating rectangle around a gameObject</summary>
@@ -43,6 +45,8 @@ public class MainScript : MonoBehaviour
     Image _leftPanel = null;
     /// <summary> Link to right panel. Contain information about depots</summary>
     Image _rightPanel = null;
+    /// <summary> Link to arrow legend panel. Contain information about arrow colors</summary>
+    Image _arrowPanel = null;
     /// <summary> Link to second menu panel</summary>
     public Image m_gameMenuPanel = null;
     /// <summary> camera position. For saving/loading</summary>
@@ -113,6 +117,7 @@ public class MainScript : MonoBehaviour
         Destroy(GetComponent<Storage>());
         Destroy(_leftPanel.gameObject);
         Destroy(_rightPanel.gameObject);
+        Destroy(_arrowPanel.gameObject);
         m_gameMenuPanel.gameObject.SetActive(false);
         m_mainMenuPanel.SetActive(true);
         m_isItInitialized = false;
@@ -206,6 +211,11 @@ public class MainScript : MonoBehaviour
 
         transform.position = new Vector3(0, 0, -10);
         _range = 30f;
+        GameObject arrowPanel = Instantiate(m_arrowLegendPanelPrefab);
+        arrowPanel.transform.SetParent(m_mainCanvas.transform);
+        _arrowPanel = arrowPanel.GetComponent<Image>();
+        _arrowPanel.rectTransform.anchoredPosition = new Vector2(585, -32f);
+
         GameObject rightPanel = Instantiate(m_rightGamePanelPrefab);
         GameObject leftPanel = Instantiate(m_leftGamePanelPrefab);
         rightPanel.transform.SetParent(m_mainCanvas.transform);
