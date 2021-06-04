@@ -5,7 +5,7 @@
 		<ns1:defaultX>-7.8</ns1:defaultX>
 		<ns1:defaultY>-7</ns1:defaultY>
 		<ns1:produce_per_person>clean vegetables*4; bone*4; fur*4</ns1:produce_per_person>
-		<ns1:dependency>boar| bear| wild hen| wild rabbit| wild cow| wild hourse</ns1:dependency>
+		<ns1:dependency>boar| bear| wild hen| wild rabbit| wild cow| wild hourse| wild sheep</ns1:dependency>
 		<ns1:dependency_cost>0</ns1:dependency_cost>
 		<ns1:final_cost>1</ns1:final_cost>
 		<ns1:container>1</ns1:container>
@@ -134,7 +134,7 @@
 		<ns1:description>log</ns1:description>
 		<ns1:defaultX>20.2</ns1:defaultX>
 		<ns1:defaultY>12.5</ns1:defaultY>
-		<ns1:produce_per_person>log*0,25; stick*3; firewood*2</ns1:produce_per_person>
+		<ns1:produce_per_person>log*0.25; stick*3; firewood*2</ns1:produce_per_person>
 		<ns1:dependency>forest</ns1:dependency>
 		<ns1:dependency_cost>0</ns1:dependency_cost>
 		<ns1:final_cost>4</ns1:final_cost>
@@ -199,7 +199,7 @@
 		<ns1:description>harvest carrots</ns1:description>
 		<ns1:defaultX>-21.8</ns1:defaultX>
 		<ns1:defaultY>-26.5</ns1:defaultY>
-		<ns1:produce_per_person>empty field*0,1; carrot*6</ns1:produce_per_person>
+		<ns1:produce_per_person>empty field*0.1; carrot*6</ns1:produce_per_person>
 		<ns1:dependency>carrot field*0,1</ns1:dependency>
 		<ns1:dependency_cost>0</ns1:dependency_cost>
 		<ns1:final_cost>10</ns1:final_cost>
@@ -212,7 +212,7 @@
 		<ns1:description>harvest wheat</ns1:description>
 		<ns1:defaultX>-21.8</ns1:defaultX>
 		<ns1:defaultY>-20</ns1:defaultY>
-		<ns1:produce_per_person>empty field*0,1; grain*8</ns1:produce_per_person>
+		<ns1:produce_per_person>empty field*0.1; grain*8</ns1:produce_per_person>
 		<ns1:dependency>wheat field*0,1</ns1:dependency>
 		<ns1:dependency_cost>0</ns1:dependency_cost>
 		<ns1:final_cost>10</ns1:final_cost>

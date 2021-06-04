@@ -214,7 +214,7 @@ public class MainScript : MonoBehaviour
         GameObject arrowPanel = Instantiate(m_arrowLegendPanelPrefab);
         arrowPanel.transform.SetParent(m_mainCanvas.transform);
         _arrowPanel = arrowPanel.GetComponent<Image>();
-        _arrowPanel.rectTransform.anchoredPosition = new Vector2(585, -32f);
+        _arrowPanel.rectTransform.anchoredPosition = new Vector2(-53, -32f);
 
         GameObject rightPanel = Instantiate(m_rightGamePanelPrefab);
         GameObject leftPanel = Instantiate(m_leftGamePanelPrefab);

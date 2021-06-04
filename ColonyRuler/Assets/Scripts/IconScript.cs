@@ -408,7 +408,7 @@ public class IconScript : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
     /// <summary>
     /// Click to icon. While icon pressed, it could be moved
     /// </summary>
-    void IconClick()
+    public void IconClick()
     {
         if (!MainScript.m_sIsButtonPressed)
         {

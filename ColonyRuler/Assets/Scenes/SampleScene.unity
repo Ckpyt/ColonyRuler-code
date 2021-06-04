@@ -2375,6 +2375,8 @@ MonoBehaviour:
     type: 3}
   m_rightGamePanelPrefab: {fileID: 6089596027995405067, guid: 4588069d2b304884aa87c87666f91ca1,
     type: 3}
+  m_arrowLegendPanelPrefab: {fileID: 8474550722924861460, guid: b571b898a7e54d54c925afcf216153f1,
+    type: 3}
   m_LearingTipPrefab: {fileID: 3547251634830354004, guid: 158367b4e960d2e4d9133afbaa4b6df3,
     type: 3}
   m_OutlinePrefab: {fileID: 3085926458397193740, guid: e6f250bcae568e147b258d5b77524836,

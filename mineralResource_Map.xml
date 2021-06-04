@@ -27,4 +27,11 @@
 		<ns1:defaultY>-7</ns1:defaultY>
 		<ns1:maximum_in_territory>0</ns1:maximum_in_territory>
 	</ns1:repetative>
+	<ns1:repetative>
+		<ns1:name>raw meat</ns1:name>
+		<ns1:description>raw meat</ns1:description>
+		<ns1:defaultX>1</ns1:defaultX>
+		<ns1:defaultY>1</ns1:defaultY>
+		<ns1:maximum_in_territory>0</ns1:maximum_in_territory>
+	</ns1:repetative>
 </ns1:mineralResource>

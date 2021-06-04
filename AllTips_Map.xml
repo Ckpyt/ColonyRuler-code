@@ -101,7 +101,8 @@ Let's have a look on the structure closer</ns1:description>
 	</ns1:repetative>
 	<ns1:repetative>
 		<ns1:name>tip9</ns1:name>
-		<ns1:description>This is the current stock quantity and warehouse size.</ns1:description>
+		<ns1:description>This is the current stock quantity and warehouse size.
+</ns1:description>
 		<ns1:defaultX>6.2</ns1:defaultX>
 		<ns1:defaultY>6</ns1:defaultY>
 		<ns1:targetIcon>wild vegetables</ns1:targetIcon>
@@ -117,16 +118,75 @@ Let's have a look on the structure closer</ns1:description>
 Based on the productivity, the arrow colors are changing: 
 If source materials are rising, arrows are green. 
 if source materials are going down, arrows are red.
-If source materials are constant, arrows are white.
-You can find this information on the color legend
-</ns1:description>
+If source materials are constant or not used, arrows are white.
+You can find this information on the color legend</ns1:description>
 		<ns1:defaultX>6.2</ns1:defaultX>
 		<ns1:defaultY>6</ns1:defaultY>
 		<ns1:targetIcon>wild vegetables</ns1:targetIcon>
 		<ns1:targetObject>Productivity</ns1:targetObject>
-		<ns1:nextTip/>
+		<ns1:nextTip>tip11</ns1:nextTip>
 		<ns1:yellowPositionVector>-1,1;-0,35</ns1:yellowPositionVector>
 		<ns1:yellowSizeVector>2,1;0,4</ns1:yellowSizeVector>
+		<ns1:isItUI>false</ns1:isItUI>
+	</ns1:repetative>
+	<ns1:repetative>
+		<ns1:name>tip11</ns1:name>
+		<ns1:description>The button "minus" used to set a person free of this job.</ns1:description>
+		<ns1:defaultX>6.2</ns1:defaultX>
+		<ns1:defaultY>6</ns1:defaultY>
+		<ns1:targetIcon>wild vegetables</ns1:targetIcon>
+		<ns1:targetObject>Canvas\Button_minus</ns1:targetObject>
+		<ns1:nextTip>tip12</ns1:nextTip>
+		<ns1:yellowPositionVector/>
+		<ns1:yellowSizeVector/>
+		<ns1:isItUI>false</ns1:isItUI>
+	</ns1:repetative>
+	<ns1:repetative>
+		<ns1:name>tip12</ns1:name>
+		<ns1:description>The button "plus" used to set a person on this job. Let's produce some clean vegetables</ns1:description>
+		<ns1:defaultX>6.2</ns1:defaultX>
+		<ns1:defaultY>6</ns1:defaultY>
+		<ns1:targetIcon>clean vegetables</ns1:targetIcon>
+		<ns1:targetObject>Canvas\Button_plus</ns1:targetObject>
+		<ns1:nextTip>tip13</ns1:nextTip>
+		<ns1:yellowPositionVector/>
+		<ns1:yellowSizeVector/>
+		<ns1:isItUI>false</ns1:isItUI>
+	</ns1:repetative>
+	<ns1:repetative>
+		<ns1:name>tip13</ns1:name>
+		<ns1:description>This icon mean the researching. The stock here is how many items need/used.</ns1:description>
+		<ns1:defaultX>6.2</ns1:defaultX>
+		<ns1:defaultY>4</ns1:defaultY>
+		<ns1:targetIcon>rod using</ns1:targetIcon>
+		<ns1:targetObject>smallIcon</ns1:targetObject>
+		<ns1:nextTip>tip14</ns1:nextTip>
+		<ns1:yellowPositionVector/>
+		<ns1:yellowSizeVector/>
+		<ns1:isItUI>false</ns1:isItUI>
+	</ns1:repetative>
+	<ns1:repetative>
+		<ns1:name>tip14</ns1:name>
+		<ns1:description>After the whole bar fills, the research button avaliable. It unlocks new items and researchs</ns1:description>
+		<ns1:defaultX>6.2</ns1:defaultX>
+		<ns1:defaultY>4</ns1:defaultY>
+		<ns1:targetIcon>rod using</ns1:targetIcon>
+		<ns1:targetObject>Canvas\Button_up</ns1:targetObject>
+		<ns1:nextTip>tip15</ns1:nextTip>
+		<ns1:yellowPositionVector/>
+		<ns1:yellowSizeVector/>
+		<ns1:isItUI>false</ns1:isItUI>
+	</ns1:repetative>
+	<ns1:repetative>
+		<ns1:name>tip15</ns1:name>
+		<ns1:description>Hunting is a tricky thing. Right now, you can't choose who gets caught. Many animals are stronger than bare humans. Many animals are faster than bare humans. You definitely need something to be successful on the hunt.</ns1:description>
+		<ns1:defaultX>6.2</ns1:defaultX>
+		<ns1:defaultY>6</ns1:defaultY>
+		<ns1:targetIcon>hunting</ns1:targetIcon>
+		<ns1:targetObject/>
+		<ns1:nextTip/>
+		<ns1:yellowPositionVector/>
+		<ns1:yellowSizeVector/>
 		<ns1:isItUI>false</ns1:isItUI>
 	</ns1:repetative>
 </ns1:AllTips>

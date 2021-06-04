@@ -121,17 +121,19 @@ class LearningTip: MonoBehaviour
         obj.SetActive(active);
     }
 
-    static void SetTargetObject(LearningTip obj, string targetObjectName, Transform parent)
+    static bool SetTargetObject(LearningTip obj, string targetObjectName, Transform parent)
     {
         var path = targetObjectName.Split('\\');
         Transform nextObj = parent.Find(path[0]);
 
         if (path.Length > 1) {
-            string newPath = targetObjectName.Split(new[] { '\\' }, 2)[1].Substring(1);
+            string newPath = targetObjectName.Split(new[] { '\\' },2)[1];
             SetTargetObject(obj, newPath, nextObj ?? parent);
         }
         else
             obj._targetObject = nextObj.gameObject;
+
+        return path[0].Contains("Canvas");
 
     }
 
@@ -186,7 +188,10 @@ class LearningTip: MonoBehaviour
 
         Vector3 coord = data.m_position;
         if (depend != null)
+        {
             coord += depend.m_thisObject.transform.position;
+            depend.m_thisObject.IconClick();
+        }
 
         coord.z = -3; //learning tips should be higher then icons;
 
@@ -218,9 +223,10 @@ class LearningTip: MonoBehaviour
 
         if (depend != null || dependency != null)
         {
+            bool hasCanvas = false;
             //TODO:yellow outline
             if (depend != null)
-                SetTargetObject(thisObj, data.m_targetObject, depend.m_thisObject.transform);
+                hasCanvas = SetTargetObject(thisObj, data.m_targetObject, depend.m_thisObject.transform);
             else
                 thisObj._targetObject = dependency;
 
@@ -233,7 +239,7 @@ class LearningTip: MonoBehaviour
             }
             else
             {
-                if (data.m_isItUI)
+                if (data.m_isItUI || hasCanvas)
                 {
                     var rect = thisObj._targetObject.transform as RectTransform;
                     rectB = rect.rect;
@@ -257,6 +263,8 @@ class LearningTip: MonoBehaviour
         //outline.OutlineMode = Outline.Mode.OutlineAll;
         //outline.OutlineColor = Color.yellow;
         //outline.OutlineWidth = 5f;
+
+
     }
 
 
