@@ -45,13 +45,13 @@ public class IconScript : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
     /// <summary> productivity negative scale. Moved from center to left </summary>
     SpriteRenderer _productivityMinus;
     /// <summary> constant. start x position for productivity scales </summary>
-    const float XMiddlePositionProductivityPlus = 0.45f;
+    const float CXMiddlePositionProductivityPlus = 0.45f;
     /// <summary> start x position for count and damaged scales </summary>
-    const float XStartPosition = -0.9f;
+    const float CXStartPosition = -0.9f;
     /// <summary> y scale for all scales </summary>
-    const float YScale = 0.2f;
+    const float CYScale = 0.2f;
     /// <summary> maximum length for all scales </summary>
-    const float XMaxScale = 1.8f;
+    const float CXMaxScale = 1.8f;
     #endregion
     /// <summary> all output arrows </summary>
     public List<ArrowScript> m_from = new List<ArrowScript>();
@@ -456,12 +456,12 @@ public class IconScript : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
             percent = 0;
 
         _tmpPos.z = 0;
-        _tmpPos.x = XMaxScale * percent / 100;
-        _tmpPos.y = YScale;
+        _tmpPos.x = CXMaxScale * percent / 100;
+        _tmpPos.y = CYScale;
 
         scaleObj.transform.localScale = _tmpPos;
 
-        float pos = XStartPosition + (-XStartPosition * percent / 100);
+        float pos = CXStartPosition + (-CXStartPosition * percent / 100);
         _tmpPos = scaleObj.transform.localPosition;
         _tmpPos.x = pos;
 
@@ -507,11 +507,11 @@ public class IconScript : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
                 if (prodPer <= 0 && prodPer > -1f) prodPer = -1;
                 if (float.IsNaN(prodPer))
                     prodPer = 1;
-                float prodScale = /*two times shorter*/(XMaxScale / 2) * (prodPer / 100f);
+                float prodScale = /*two times shorter*/(CXMaxScale / 2) * (prodPer / 100f);
                 if (m_thisItem.m_productivity > 0)
                 {
                     _tmpPos.x = 0;
-                    _tmpPos.y = YScale;
+                    _tmpPos.y = CYScale;
                     _tmpPos.z = 0;
                     _productivityMinus.transform.localScale = _tmpPos;
 
@@ -519,7 +519,7 @@ public class IconScript : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
                     _productivityPlus.transform.localScale = _tmpPos;
 
                     _tmpPos = _productivityPlus.transform.localPosition;
-                    _tmpPos.x = XMiddlePositionProductivityPlus * prodPer / 100f;
+                    _tmpPos.x = CXMiddlePositionProductivityPlus * prodPer / 100f;
 
                     _productivityPlus.transform.localPosition = _tmpPos;
 
@@ -527,14 +527,14 @@ public class IconScript : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
                 else
                 {
                     _tmpPos.x = 0;
-                    _tmpPos.y = YScale;
+                    _tmpPos.y = CYScale;
                     _tmpPos.z = 0;
                     _productivityPlus.transform.localScale = _tmpPos;
 
                     _tmpPos.x = prodScale;
                     _productivityMinus.transform.localScale = _tmpPos;
                     _tmpPos = _productivityMinus.transform.localPosition;
-                    _tmpPos.x = XMiddlePositionProductivityPlus * prodPer / 100f;
+                    _tmpPos.x = CXMiddlePositionProductivityPlus * prodPer / 100f;
                     _productivityMinus.transform.localPosition = _tmpPos;
                 }
             }

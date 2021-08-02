@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -9,8 +9,8 @@ public class Outline : MonoBehaviour
     public bool mb_IsItCanvas = false;
 
     bool mb_IsItInitialized = false;
-    const int c_CanvasScale = 5;
-    const float c_positionZ = -1.5f;
+    const int СCanvasScale = 5;
+    const float СPositionZ = -1.5f;
 
     public GameObject m_LeftLine;
     public GameObject m_RightLine;
@@ -26,7 +26,7 @@ public class Outline : MonoBehaviour
     
     void ChangePositionToChild(GameObject child, float scaleX, float scaleY, float posX, float posY)
     {
-        child.transform.position = new Vector3(posX, posY, c_positionZ);
+        child.transform.position = new Vector3(posX, posY, СPositionZ);
         child.transform.localScale = new Vector3(scaleX, scaleY, 1);
     }
 
@@ -45,7 +45,7 @@ public class Outline : MonoBehaviour
         float scale = m_TopLine.transform.localScale.y;
         if (mb_IsItCanvas)
         {
-            scale = c_CanvasScale;
+            scale = СCanvasScale;
             transform.parent = Camera.main.GetComponent<MainScript>().m_mainCanvas.transform;
             CanvasImplematationToChild(m_TopLine);
             CanvasImplematationToChild(m_BottomLine);

@@ -7,7 +7,7 @@ using UnityEngine.UI;
 /// Here and everywhere else, I'm using some naming rules:
 /// m_ - public member
 /// _ - private member
-/// _c - constant
+/// C - constant
 /// _s - static
 
 /// <summary>

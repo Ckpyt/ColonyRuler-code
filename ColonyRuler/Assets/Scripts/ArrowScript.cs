@@ -56,10 +56,10 @@ public class ArrowScript : MonoBehaviour
     SpriteRenderer _arrowBody2 = null;
     SpriteRenderer _arrowBody3 = null;
 
-    const float XMaxCorner = 2.2f;
-    const float XMinCorner = 1.0f;
-    const float YMaxCorner = 2.4f;
-    const float YMinCorner = 1.3f;
+    const float CXMaxCorner = 2.2f;
+    const float CXMinCorner = 1.0f;
+    const float CYMaxCorner = 2.4f;
+    const float CYMinCorner = 1.3f;
 
     // diffrence between from coords and to coords
     const float XDif = 0.3f;
@@ -153,18 +153,18 @@ public class ArrowScript : MonoBehaviour
     /// <param name="dif"> differnce of arrow's head </param>
     Vector3 CalcCross(Vector3 first, Vector3 second, bool isButtonsDisabled, float dif = 0)
     {
-        float x1 = (isButtonsDisabled ? XMinCorner : XMaxCorner) + dif;
-        float x2 = -(isButtonsDisabled ? XMinCorner : XMaxCorner) - dif;
-        float y1 = YMinCorner + dif;
-        float y2 = -(isButtonsDisabled ? YMinCorner : YMaxCorner) - dif;
-        float min = y1 < y2 ? y1 : y2;
-        float max = y1 > y2 ? y1 : y2;
-        float len = (max - min) / 2;
-        float centerY = min + len;
+        float x1 = (isButtonsDisabled ? CXMinCorner : CXMaxCorner) + dif;
+        float x2 = -(isButtonsDisabled ? CXMinCorner : CXMaxCorner) - dif;
+        float y1 = CYMinCorner + dif;
+        float y2 = -(isButtonsDisabled ? CYMinCorner : CYMaxCorner) - dif;
+        float Ymin = y1 < y2 ? y1 : y2;
+        float Ymax = y1 > y2 ? y1 : y2;
+        float Ylen = (Ymax - Ymin) / 2;
+        float centerY = Ymin + Ylen;
         Vector3 center = first;
         center.y = first.y + centerY;
-        y1 = +len;
-        y2 = -len;
+        y1 = +Ylen;
+        y2 = -Ylen;
 
         _corners[0].x = x1;
         _corners[0].y = y1;
