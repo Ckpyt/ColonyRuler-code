@@ -56,6 +56,14 @@ public class ArrowScript : MonoBehaviour
     SpriteRenderer _arrowBody2 = null;
     SpriteRenderer _arrowBody3 = null;
 
+    const float XMaxCorner = 2.2f;
+    const float XMinCorner = 1.0f;
+    const float YMaxCorner = 2.4f;
+    const float YMinCorner = 1.3f;
+
+    // diffrence between from coords and to coords
+    const float XDif = 0.3f;
+
     /// <summary>
     /// First frame initialization
     /// </summary>
@@ -97,7 +105,19 @@ public class ArrowScript : MonoBehaviour
     }
 
     /// <summary>
-    /// Calc interception with two lines
+    /// Used for checking non-value numbers and replace it to finitive value
+    /// </summary>
+    /// <param name="somecoord"> finintive coordinates</param>
+    /// <returns></returns>
+    static float CheckInfinity(float check, float somecoord)
+    {
+        if (float.IsNaN(check) || float.IsInfinity(check))
+            check = somecoord + 10000f;
+        return check;
+    }
+
+    /// <summary>
+    /// Calc interception with two lines.
     /// </summary>
     /// <param name="first"> start first line </param>
     /// <param name="second"> finish first line </param>
@@ -106,9 +126,9 @@ public class ArrowScript : MonoBehaviour
     /// <returns> interception </returns>
     Vector3 CalcCrossVec(Vector3 first, Vector3 second, Vector3 firstCor, Vector3 secondCor)
     {
-        Vector3 answ = _magnitude;
+        var answ = _magnitude;
         answ.z = 0;
-        float del = ((firstCor.x - secondCor.x) * (first.y - second.y) -
+        var del = ((firstCor.x - secondCor.x) * (first.y - second.y) -
             (firstCor.y - secondCor.y) * (first.x - second.x));
 
         answ.x = ((firstCor.x * secondCor.y - firstCor.y * secondCor.x) * (first.x - second.x) -
@@ -117,10 +137,9 @@ public class ArrowScript : MonoBehaviour
         answ.y = ((firstCor.x * secondCor.y - firstCor.y * secondCor.x) * (first.y - second.y) -
             (firstCor.y - secondCor.y) * (first.x * second.y - first.y * second.x)) / del;
 
-        if (float.IsNaN(answ.x) || float.IsInfinity(answ.x))
-            answ.x = secondCor.x + 10000f;
-        if (float.IsNaN(answ.y) || float.IsInfinity(answ.y))
-            answ.y = secondCor.y + 10000f;
+        answ.x = CheckInfinity(answ.x, second.x);
+        answ.y = CheckInfinity(answ.y, second.y);
+
         return answ;
     }
 
@@ -134,15 +153,10 @@ public class ArrowScript : MonoBehaviour
     /// <param name="dif"> differnce of arrow's head </param>
     Vector3 CalcCross(Vector3 first, Vector3 second, bool isButtonsDisabled, float dif = 0)
     {
-        float x1 = 1.2f;
-        float x2 = -1.2f;
-        float y1 = 1.2f;
-        float y2 = -1.2f;
-
-        x1 = (isButtonsDisabled ? 1.0f : 2.2f) + dif;
-        x2 = -(isButtonsDisabled ? 1.0f : 2.2f) - dif;
-        y1 = 1.3f + dif;
-        y2 = -(isButtonsDisabled ? 1.3f : 2.4f) - dif;
+        float x1 = (isButtonsDisabled ? XMinCorner : XMaxCorner) + dif;
+        float x2 = -(isButtonsDisabled ? XMinCorner : XMaxCorner) - dif;
+        float y1 = YMinCorner + dif;
+        float y2 = -(isButtonsDisabled ? YMinCorner : YMaxCorner) - dif;
         float min = y1 < y2 ? y1 : y2;
         float max = y1 > y2 ? y1 : y2;
         float len = (max - min) / 2;
@@ -232,7 +246,7 @@ public class ArrowScript : MonoBehaviour
     }
 
     /// <summary>
-    /// Move arrow, where from and to is the same object
+    /// Make arrow, where start and finish objects is the same object
     /// </summary>
     public void MoveHimself()
     {
@@ -272,7 +286,7 @@ public class ArrowScript : MonoBehaviour
             }
 
             _toCoord = CalcCross(m_to.transform.position, m_from.transform.position,
-                m_to.m_thisItem.m_isButtonsDisabled, 0.3f);
+                m_to.m_thisItem.m_isButtonsDisabled, XDif);
             _fromCoord = CalcCross(m_from.transform.position, m_to.transform.position,
                 m_from.m_thisItem.m_isButtonsDisabled);
 

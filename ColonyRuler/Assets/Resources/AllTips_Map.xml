@@ -189,4 +189,78 @@ You can find this information on the color legend</ns1:description>
 		<ns1:yellowSizeVector/>
 		<ns1:isItUI>false</ns1:isItUI>
 	</ns1:repetative>
+	<ns1:repetative>
+		<ns1:name>tip16</ns1:name>
+		<ns1:description>It is your tool. Tools are using for increasing the speed of production or decreasing the consumtion of source materials. </ns1:description>
+		<ns1:defaultX>6.2</ns1:defaultX>
+		<ns1:defaultY>6</ns1:defaultY>
+		<ns1:targetIcon>wicker basket</ns1:targetIcon>
+		<ns1:targetObject/>
+		<ns1:nextTip>tip17</ns1:nextTip>
+		<ns1:yellowPositionVector/>
+		<ns1:yellowSizeVector/>
+		<ns1:isItUI>false</ns1:isItUI>
+	</ns1:repetative>
+	<ns1:repetative>
+		<ns1:name>tip17</ns1:name>
+		<ns1:description>If a worker get a tool, he/she don't return it and holds  on his working place.</ns1:description>
+		<ns1:defaultX>6.2</ns1:defaultX>
+		<ns1:defaultY>6</ns1:defaultY>
+		<ns1:targetIcon>wicker basket</ns1:targetIcon>
+		<ns1:targetObject/>
+		<ns1:nextTip>tip18</ns1:nextTip>
+		<ns1:yellowPositionVector/>
+		<ns1:yellowSizeVector/>
+		<ns1:isItUI>false</ns1:isItUI>
+	</ns1:repetative>
+	<ns1:repetative>
+		<ns1:name>tip18</ns1:name>
+		<ns1:description>Tools can be damaged. 
+Once a tool damaged, it returns to the production place, in the damaged stack. If the stack is full, damaged tools can be lost. 
+If the damaged stack has some damaged tools, it repears before producing something new and much faster.</ns1:description>
+		<ns1:defaultX>6.2</ns1:defaultX>
+		<ns1:defaultY>6</ns1:defaultY>
+		<ns1:targetIcon>wicker basket</ns1:targetIcon>
+		<ns1:targetObject>DamagedText</ns1:targetObject>
+		<ns1:nextTip>tip19</ns1:nextTip>
+		<ns1:yellowPositionVector>-1,1;-0,35</ns1:yellowPositionVector>
+		<ns1:yellowSizeVector>2,1;0,4</ns1:yellowSizeVector>
+		<ns1:isItUI>false</ns1:isItUI>
+	</ns1:repetative>
+	<ns1:repetative>
+		<ns1:name>tip19</ns1:name>
+		<ns1:description>Also, tools can be destroyed. If it happens, the tool disappear.</ns1:description>
+		<ns1:defaultX>6.2</ns1:defaultX>
+		<ns1:defaultY>6</ns1:defaultY>
+		<ns1:targetIcon>wicker basket</ns1:targetIcon>
+		<ns1:targetObject/>
+		<ns1:nextTip>tip20</ns1:nextTip>
+		<ns1:yellowPositionVector/>
+		<ns1:yellowSizeVector/>
+		<ns1:isItUI>false</ns1:isItUI>
+	</ns1:repetative>
+	<ns1:repetative>
+		<ns1:name>tip20</ns1:name>
+		<ns1:description>A wicker backet is using as a light storage also. If you have enough light storage space, it could be used for increasing the production warehouse size.</ns1:description>
+		<ns1:defaultX>6.2</ns1:defaultX>
+		<ns1:defaultY>6</ns1:defaultY>
+		<ns1:targetIcon>wicker basket</ns1:targetIcon>
+		<ns1:targetObject/>
+		<ns1:nextTip>tip21</ns1:nextTip>
+		<ns1:yellowPositionVector/>
+		<ns1:yellowSizeVector/>
+		<ns1:isItUI>false</ns1:isItUI>
+	</ns1:repetative>
+	<ns1:repetative>
+		<ns1:name>tip21</ns1:name>
+		<ns1:description>If you upgrade the warehouse size, the current amount of light or heavy storage items locks and cannot be used in any other way.</ns1:description>
+		<ns1:defaultX>6.2</ns1:defaultX>
+		<ns1:defaultY>6</ns1:defaultY>
+		<ns1:targetIcon>wicker basket</ns1:targetIcon>
+		<ns1:targetObject/>
+		<ns1:nextTip/>
+		<ns1:yellowPositionVector/>
+		<ns1:yellowSizeVector/>
+		<ns1:isItUI>false</ns1:isItUI>
+	</ns1:repetative>
 </ns1:AllTips>

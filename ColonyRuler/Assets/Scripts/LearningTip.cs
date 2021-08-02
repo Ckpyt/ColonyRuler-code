@@ -102,12 +102,18 @@ class LearningTip: MonoBehaviour
             var tip = tipPair.Value;
             if (tip.m_next != null && tip.m_next.Length > 0)
             {
-                var nextTip = _sAllTips[tip.m_next];
-                if (nextTip.m_previous == null || nextTip.m_previous.Length == 0)
-                    _sAllTips[tip.m_next].m_previous = tip.m_name;
-                else
-                    throw new Exception("tip '" + nextTip + "' has previous tip:" + nextTip.m_previous);
-
+                try
+                {
+                    var nextTip = _sAllTips[tip.m_next];
+                    if (nextTip.m_previous == null || nextTip.m_previous.Length == 0)
+                        _sAllTips[tip.m_next].m_previous = tip.m_name;
+                    else
+                        throw new Exception("tip '" + nextTip + "' has previous tip:" + nextTip.m_previous);
+                }
+                catch (Exception)
+                {
+                    Debug.Log("Key not found" + tip.m_name);
+                }
                 
             }
         }
@@ -162,7 +168,7 @@ class LearningTip: MonoBehaviour
     /// <param name="forseShow">is it should be shown without the "can show" param?</param>
     public static void CreateTip(string name, bool forseShow = false)
     {
-        if (m_sCanShow == false && forseShow == false) return;
+        if ((m_sCanShow == false && forseShow == false) || name.Length == 0) return;
 
         LearningTipData data;
         MainScript ms = Camera.main.GetComponent<MainScript>();

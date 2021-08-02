@@ -17,9 +17,9 @@ class Science : GameAbstractItem
     /// <summary> How many materials reguared to complite research. used for understanding research procegress </summary>
     [NonSerialized]
     public float m_maxCount = 0;
-    /// <summary> learning tips. Should be shown after reserching </summary>
+    /// <summary>The starting learning tip. Should be shown after reserching </summary>
     [NonSerialized]
-    string m_tips;
+    string m_tip = "";
     /// <summary>
     /// Copy from loaded item.
     /// shouldn't copy non-serialized fields
@@ -121,6 +121,7 @@ class Science : GameAbstractItem
         scs.m_repItem = rep;
         scs.m_tooltipCount = loc.m_ui.m_scienceCount;
         scs.m_tooltipProductivity = loc.m_ui.m_scienceProductivity;
+        scs.m_tip = rep.tips;
         Productions.AddProduction(scs, "science");
 
         return GameAbstractItem.Parse(itm, repItm);
@@ -206,6 +207,7 @@ class Science : GameAbstractItem
             itms.Add(itm);
         }
         CameraScript.m_main.GetComponent<MainScript>().PlaceOpenedItems(itms);
+        LearningTip.CreateTip(m_tip);
 
         m_isItOpen = -1000;
         return true;

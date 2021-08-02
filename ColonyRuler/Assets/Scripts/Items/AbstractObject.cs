@@ -322,10 +322,11 @@ public class AbstractObject
     /// <param name="str"> float in text mode </param>
     /// <param name="separator"> a separator between integer and the fractional part  </param>
     /// <returns> parsed float </returns>
-    public static float FloatParse(string str, string separator = ",")
+    public static float FloatParse(string str)
     {
+        str = str.Replace(',', '.');
         NumberFormatInfo nfi = new CultureInfo("en-US", false).NumberFormat;
-        nfi.NumberDecimalSeparator = separator;
+        nfi.NumberDecimalSeparator = ".";
         return float.Parse(str, nfi);
     }
 

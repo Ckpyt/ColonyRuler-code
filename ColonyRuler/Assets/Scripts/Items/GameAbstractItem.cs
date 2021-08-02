@@ -159,7 +159,7 @@ public class GameAbstractItem : AbstractObject
                     mat.m_producePerPerson = new DependencyCount[1];
                     mat.m_producePerPerson[0] = new DependencyCount();
                     mat.m_producePerPerson[0].m_dependency.Add(mat);
-                    mat.m_producePerPerson[0].m_value.Add(FloatParse(prod, "."));
+                    mat.m_producePerPerson[0].m_value.Add(FloatParse(prod));
                 }
                 else
                     mat.m_producePerPerson = ParseDependencyCounts(prod);
