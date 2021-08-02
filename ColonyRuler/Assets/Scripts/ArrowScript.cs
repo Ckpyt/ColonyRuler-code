@@ -109,7 +109,7 @@ public class ArrowScript : MonoBehaviour
     /// </summary>
     /// <param name="somecoord"> finintive coordinates</param>
     /// <returns></returns>
-    static float CheckInfinity(float check, float somecoord)
+    static float FixInfinity(float check, float somecoord)
     {
         if (float.IsNaN(check) || float.IsInfinity(check))
             check = somecoord + 10000f;
@@ -137,8 +137,8 @@ public class ArrowScript : MonoBehaviour
         answ.y = ((firstCor.x * secondCor.y - firstCor.y * secondCor.x) * (first.y - second.y) -
             (firstCor.y - secondCor.y) * (first.x * second.y - first.y * second.x)) / del;
 
-        answ.x = CheckInfinity(answ.x, second.x);
-        answ.y = CheckInfinity(answ.y, second.y);
+        answ.x = FixInfinity(answ.x, second.x);
+        answ.y = FixInfinity(answ.y, second.y);
 
         return answ;
     }
