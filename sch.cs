@@ -97,6 +97,8 @@ namespace ExcelLoading {
         
         private string descriptionField;
         
+        private string learningTipField;
+        
         private float defaultXField;
         
         private float defaultYField;
@@ -118,6 +120,16 @@ namespace ExcelLoading {
             }
             set {
                 this.descriptionField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string LearningTip {
+            get {
+                return this.learningTipField;
+            }
+            set {
+                this.learningTipField = value;
             }
         }
         
@@ -575,8 +587,6 @@ namespace ExcelLoading {
         
         private string closesField;
         
-        private string tipsField;
-        
         /// <remarks/>
         public string opens {
             get {
@@ -594,16 +604,6 @@ namespace ExcelLoading {
             }
             set {
                 this.closesField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string tips {
-            get {
-                return this.tipsField;
-            }
-            set {
-                this.tipsField = value;
             }
         }
     }

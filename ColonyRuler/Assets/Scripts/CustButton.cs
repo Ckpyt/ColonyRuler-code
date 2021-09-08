@@ -77,7 +77,8 @@ public class CustButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     /// </summary>
     void Update()
     {
-        try { 
+        try
+        {
             if (!TimeScript.m_isItPaused && !m_isItPaused)
             {
                 if (_isItPressed)
@@ -99,7 +100,7 @@ public class CustButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         }
         catch (Exception ex)
         {
-            Debug.LogError("CustButton Update exception:"  + ex.Message);
+            Debug.LogError("CustButton Update exception:" + ex.Message);
         }
     }
 }

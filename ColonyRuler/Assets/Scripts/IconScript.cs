@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -52,6 +53,13 @@ public class IconScript : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
     const float CYScale = 0.2f;
     /// <summary> maximum length for all scales </summary>
     const float CXMaxScale = 1.8f;
+    /// <summary> 1 line position </summary>
+    const float COneLine = -0.40f;
+    /// <summary> 2 lines position </summary>
+    const float CTwoLines = 0.46f;
+
+    bool IsTwoLinesEnabled = false;
+
     #endregion
     /// <summary> all output arrows </summary>
     public List<ArrowScript> m_from = new List<ArrowScript>();
@@ -95,8 +103,7 @@ public class IconScript : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
             m_people = Camera.main.GetComponent<People>();
             if (m_thisItem != null)
             {
-                TextMesh obj = GetComponentInChildren<TextMesh>();
-                obj.text = m_thisItem.m_text;
+                ChangeLanguage();
             }
             CheckButtons();
 
@@ -160,8 +167,17 @@ public class IconScript : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
     /// </summary>
     public void ChangeLanguage()
     {
-        TextMesh obj = GetComponentInChildren<TextMesh>();
+        TextMeshPro obj = GetComponentInChildren<TextMeshPro>();
         obj.text = m_thisItem.m_text;
+        /*
+                obj.ForceMeshUpdate(); //for calculating a new text width
+                if(obj.renderedWidth > 14 || IsTwoLinesEnabled) //splitting into two strings
+                {
+                    var text = m_thisItem.m_text.Split(new char[]{' '}, 1);
+                    obj.text = text[0] + '\n' + text[1];
+                    IsTwoLinesEnabled = true;
+                }*/
+
     }
 
     /// <summary>

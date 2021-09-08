@@ -18,7 +18,7 @@ public class Territory : Resource
     /// <param name="worked">not used</param>
     public override void Working(long worked = 0)
     {
-        if(Storage.m_storage != null)
+        if (Storage.m_storage != null)
         {
             if (!_isItInitialized)
             {
@@ -42,9 +42,9 @@ public class Territory : Resource
                     m_count = Storage.m_storage.m_territory;
                     _lastCount = m_count;
                     m_count += (delCount - delt);
-                    
+
                 }
-                else if(delTerr != 0)
+                else if (delTerr != 0)
                 {
                     m_count += delTerr;
                     _lastCount += delTerr;

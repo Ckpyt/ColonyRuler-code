@@ -2,6 +2,7 @@
 	<ns1:repetative>
 		<ns1:name>forest</ns1:name>
 		<ns1:description>forest</ns1:description>
+		<ns1:LearningTip/>
 		<ns1:defaultX>13.2</ns1:defaultX>
 		<ns1:defaultY>12.5</ns1:defaultY>
 		<ns1:maximum_in_territory>1000000</ns1:maximum_in_territory>
@@ -10,6 +11,7 @@
 	<ns1:repetative>
 		<ns1:name>wild fruit</ns1:name>
 		<ns1:description>wild fruit</ns1:description>
+		<ns1:LearningTip/>
 		<ns1:defaultX>6.2</ns1:defaultX>
 		<ns1:defaultY>-7</ns1:defaultY>
 		<ns1:maximum_in_territory>10000</ns1:maximum_in_territory>
@@ -18,6 +20,7 @@
 	<ns1:repetative>
 		<ns1:name>swamp thing</ns1:name>
 		<ns1:description>swamp thing</ns1:description>
+		<ns1:LearningTip/>
 		<ns1:defaultX>-21.8</ns1:defaultX>
 		<ns1:defaultY>-0.5</ns1:defaultY>
 		<ns1:maximum_in_territory>10000</ns1:maximum_in_territory>
@@ -26,6 +29,7 @@
 	<ns1:repetative>
 		<ns1:name>-grass</ns1:name>
 		<ns1:description>grass</ns1:description>
+		<ns1:LearningTip/>
 		<ns1:defaultX>1</ns1:defaultX>
 		<ns1:defaultY>1</ns1:defaultY>
 		<ns1:maximum_in_territory>1000000</ns1:maximum_in_territory>

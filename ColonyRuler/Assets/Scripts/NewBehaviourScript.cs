@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 using UnityEngine;
-using System.Runtime.InteropServices;
 
 /// <summary>
 /// Get username from website javascript
@@ -62,6 +56,6 @@ public class NewBehaviourScript : MonoBehaviour
 
     void Update()
     {
-        
+
     }
 }

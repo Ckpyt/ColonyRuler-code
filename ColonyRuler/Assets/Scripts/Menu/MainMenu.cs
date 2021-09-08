@@ -36,7 +36,7 @@ public class MainMenu : MonoBehaviour
     public Text m_userAttention;
     /// <summary> Currently active menu </summary>
     public static GameObject m_sActiveMenu;
-        
+
     /// <summary>
     /// Setter for s_userName
     /// </summary>
@@ -166,7 +166,7 @@ public class MainMenu : MonoBehaviour
                 m_saveGame.onClick.AddListener(Save);
                 m_loadGame = transform.Find("LoadGame").GetComponent<Button>();
                 m_loadGame.onClick.AddListener(Load);
-                
+
             }
             Settings.SettingsLoad(gameObject);
         }
@@ -184,7 +184,8 @@ public class MainMenu : MonoBehaviour
     void Update()
     {
         m_sActiveMenu = this.gameObject;
-        try { 
+        try
+        {
             if (m_userAttention != null)
             {
 #if UNITY_WEBGL
@@ -202,10 +203,11 @@ public class MainMenu : MonoBehaviour
                 m_userAttention.text = "";
 #endif
             }
-        }catch(Exception ex)
+        }
+        catch (Exception ex)
         {
             Debug.LogError("MainMenu Update exception:" + ex.Message);
         }
-        
+
     }
 }

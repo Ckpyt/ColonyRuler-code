@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 /// <summary>
 /// Resources that cannot be produced by the player.
@@ -86,7 +84,7 @@ public class MineralResource : AbstractObject
     /// <param name="worked"></param>
     public override void Working(long worked = 0)
     {
-        
+
     }
 
 }

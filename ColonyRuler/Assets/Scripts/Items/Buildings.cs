@@ -118,7 +118,7 @@ public class Buildings : Items
     /// </summary>
     public override string GetCountString()
     {
-        return m_count.ToString("F") + (m_living == null || m_living.m_toolsCount  == 0 
+        return m_count.ToString("F") + (m_living == null || m_living.m_toolsCount == 0
             ? "" : "/" + m_living.m_toolsCount.ToString());
     }
 

@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
@@ -14,12 +12,12 @@ public class HidingPanel : MonoBehaviour
     public GameObject m_panel;
     /// <summary> moving еру button from hidden to unhidden position of the panel  </summary>
     public Vector2 m_deltaPosition;
-    public bool m_isItUnhiden= true;
+    public bool m_isItUnhiden = true;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     public void OnClick()
@@ -36,11 +34,11 @@ public class HidingPanel : MonoBehaviour
         transform.position = transform.position + pos;
         transform.eulerAngles = new Vector3(0, 0, transform.eulerAngles.z + 180);
     }
-    
+
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }

@@ -1,9 +1,9 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.IO;
 using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
-using Newtonsoft.Json;
 
 
 namespace SendLocalization
@@ -26,12 +26,12 @@ namespace SendLocalization
             {
                 HttpClient client = new HttpClient();
                 client.DefaultRequestHeaders.Accept.Clear();
-                HttpResponseMessage response = 
+                HttpResponseMessage response =
                     await client.GetAsync(_siteName + "/api/colonyrulerapi?id=3&name=q");
                 if (response.StatusCode == HttpStatusCode.NotFound)
                 {
                     await client.GetAsync(_siteName);
-                    response = 
+                    response =
                         await client.GetAsync(_siteName + "/api/colonyrulerapi?id=3&name=q");
                 }
 
@@ -44,7 +44,7 @@ namespace SendLocalization
             }
         }
 
-        public static async Task SendText(string loc, int id, string text )
+        public static async Task SendText(string loc, int id, string text)
         {
             //var pass = "Cnhfnc,ehu(Y.if)";
             int hash = -1406264422;
@@ -55,7 +55,7 @@ namespace SendLocalization
 
             HttpContent cont = new StringContent(text);
 
-            Uri url = new Uri(_siteName + "/api/colonyrulerapi?id=" + id + 
+            Uri url = new Uri(_siteName + "/api/colonyrulerapi?id=" + id +
                               "&name=" + loc + "&hash=" + passHash);
 
             var responseMessage = await client.PostAsync(url, cont);
@@ -67,7 +67,7 @@ namespace SendLocalization
 
         public static async Task SendLocalization(string loc)
         {
-            var jsonTextUi = File.ReadAllText(loc +"\\" +  Localization.CUiFileName + ".json");
+            var jsonTextUi = File.ReadAllText(loc + "\\" + Localization.CUiFileName + ".json");
             var jsonTextItems = File.ReadAllText(loc + "\\" + Localization.CItemsFileName + ".json");
             var jsonTextHistory = File.ReadAllText(loc + "\\" + Localization.CHistoryFileName + ".json");
             await SendText(loc, 1, jsonTextUi);
@@ -85,7 +85,7 @@ namespace SendLocalization
                 int pos = curDir.Length - 1;
                 while (curDir[pos] != '\\')
                     pos--;
-                
+
                 curDir = curDir.Substring(0, pos);
             }
 

@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using UnityEditor;
-
-/// <summary>
+﻿/// <summary>
 /// Hunting class. 
 /// Each day should be hunted into different animals
 /// </summary>
@@ -26,9 +19,9 @@ class Hunting : GameMaterial
         float distance = 10;
 
         //calc attributes
-        foreach(var tool in m_tools)
+        foreach (var tool in m_tools)
         {
-            foreach(var effectPair in tool.m_toolLink.m_effects)
+            foreach (var effectPair in tool.m_toolLink.m_effects)
             {
                 var effect = effectPair.Value;
                 switch (effect.m_name)
@@ -56,7 +49,7 @@ class Hunting : GameMaterial
         long hunters = workers;
 
         // fight!
-        while(killedAnimals < count && !(scared && distance > attackDistance && ani.m_speed > speed) 
+        while (killedAnimals < count && !(scared && distance > attackDistance && ani.m_speed > speed)
             && squadreHealth > 0)
         {
             //attack animals
@@ -66,7 +59,7 @@ class Hunting : GameMaterial
                 killedAnimals = count - (int)((aniHealth / ani.m_protection) + (float.Equals(aniHealth % ani.m_protection, 0) ? 0f : 1f));
             }
             // animals attack
-            if(distance <= 1)
+            if (distance <= 1)
             {
                 float aniAttack = ani.m_attack * (count - killedAnimals) - protection * workers;
                 if (aniAttack > 0)

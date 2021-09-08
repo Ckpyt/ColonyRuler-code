@@ -99,7 +99,7 @@ public class GameAbstractItem : AbstractObject
                     }
                     catch (Exception ex)
                     {
-                        Debug.Log( "Object float parsing error:" + dependency[i] + " " +  ex.Message);
+                        Debug.Log("Object float parsing error:" + dependency[i] + " " + ex.Message);
                         return null;
                     }
                 }
@@ -109,7 +109,8 @@ public class GameAbstractItem : AbstractObject
                     while (str.Length > 1 && str[0] == ' ')
                         str = str.Substring(1);
 
-                }catch(Exception ex)
+                }
+                catch (Exception ex)
                 {
                     Debug.Log("Object splitting substrings error:" + dependency[i] + " " + ex.Message);
                     return null;

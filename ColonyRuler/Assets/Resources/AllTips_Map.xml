@@ -148,7 +148,7 @@ You can find this information on the color legend</ns1:description>
 		<ns1:defaultY>6</ns1:defaultY>
 		<ns1:targetIcon>clean vegetables</ns1:targetIcon>
 		<ns1:targetObject>Canvas\Button_plus</ns1:targetObject>
-		<ns1:nextTip>tip13</ns1:nextTip>
+		<ns1:nextTip/>
 		<ns1:yellowPositionVector/>
 		<ns1:yellowSizeVector/>
 		<ns1:isItUI>false</ns1:isItUI>
@@ -241,19 +241,7 @@ If the damaged stack has some damaged tools, it repears before producing somethi
 	</ns1:repetative>
 	<ns1:repetative>
 		<ns1:name>tip20</ns1:name>
-		<ns1:description>A wicker backet is using as a light storage also. If you have enough light storage space, it could be used for increasing the production warehouse size.</ns1:description>
-		<ns1:defaultX>6.2</ns1:defaultX>
-		<ns1:defaultY>6</ns1:defaultY>
-		<ns1:targetIcon>wicker basket</ns1:targetIcon>
-		<ns1:targetObject/>
-		<ns1:nextTip>tip21</ns1:nextTip>
-		<ns1:yellowPositionVector/>
-		<ns1:yellowSizeVector/>
-		<ns1:isItUI>false</ns1:isItUI>
-	</ns1:repetative>
-	<ns1:repetative>
-		<ns1:name>tip21</ns1:name>
-		<ns1:description>If you upgrade the warehouse size, the current amount of light or heavy storage items locks and cannot be used in any other way.</ns1:description>
+		<ns1:description>A wicker backet is using as a light storage also. If you have enough light storage space, it could be used for increasing the production warehouse size. It also striks your backet's stock size</ns1:description>
 		<ns1:defaultX>6.2</ns1:defaultX>
 		<ns1:defaultY>6</ns1:defaultY>
 		<ns1:targetIcon>wicker basket</ns1:targetIcon>
@@ -262,5 +250,41 @@ If the damaged stack has some damaged tools, it repears before producing somethi
 		<ns1:yellowPositionVector/>
 		<ns1:yellowSizeVector/>
 		<ns1:isItUI>false</ns1:isItUI>
+	</ns1:repetative>
+	<ns1:repetative>
+		<ns1:name>tip21</ns1:name>
+		<ns1:description>If you upgrade the warehouse size, the current amount of light or heavy items storage locks and cannot be used in any other way.</ns1:description>
+		<ns1:defaultX>6.2</ns1:defaultX>
+		<ns1:defaultY>6</ns1:defaultY>
+		<ns1:targetIcon>wicker basket</ns1:targetIcon>
+		<ns1:targetObject/>
+		<ns1:nextTip/>
+		<ns1:yellowPositionVector/>
+		<ns1:yellowSizeVector/>
+		<ns1:isItUI>false</ns1:isItUI>
+	</ns1:repetative>
+	<ns1:repetative>
+		<ns1:name>tip22</ns1:name>
+		<ns1:description>It is your the first house. Houses are using for living some people and have squadre for some decorative items. Your people cannot afford statues and pictures if they have no houses</ns1:description>
+		<ns1:defaultX>6.2</ns1:defaultX>
+		<ns1:defaultY>6</ns1:defaultY>
+		<ns1:targetIcon>hut of branches</ns1:targetIcon>
+		<ns1:targetObject/>
+		<ns1:nextTip>tip23</ns1:nextTip>
+		<ns1:yellowPositionVector/>
+		<ns1:yellowSizeVector/>
+		<ns1:isItUI>true</ns1:isItUI>
+	</ns1:repetative>
+	<ns1:repetative>
+		<ns1:name>tip23</ns1:name>
+		<ns1:description>if you don't need some houses, you can destroy them. But you cannot destroy houses if someone is living in it.</ns1:description>
+		<ns1:defaultX>6.2</ns1:defaultX>
+		<ns1:defaultY>6</ns1:defaultY>
+		<ns1:targetIcon/>
+		<ns1:targetObject/>
+		<ns1:nextTip/>
+		<ns1:yellowPositionVector/>
+		<ns1:yellowSizeVector/>
+		<ns1:isItUI>true</ns1:isItUI>
 	</ns1:repetative>
 </ns1:AllTips>

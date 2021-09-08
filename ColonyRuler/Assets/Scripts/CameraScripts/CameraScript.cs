@@ -78,18 +78,18 @@ public class CameraScript : MonoBehaviour
                         else
                         {
 #endif
-                            Vector3 newPos = ((Vector2)(Input.mousePosition));
+                        Vector3 newPos = ((Vector2)(Input.mousePosition));
 
-                            _mouseShift = (_mousePos - newPos);
-                            if (_mouseShift.magnitude > 0)
-                            {
-                                _mouseShift = m_main.ScreenToWorldPoint(_mousePos) - m_main.ScreenToWorldPoint(newPos);
-                                _mouseShift.x += m_main.transform.position.x;
-                                _mouseShift.y += m_main.transform.position.y;
-                                _mouseShift.z = z;
-                                m_main.transform.position = _mouseShift;
-                                _mousePos = newPos;
-                            }
+                        _mouseShift = (_mousePos - newPos);
+                        if (_mouseShift.magnitude > 0)
+                        {
+                            _mouseShift = m_main.ScreenToWorldPoint(_mousePos) - m_main.ScreenToWorldPoint(newPos);
+                            _mouseShift.x += m_main.transform.position.x;
+                            _mouseShift.y += m_main.transform.position.y;
+                            _mouseShift.z = z;
+                            m_main.transform.position = _mouseShift;
+                            _mousePos = newPos;
+                        }
 #if UNITY_ANDROID
                         }
 #else
@@ -108,7 +108,8 @@ public class CameraScript : MonoBehaviour
                     ScaleCamera(Input.mouseScrollDelta.y);
                 }
             }
-        }catch(Exception ex)
+        }
+        catch (Exception ex)
         {
             Debug.LogError("CameraScript Update Exception" + ex.Message);
         }

@@ -73,7 +73,8 @@ public class Emoji : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     /// </summary>
     void Start()
     {
-        try { 
+        try
+        {
             _tps = GetComponent<Tooltips>();
             _tps.m_tooltipText = "training";
             Localization.m_onLanguageChanged += ChangeLanguage;

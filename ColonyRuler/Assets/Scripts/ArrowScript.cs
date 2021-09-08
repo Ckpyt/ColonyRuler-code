@@ -62,7 +62,7 @@ public class ArrowScript : MonoBehaviour
     const float CYMinCorner = 1.3f;
 
     // diffrence between from coords and to coords
-    const float XDif = 0.3f;
+    const float CXDif = 0.3f;
 
     /// <summary>
     /// First frame initialization
@@ -286,7 +286,7 @@ public class ArrowScript : MonoBehaviour
             }
 
             _toCoord = CalcCross(m_to.transform.position, m_from.transform.position,
-                m_to.m_thisItem.m_isButtonsDisabled, XDif);
+                m_to.m_thisItem.m_isButtonsDisabled, CXDif);
             _fromCoord = CalcCross(m_from.transform.position, m_to.transform.position,
                 m_from.m_thisItem.m_isButtonsDisabled);
 
@@ -344,7 +344,7 @@ public class ArrowScript : MonoBehaviour
                 if (m_isItTool)
                 {
                     Color clr = rend.color;
-                    if(m_from.m_thisItem.m_count > 0)
+                    if (m_from.m_thisItem.m_count > 0)
                         clr = _sArrowToolsEnough;
                     else
                         clr = _sArrowToolsNotEnough;
@@ -359,7 +359,7 @@ public class ArrowScript : MonoBehaviour
                             rend.color = clr;
                     }
 
-                }   
+                }
                 else if (itm != null && (itm.m_workers == 0))
                     rend.color = _sArrowMaterialsNotUsed;
                 else if (matFrom != null && matFrom.m_productivity < 0)

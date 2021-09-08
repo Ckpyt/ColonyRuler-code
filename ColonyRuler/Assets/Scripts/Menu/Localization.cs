@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Text;
 using UnityEngine;
 
 /// <summary>
@@ -74,7 +73,7 @@ public class Localization : ISerializationCallbackReceiver
         m_sHistoryFullPath = Path.Combine(SCurrentLocalization.m_languages.
             m_languages[SCurrentLocalization.m_currentLanguage], CHistoryFileName);
         m_sItemsFullPath = Path.Combine(SCurrentLocalization.m_languages.
-            m_languages[SCurrentLocalization.m_currentLanguage], CItemsFileName); 
+            m_languages[SCurrentLocalization.m_currentLanguage], CItemsFileName);
         m_sUiFullPath = Path.Combine(SCurrentLocalization.m_languages.
             m_languages[SCurrentLocalization.m_currentLanguage], CUiFileName);
     }
@@ -215,7 +214,7 @@ public class Localization : ISerializationCallbackReceiver
             Awake();
             Load();
 
-            
+
 
             Camera.main.GetComponent<MainScript>().ChangeLanguage();
 

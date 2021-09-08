@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
@@ -10,7 +8,7 @@ public class AbstractAnimal : Resource
 {
     /// <summary> list of butchering materials </summary>
     [NonSerialized]
-    public DependencyCount [] m_butcheringPerPerson;
+    public DependencyCount[] m_butcheringPerPerson;
 
     /// <summary>
     /// parsing excel data into current format

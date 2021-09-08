@@ -1,8 +1,6 @@
-﻿using UnityEditor;
+﻿using System.IO;
 using UnityEditor.Build;
 using UnityEditor.Build.Reporting;
-using System.IO;
-using System;
 using UnityEngine;
 
 #if UNITY_EDITOR
@@ -26,9 +24,9 @@ public class Prebuild : IPreprocessBuildWithReport
         string curDir = Directory.GetCurrentDirectory();
         string filename = "XMLExport.exe";
         while (!File.Exists(curDir + "\\" + filename))
-                curDir = Directory.GetParent(curDir).FullName;
+            curDir = Directory.GetParent(curDir).FullName;
         string strCmdText = "/C " + filename;
-        System.Diagnostics.Process.Start("CMD.exe",strCmdText); //Start cmd process
+        System.Diagnostics.Process.Start("CMD.exe", strCmdText); //Start cmd process
 
         Debug.Log("xml files copied");
     }

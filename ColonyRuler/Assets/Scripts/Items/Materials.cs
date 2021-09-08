@@ -139,7 +139,7 @@ public class GameMaterial : GameAbstractItem
                     for (int id = 0; id < m_dependencyCount[iL].m_dependency.Count && count > 0; id++)
                     {
                         var dep = m_dependencyCount[iL].m_dependency[id];
-                        long tmpOrdr = (long)((dep.Count - dep.m_oredered) / 
+                        long tmpOrdr = (long)((dep.Count - dep.m_oredered) /
                             (effect * m_dependencyCount[iL].m_value[id]));
                         if (tmpOrdr > count)
                         {
@@ -204,8 +204,8 @@ public class GameMaterial : GameAbstractItem
                 toolsMax : m_tools[startIndex].m_toolsCount;
 
         wrks = wrks < toolsMax ? wrks : toolsMax;
-        
-        
+
+
         if (m_dependencyCount != null && m_dependencyCount.Length > 0 && !m_isItFix)
         {
             //current amount of workers depends on the resources count
@@ -216,12 +216,12 @@ public class GameMaterial : GameAbstractItem
                 {
                     var dep = m_dependencyCount[iL].m_dependency[i];
                     count += (int)(dep.Count / (effect * m_dependencyCount[iL].m_value[i]));
-                    if(dep.GetType() == typeof(Process))
+                    if (dep.GetType() == typeof(Process))
                     {
                         Process proc = dep as Process;
                         mulEffect = proc.m_mulEffect;
                     }
-                        
+
                 }
                 wrks = wrks < count ? wrks : count;
             }
@@ -280,8 +280,8 @@ public class GameMaterial : GameAbstractItem
                     for (int i = 0; i < dep.m_dependency.Count; i++)
                     {
 
-                        dep.m_dependency[i].m_count += 
-                            (dep.m_dependency[i].m_name == "empty field" || 
+                        dep.m_dependency[i].m_count +=
+                            (dep.m_dependency[i].m_name == "empty field" ||
                             dep.m_dependency[i].m_name == "farm field" ?
                             1 : mulEffect) * effectWorker * dep.m_value[i];
 
@@ -397,7 +397,7 @@ public class GameMaterial : GameAbstractItem
         foreach (var rep in itms.repetative)
         {
             //the special ability, works different
-            if (rep.name == "hunting") 
+            if (rep.name == "hunting")
                 Parse(new Hunting(), rep);
             else
                 Parse(new GameMaterial(), rep);

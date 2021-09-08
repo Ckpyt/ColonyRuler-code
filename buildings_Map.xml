@@ -2,6 +2,7 @@
 	<ns1:repetative>
 		<ns1:name>hut of branches</ns1:name>
 		<ns1:description>hut of branches</ns1:description>
+		<ns1:LearningTip>tip22</ns1:LearningTip>
 		<ns1:defaultX>-14.8</ns1:defaultX>
 		<ns1:defaultY>6</ns1:defaultY>
 		<ns1:produce_per_person>0.25</ns1:produce_per_person>
@@ -22,6 +23,7 @@
 	<ns1:repetative>
 		<ns1:name>log barraks</ns1:name>
 		<ns1:description>log barraks</ns1:description>
+		<ns1:LearningTip/>
 		<ns1:defaultX>13.2</ns1:defaultX>
 		<ns1:defaultY>-0.5</ns1:defaultY>
 		<ns1:produce_per_person>0.025</ns1:produce_per_person>
@@ -42,6 +44,7 @@
 	<ns1:repetative>
 		<ns1:name>log cabin</ns1:name>
 		<ns1:description>log cabin</ns1:description>
+		<ns1:LearningTip/>
 		<ns1:defaultX>13.2</ns1:defaultX>
 		<ns1:defaultY>6</ns1:defaultY>
 		<ns1:produce_per_person>0.025</ns1:produce_per_person>
@@ -62,6 +65,7 @@
 	<ns1:repetative>
 		<ns1:name>Long house</ns1:name>
 		<ns1:description>Long house</ns1:description>
+		<ns1:LearningTip/>
 		<ns1:defaultX>1</ns1:defaultX>
 		<ns1:defaultY>1</ns1:defaultY>
 		<ns1:produce_per_person>0.01</ns1:produce_per_person>
@@ -82,6 +86,7 @@
 	<ns1:repetative>
 		<ns1:name>warehouse</ns1:name>
 		<ns1:description>warehouse</ns1:description>
+		<ns1:LearningTip/>
 		<ns1:defaultX>20.2</ns1:defaultX>
 		<ns1:defaultY>6</ns1:defaultY>
 		<ns1:produce_per_person>0.02</ns1:produce_per_person>

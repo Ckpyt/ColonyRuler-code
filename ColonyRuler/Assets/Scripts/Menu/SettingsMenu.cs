@@ -57,7 +57,7 @@ public class SettingsMenu : SubMenu
 
         m_sliderProductivity.value = m_settings.m_productQueueLimit;
         m_fullTree.isOn = m_settings.m_isItFullTree;
-        m_languageSelector.ClearOptions(); 
+        m_languageSelector.ClearOptions();
         m_languageSelector.AddOptions(loc.m_languages.m_languages);
 
         m_languageSelector.value = loc.m_currentLanguage;

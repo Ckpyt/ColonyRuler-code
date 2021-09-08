@@ -11,9 +11,11 @@ using UnityEngine;
 /// AbstractObject -> resource -> AbstractAnimal -> WildAnimal
 /// AbstractObject -> resource -> AbstractAnimal -> DomesticAnimal
 /// AbstractObject -> GameAbstractItem -> Science
+/// AbstractObject -> GameAbstractItem -> GameMaterial
 /// AbstractObject -> GameAbstractItem -> GameMaterial -> Process
 /// AbstractObject -> GameAbstractItem -> GameMaterial -> Science
 /// AbstractObject -> GameAbstractItem -> GameMaterial -> Population
+/// AbstractObject -> GameAbstractItem -> GameMaterial -> Items
 /// AbstractObject -> GameAbstractItem -> GameMaterial -> Items -> Buildings
 /// </summary>
 [Serializable]
@@ -26,6 +28,11 @@ public class AbstractObject
     /// <summary> Can it disappear after research? </summary>
     [NonSerialized]
     public bool m_isItDestroyable = false;
+
+    /// <summary> a learning tip for a new researched item </summary>
+    private string m_LearningTipName = "";
+
+    public string LearningTipName { get { return m_LearningTipName; } }
 
     /// <summary> Is all buttons in IconScript disabled? </summary>
     [NonSerialized]
@@ -47,7 +54,7 @@ public class AbstractObject
     /// <summary> how many items here </summary>
     public float m_count = 0;
 
-    
+
     #region tooltips
     /// <summary> Tooltips for count. Could be changed by children. Should be localized </summary>
     [NonSerialized]
@@ -119,7 +126,7 @@ public class AbstractObject
     public virtual void ChangeLanguage()
     {
         if (m_name[0] == '-') return; //blocked item
-        
+
         try
         {
             Localization loc = Localization.GetLocalization();
@@ -164,7 +171,7 @@ public class AbstractObject
     /// <param name="worked"> how many workers had work on this day </param>
     public virtual void Working(long worked = 0)
     {
-        //throw new Exception("error: unrealised working into " + m_name);
+        //throw new Exception("error: unrealized working into " + m_name);
     }
 
     /// <summary>
@@ -308,11 +315,16 @@ public class AbstractObject
 
     /// <summary>
     /// Open item after research.
-    /// Should be changed by children
+    /// Should be override by children and call the base class
     /// </summary>
     public virtual void OpenItem()
     {
-
+        if (LearningTipName != null && LearningTipName.Length > 0)
+        {
+            var strs = LearningTipName.Split(';');
+            foreach (var str in strs)
+                LearningTip.CreateTip(str);
+        }
     }
 
     /// <summary>
@@ -349,7 +361,8 @@ public class AbstractObject
             TextReader reader = new StringReader(resorce.text);
 
             return (T)x.Deserialize(reader);
-        }catch(Exception ex)
+        }
+        catch (Exception ex)
         {
             Debug.LogException(ex);
             return default(T);
@@ -369,6 +382,7 @@ public class AbstractObject
         mat.m_text = rep.description;
         mat.m_defaultX = rep.defaultX;
         mat.m_defaultY = rep.defaultY;
+        mat.m_LearningTipName = rep.LearningTip;
 
         if (mat.m_name[0] == '-')
             mat.m_isItOpen--;

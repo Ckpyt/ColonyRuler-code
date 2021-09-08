@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 
 /// <summary>
 /// Production reguered some time with no workers.
@@ -91,7 +89,7 @@ class Process : GameMaterial
     public override string GetCountString()
     {
         float inProc = TotalInWaiting();
-        return m_count.ToString("F") + (inProc > 0 ? "\\" + inProc.ToString("F"): "");
+        return m_count.ToString("F") + (inProc > 0 ? "\\" + inProc.ToString("F") : "");
     }
 
     /// <summary>

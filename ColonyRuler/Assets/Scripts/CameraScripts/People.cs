@@ -56,7 +56,8 @@ public class People : MonoBehaviour
         {
             return _people;
         }
-        set { 
+        set
+        {
             _people = value;
             if (_people < 0)
                 _people = 0;
@@ -242,7 +243,7 @@ public class People : MonoBehaviour
         {
             m_lastYear = year;
             long maxPopul = CalcMaxPopulation();
-            if ((m_maxHappy > 0 && m_happy > 4 * m_maxHappy / 5) || 
+            if ((m_maxHappy > 0 && m_happy > 4 * m_maxHappy / 5) ||
                 (_people < 10 && _people > 0)) //for rising if population less than 10
             {
                 long newPeople = _people / 10;

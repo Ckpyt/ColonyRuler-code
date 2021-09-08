@@ -129,7 +129,7 @@ public class Items : GameMaterial
 
         foreach (var rep in itms.repetative)
         {
-            Parse(new Items(),  rep);
+            Parse(new Items(), rep);
         }
     }
 

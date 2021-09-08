@@ -2,3 +2,5 @@ call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\Tool
 xsd sch.xsd /t:c /c /n:ExcelLoading
 copy sch.xsd xmlexport\sch.xsd /Y
 copy sch.xsd ColonyRuler\Assets\Scripts\XMLScripts\sch.xsd /y
+copy sch.cs ColonyRuler\Assets\Scripts\XMLScripts\sch.cs /y
+copy sch.cs XMLExport\sch.cs /y

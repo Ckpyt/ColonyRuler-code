@@ -2,6 +2,7 @@
 	<ns1:repetative>
 		<ns1:name>wheat field</ns1:name>
 		<ns1:description>wheat field</ns1:description>
+		<ns1:LearningTip/>
 		<ns1:defaultX>-28.8</ns1:defaultX>
 		<ns1:defaultY>-20</ns1:defaultY>
 		<ns1:produce_per_person>0.1</ns1:produce_per_person>
@@ -16,6 +17,7 @@
 	<ns1:repetative>
 		<ns1:name>carrot field</ns1:name>
 		<ns1:description>carrot field</ns1:description>
+		<ns1:LearningTip/>
 		<ns1:defaultX>-14.8</ns1:defaultX>
 		<ns1:defaultY>-26.5</ns1:defaultY>
 		<ns1:produce_per_person>0.1</ns1:produce_per_person>
@@ -30,6 +32,7 @@
 	<ns1:repetative>
 		<ns1:name>farm field</ns1:name>
 		<ns1:description>farm field</ns1:description>
+		<ns1:LearningTip/>
 		<ns1:defaultX>-28.8</ns1:defaultX>
 		<ns1:defaultY>-13.5</ns1:defaultY>
 		<ns1:produce_per_person>0.1</ns1:produce_per_person>

@@ -293,7 +293,8 @@ public class Storage : MonoBehaviour
     /// </summary>
     void Update()
     {
-        try { 
+        try
+        {
             if (!TimeScript.m_isItPaused && !m_isItPaused)
             {
                 if (m_livingStorages.Count == 0)

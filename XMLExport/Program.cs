@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using ExcelLoading;
 using Microsoft.Office.Interop.Excel;
-using System.Xml.Serialization;
-using ExcelLoading;
 using Newtonsoft.Json;
+using System;
+using System.IO;
+using System.Xml.Serialization;
 
 namespace XMLExport
 {
@@ -91,7 +87,7 @@ namespace XMLExport
                     //fixing with Russian Excel
                     const string wrongName = "карта";
                     string lastName = map.Name.Substring(map.Name.Length - wrongName.Length);
-                    if(lastName == wrongName)
+                    if (lastName == wrongName)
                     {
                         string name = map.Name.Substring(0, map.Name.Length - wrongName.Length);
                         name += "Map";
@@ -129,8 +125,8 @@ namespace XMLExport
         static void ExportJson(string DestPath)
         {
 
-            ReadFile(DestPath + itmsMap, "items"); 
-            ReadFile(DestPath + ArmyMap, "army"); 
+            ReadFile(DestPath + itmsMap, "items");
+            ReadFile(DestPath + ArmyMap, "army");
             ReadFile(DestPath + buildingsMap, "buildings");
             ReadFile(DestPath + materialsMap, "materials");
             ReadFile(DestPath + scienceMap, "science");
@@ -159,7 +155,7 @@ namespace XMLExport
                 fl = fl.Replace(className, "XmlObject");
                 StringReader strReader = new StringReader(fl);
                 XmlObject itm = (XmlObject)x.Deserialize(strReader);
-                foreach(var obj in itm.repetative)
+                foreach (var obj in itm.repetative)
                 {
                     LocalizationItem litm = new LocalizationItem(obj.name, obj.description);
                     localizItems.m_itemList.Add(litm);
@@ -245,7 +241,7 @@ namespace XMLExport
         /// </summary>
         /// <typeparam name="T"> class for testing </typeparam>
         /// <param name="filename"> data for testing </param>
-        static void test<T> (string filename)
+        static void test<T>(string filename)
         {
             if (File.Exists(filename))
             {

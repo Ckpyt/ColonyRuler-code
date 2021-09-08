@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
@@ -11,7 +8,7 @@ using UnityEngine.UI;
 /// <summary>
 /// Class for making learning tips.
 /// </summary>
-class LearningTip: MonoBehaviour
+class LearningTip : MonoBehaviour
 {
     [Serializable]
     class LearningTipData
@@ -40,10 +37,14 @@ class LearningTip: MonoBehaviour
     }
 
     static Dictionary<string, LearningTipData> _sAllTips;
+    /// <summary> the name of the next tips after closing current one</summary>
+    static List<string> _sNextTips = new List<string>();
+    static LearningTip _sCurrentTip = null;
+
 
     /// <summary> if a player does not want to see tooltips, they should not be shown</summary>
     public static bool m_sCanShow = true;
-
+    /// <summary> name of the last tip</summary>
     public static string m_sLastTip = "";
 
     LearningTipData _data;
@@ -62,7 +63,7 @@ class LearningTip: MonoBehaviour
     /// </summary>
     public void Start()
     {
-        
+
     }
 
     /// <summary>
@@ -73,7 +74,7 @@ class LearningTip: MonoBehaviour
         _sAllTips = new Dictionary<string, LearningTipData>();
 
         var uparsedTips = AbstractObject.Load<ExcelLoading.AllTips>(filename);
-        foreach(var source in uparsedTips.repetative)
+        foreach (var source in uparsedTips.repetative)
         {
             var tipData = new LearningTipData();
             tipData.m_dependency = source.targetIcon;
@@ -84,7 +85,7 @@ class LearningTip: MonoBehaviour
             tipData.m_next = source.nextTip;
             tipData.m_isItUI = source.isItUI;
 
-            string[] positionVecor = source.yellowPositionVector == null ? new string[]{""} : source.yellowPositionVector.Split(';');
+            string[] positionVecor = source.yellowPositionVector == null ? new string[] { "" } : source.yellowPositionVector.Split(';');
             string[] sizeVector = source.yellowSizeVector == null ? new string[] { "" } : source.yellowSizeVector.Split(';');
             if (positionVecor.Length > 1 && sizeVector.Length > 1)
                 tipData.m_yellowBox = new Rect(
@@ -97,7 +98,7 @@ class LearningTip: MonoBehaviour
         }
 
         //making previous link
-        foreach(var tipPair in _sAllTips)
+        foreach (var tipPair in _sAllTips)
         {
             var tip = tipPair.Value;
             if (tip.m_next != null && tip.m_next.Length > 0)
@@ -114,7 +115,7 @@ class LearningTip: MonoBehaviour
                 {
                     Debug.Log("Key not found" + tip.m_name);
                 }
-                
+
             }
         }
     }
@@ -132,8 +133,9 @@ class LearningTip: MonoBehaviour
         var path = targetObjectName.Split('\\');
         Transform nextObj = parent.Find(path[0]);
 
-        if (path.Length > 1) {
-            string newPath = targetObjectName.Split(new[] { '\\' },2)[1];
+        if (path.Length > 1)
+        {
+            string newPath = targetObjectName.Split(new[] { '\\' }, 2)[1];
             SetTargetObject(obj, newPath, nextObj ?? parent);
         }
         else
@@ -170,18 +172,37 @@ class LearningTip: MonoBehaviour
     {
         if ((m_sCanShow == false && forseShow == false) || name.Length == 0) return;
 
+        if (_sCurrentTip != null)
+        {
+            if (_sCurrentTip.name.CompareTo(name) < 0)
+            {
+                var curData = _sCurrentTip._data;
+                _sNextTips.Add(curData.m_name);
+                _sCurrentTip.OnClose(false);
+                curData.m_isItShown = false;
+            }
+            else
+            {
+                _sNextTips.Add(name);
+                return;
+            }
+        }
+
         LearningTipData data;
         MainScript ms = Camera.main.GetComponent<MainScript>();
 
         try
         {
+
             data = _sAllTips[name];
         }
-        catch ( KeyNotFoundException)
+        catch (KeyNotFoundException ex)
         {
-            Debug.LogError("Tip " + name + " set as the next, but was not found");
+            Debug.LogError("Tip " + name + " set as the next, but was not found:" + ex.Message);
             return;
         }
+
+        if (data.m_isItShown && forseShow == false) return;
 
         AbstractObject depend = null;
         GameObject dependency = null;
@@ -216,21 +237,21 @@ class LearningTip: MonoBehaviour
         var txtObj = Canvas.Find("TipText").gameObject;
         var txt = txtObj.GetComponent<TextMeshProUGUI>();
         txt.text = data.m_text;
-        
+
 
         SetButton(Canvas, "PrevButton", thisObj.OnPrevious, data.m_previous != null);
         SetButton(Canvas, "NextButton", thisObj.OnNext, data.m_next != null && data.m_next.Length > 0);
-        SetButton(Canvas, "OkButton",   thisObj.OnClose, !(data.m_next != null && data.m_next.Length > 0));
+        SetButton(Canvas, "OkButton", thisObj.OnClose, !(data.m_next != null && data.m_next.Length > 0));
 
         var toggle = thisObj.m_showTips.GetComponent<Toggle>();
         toggle.isOn = m_sCanShow;
         toggle.onValueChanged.AddListener(delegate { thisObj.OnShowTip(); });
-        
+
 
         if (depend != null || dependency != null)
         {
             bool hasCanvas = false;
-            //TODO:yellow outline
+
             if (depend != null)
                 hasCanvas = SetTargetObject(thisObj, data.m_targetObject, depend.m_thisObject.transform);
             else
@@ -265,18 +286,21 @@ class LearningTip: MonoBehaviour
             data.m_outline.m_OutlineRect = rectB;
             data.m_outline.mb_IsItCanvas = thisObj._data.m_isItUI;
         }
-        //var outline = thisObj.m_targetObject.AddComponent<Outline>();
-        //outline.OutlineMode = Outline.Mode.OutlineAll;
-        //outline.OutlineColor = Color.yellow;
-        //outline.OutlineWidth = 5f;
 
-
+        _sCurrentTip = thisObj;
     }
 
+    /// <summary> the Unity delegate for OnClose event </summary>
+    public void OnClose() { OnClose(true); }
 
-    public void OnClose()
+    /// <summary>
+    /// Realization of closing event
+    /// </summary>
+    /// <param name="showNext">should be sshown the next tip from the queue?</param>
+    public void OnClose(bool showNext = true)
     {
-    
+        _sCurrentTip = null;
+        _data.m_isItShown = true;
         if (_data.m_outline != null)
         {
             Destroy(_data.m_outline.gameObject);
@@ -284,6 +308,14 @@ class LearningTip: MonoBehaviour
         }
         gameObject.SetActive(false);
         Destroy(gameObject);
+
+        if (_sNextTips.Count > 0 && showNext)
+        {
+            _sNextTips.Sort();
+            string name = _sNextTips[0];
+            _sNextTips.Remove(name);
+            CreateTip(name);
+        }
     }
 
     /// <summary>
@@ -293,8 +325,8 @@ class LearningTip: MonoBehaviour
     {
         if (_isItUnclicked)
         {
+            OnClose(false);
             CreateTip(_data.m_next, true);
-            OnClose();
             _isItUnclicked = false;
         }
     }
@@ -306,8 +338,8 @@ class LearningTip: MonoBehaviour
     {
         if (_isItUnclicked)
         {
+            OnClose(false);
             CreateTip(_data.m_previous, true);
-            OnClose();
             _isItUnclicked = false;
         }
     }

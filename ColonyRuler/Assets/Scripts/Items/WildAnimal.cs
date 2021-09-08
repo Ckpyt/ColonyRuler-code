@@ -1,7 +1,6 @@
-﻿using System.Collections;
+﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
-using System;
 
 /// <summary>
 /// Wild animals. Can rise on the empty territory. Attack hunters.
@@ -73,9 +72,10 @@ public class WildAnimal : AbstractAnimal
         try
         {
             ExcelLoading.WildAnimalItem aniRep = rep as ExcelLoading.WildAnimalItem;
-            if(aniRep.tamed_to.Length > 0 && aniRep.tamed_to[0] != '-')
+            if (aniRep.tamed_to.Length > 0 && aniRep.tamed_to[0] != '-')
                 m_tamedTo = DomesticAnimal.GetAnimal(aniRep.tamed_to);
-        }catch(Exception e)
+        }
+        catch (Exception e)
         {
             Debug.LogException(e);
         }
@@ -125,7 +125,7 @@ public class WildAnimal : AbstractAnimal
 
         foreach (var rep in itms.repetative)
         {
-             Parse(new WildAnimal(), rep);
+            Parse(new WildAnimal(), rep);
         }
     }
 }

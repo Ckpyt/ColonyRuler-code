@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class Outline : MonoBehaviour
@@ -23,7 +21,7 @@ public class Outline : MonoBehaviour
     {
         Initialization();
     }
-    
+
     void ChangePositionToChild(GameObject child, float scaleX, float scaleY, float posX, float posY)
     {
         child.transform.position = new Vector3(posX, posY, СPositionZ);
@@ -62,13 +60,13 @@ public class Outline : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(m_OutlineRect.size.x > 0)
+        if (m_OutlineRect.size.x > 0)
         {
-            if(mb_IsItInitialized == false)
+            if (mb_IsItInitialized == false)
             {
                 Initialization();
             }
         }
-        
+
     }
 }

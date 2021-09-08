@@ -2,6 +2,7 @@
 	<ns1:repetative>
 		<ns1:name>clay deposit</ns1:name>
 		<ns1:description>clay deposit</ns1:description>
+		<ns1:LearningTip/>
 		<ns1:defaultX>-21.8</ns1:defaultX>
 		<ns1:defaultY>12.5</ns1:defaultY>
 		<ns1:maximum_in_territory>1000000</ns1:maximum_in_territory>
@@ -9,6 +10,7 @@
 	<ns1:repetative>
 		<ns1:name>stone deposit</ns1:name>
 		<ns1:description>stone deposit</ns1:description>
+		<ns1:LearningTip/>
 		<ns1:defaultX>-14.8</ns1:defaultX>
 		<ns1:defaultY>12.5</ns1:defaultY>
 		<ns1:maximum_in_territory>1000000</ns1:maximum_in_territory>
@@ -16,6 +18,7 @@
 	<ns1:repetative>
 		<ns1:name>territory</ns1:name>
 		<ns1:description>territory</ns1:description>
+		<ns1:LearningTip/>
 		<ns1:defaultX>-30.3</ns1:defaultX>
 		<ns1:defaultY>-7</ns1:defaultY>
 		<ns1:maximum_in_territory>100000</ns1:maximum_in_territory>
@@ -23,6 +26,7 @@
 	<ns1:repetative>
 		<ns1:name>empty field</ns1:name>
 		<ns1:description>empty field</ns1:description>
+		<ns1:LearningTip/>
 		<ns1:defaultX>-27.3</ns1:defaultX>
 		<ns1:defaultY>-7</ns1:defaultY>
 		<ns1:maximum_in_territory>0</ns1:maximum_in_territory>
@@ -30,6 +34,7 @@
 	<ns1:repetative>
 		<ns1:name>raw meat</ns1:name>
 		<ns1:description>raw meat</ns1:description>
+		<ns1:LearningTip/>
 		<ns1:defaultX>1</ns1:defaultX>
 		<ns1:defaultY>1</ns1:defaultY>
 		<ns1:maximum_in_territory>0</ns1:maximum_in_territory>

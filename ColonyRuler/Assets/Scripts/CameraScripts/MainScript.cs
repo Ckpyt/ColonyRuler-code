@@ -155,7 +155,7 @@ public class MainScript : MonoBehaviour
         LearningTip.Load("AllTips_Map");
 
         GameAbstractItem.ParseDependency();
-        Population ppl = new Population {m_people = GetComponent<People>(), m_isItOpen = 1};
+        Population ppl = new Population { m_people = GetComponent<People>(), m_isItOpen = 1 };
         AbstractObject.m_sEverything.Add(ppl);
         Localization.GetLocalization().FirstLoad();
         Localization.GetLocalization().ChangeLanguage(Localization.GetLocalization().m_currentLanguage);
@@ -192,7 +192,7 @@ public class MainScript : MonoBehaviour
         _rightPanel.gameObject.SetActive(false);
         m_gameMenuPanel.gameObject.SetActive(true);
         Camera.main.GetComponent<TimeScript>().Pause();
-        var pos = new Vector3(1000, 1000) {z = transform.position.z};
+        var pos = new Vector3(1000, 1000) { z = transform.position.z };
         _savedPos = transform.position;
         transform.position = pos;
     }
@@ -338,9 +338,9 @@ public class MainScript : MonoBehaviour
 
             if (itm?.m_dependencyCount == null) continue;
             foreach (var depList in itm.m_dependencyCount)
-            foreach (var dep in depList.m_dependency.Where(
-                dep => dep.m_isItOpen > 0))
-                ArrowScript.NewStoredArrowScript(dep.m_thisObject, itm.m_thisObject);
+                foreach (var dep in depList.m_dependency.Where(
+                    dep => dep.m_isItOpen > 0))
+                    ArrowScript.NewStoredArrowScript(dep.m_thisObject, itm.m_thisObject);
         }
     }
 

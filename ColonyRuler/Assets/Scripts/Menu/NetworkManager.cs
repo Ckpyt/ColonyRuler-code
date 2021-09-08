@@ -187,7 +187,8 @@ public class NetworkManager : SubMenu
     /// </summary>
     public override void Update()
     {
-        try { 
+        try
+        {
             base.Update();
             if (_sCurrent != null && _sCurrent.isDone && _sAnswer != null)
             {

@@ -2,6 +2,7 @@
 	<ns1:repetative>
 		<ns1:name>stone axe</ns1:name>
 		<ns1:description>stone axe</ns1:description>
+		<ns1:LearningTip/>
 		<ns1:defaultX>6.2</ns1:defaultX>
 		<ns1:defaultY>12.5</ns1:defaultY>
 		<ns1:produce_per_person>1</ns1:produce_per_person>
@@ -21,6 +22,7 @@
 	<ns1:repetative>
 		<ns1:name>stone hummer</ns1:name>
 		<ns1:description>stone hummer</ns1:description>
+		<ns1:LearningTip/>
 		<ns1:defaultX>-14.8</ns1:defaultX>
 		<ns1:defaultY>19</ns1:defaultY>
 		<ns1:produce_per_person>0.5</ns1:produce_per_person>
@@ -40,6 +42,7 @@
 	<ns1:repetative>
 		<ns1:name>stone knife</ns1:name>
 		<ns1:description>stone knife</ns1:description>
+		<ns1:LearningTip>tip16</ns1:LearningTip>
 		<ns1:defaultX>-7.8</ns1:defaultX>
 		<ns1:defaultY>12.5</ns1:defaultY>
 		<ns1:produce_per_person>1</ns1:produce_per_person>
@@ -59,6 +62,7 @@
 	<ns1:repetative>
 		<ns1:name>wicker basket</ns1:name>
 		<ns1:description>wicker basket</ns1:description>
+		<ns1:LearningTip>tip16;tip19</ns1:LearningTip>
 		<ns1:defaultX>-14.8</ns1:defaultX>
 		<ns1:defaultY>-7</ns1:defaultY>
 		<ns1:produce_per_person>1</ns1:produce_per_person>
@@ -78,6 +82,7 @@
 	<ns1:repetative>
 		<ns1:name>stone spear</ns1:name>
 		<ns1:description>stone spear</ns1:description>
+		<ns1:LearningTip/>
 		<ns1:defaultX>-0.800000000000001</ns1:defaultX>
 		<ns1:defaultY>19</ns1:defaultY>
 		<ns1:produce_per_person>0.5</ns1:produce_per_person>
@@ -97,6 +102,7 @@
 	<ns1:repetative>
 		<ns1:name>rod shield</ns1:name>
 		<ns1:description>rod shield</ns1:description>
+		<ns1:LearningTip/>
 		<ns1:defaultX>1</ns1:defaultX>
 		<ns1:defaultY>1</ns1:defaultY>
 		<ns1:produce_per_person>0.5</ns1:produce_per_person>
@@ -116,6 +122,7 @@
 	<ns1:repetative>
 		<ns1:name>bone needle</ns1:name>
 		<ns1:description>bone needle</ns1:description>
+		<ns1:LearningTip/>
 		<ns1:defaultX>20.2</ns1:defaultX>
 		<ns1:defaultY>-13.5</ns1:defaultY>
 		<ns1:produce_per_person>1</ns1:produce_per_person>
@@ -135,6 +142,7 @@
 	<ns1:repetative>
 		<ns1:name>basket drum</ns1:name>
 		<ns1:description>basket drum</ns1:description>
+		<ns1:LearningTip/>
 		<ns1:defaultX>1</ns1:defaultX>
 		<ns1:defaultY>1</ns1:defaultY>
 		<ns1:produce_per_person>0.33</ns1:produce_per_person>
@@ -154,6 +162,7 @@
 	<ns1:repetative>
 		<ns1:name>leather shirt</ns1:name>
 		<ns1:description>leather shirt</ns1:description>
+		<ns1:LearningTip/>
 		<ns1:defaultX>-7.8</ns1:defaultX>
 		<ns1:defaultY>-20</ns1:defaultY>
 		<ns1:produce_per_person>0.5</ns1:produce_per_person>
@@ -173,6 +182,7 @@
 	<ns1:repetative>
 		<ns1:name>leather shoe</ns1:name>
 		<ns1:description>leather shoe</ns1:description>
+		<ns1:LearningTip/>
 		<ns1:defaultX>-0.800000000000001</ns1:defaultX>
 		<ns1:defaultY>-20</ns1:defaultY>
 		<ns1:produce_per_person>1</ns1:produce_per_person>
@@ -192,6 +202,7 @@
 	<ns1:repetative>
 		<ns1:name>leather pants</ns1:name>
 		<ns1:description>leather pants</ns1:description>
+		<ns1:LearningTip/>
 		<ns1:defaultX>6.2</ns1:defaultX>
 		<ns1:defaultY>-20</ns1:defaultY>
 		<ns1:produce_per_person>0.5</ns1:produce_per_person>
@@ -211,6 +222,7 @@
 	<ns1:repetative>
 		<ns1:name>stone statue</ns1:name>
 		<ns1:description>stone statue</ns1:description>
+		<ns1:LearningTip/>
 		<ns1:defaultX>6.2</ns1:defaultX>
 		<ns1:defaultY>-13.5</ns1:defaultY>
 		<ns1:produce_per_person>1</ns1:produce_per_person>
@@ -230,6 +242,7 @@
 	<ns1:repetative>
 		<ns1:name>bone necklace</ns1:name>
 		<ns1:description>bone necklace</ns1:description>
+		<ns1:LearningTip/>
 		<ns1:defaultX>13.2</ns1:defaultX>
 		<ns1:defaultY>-20</ns1:defaultY>
 		<ns1:produce_per_person>1</ns1:produce_per_person>
@@ -249,6 +262,7 @@
 	<ns1:repetative>
 		<ns1:name>leather braslete</ns1:name>
 		<ns1:description>leather braslete</ns1:description>
+		<ns1:LearningTip/>
 		<ns1:defaultX>-14.8</ns1:defaultX>
 		<ns1:defaultY>-20</ns1:defaultY>
 		<ns1:produce_per_person>1</ns1:produce_per_person>
@@ -268,6 +282,7 @@
 	<ns1:repetative>
 		<ns1:name>bone armor</ns1:name>
 		<ns1:description>bone armor</ns1:description>
+		<ns1:LearningTip/>
 		<ns1:defaultX>1</ns1:defaultX>
 		<ns1:defaultY>1</ns1:defaultY>
 		<ns1:produce_per_person>0.5</ns1:produce_per_person>
@@ -287,6 +302,7 @@
 	<ns1:repetative>
 		<ns1:name>bow</ns1:name>
 		<ns1:description>bow</ns1:description>
+		<ns1:LearningTip/>
 		<ns1:defaultX>1</ns1:defaultX>
 		<ns1:defaultY>1</ns1:defaultY>
 		<ns1:produce_per_person>0.1</ns1:produce_per_person>
@@ -306,6 +322,7 @@
 	<ns1:repetative>
 		<ns1:name>rough plate</ns1:name>
 		<ns1:description>rough plate</ns1:description>
+		<ns1:LearningTip/>
 		<ns1:defaultX>-28.8</ns1:defaultX>
 		<ns1:defaultY>6</ns1:defaultY>
 		<ns1:produce_per_person>1</ns1:produce_per_person>
@@ -325,6 +342,7 @@
 	<ns1:repetative>
 		<ns1:name>rough pot</ns1:name>
 		<ns1:description>rough pot</ns1:description>
+		<ns1:LearningTip/>
 		<ns1:defaultX>-28.8</ns1:defaultX>
 		<ns1:defaultY>-0.5</ns1:defaultY>
 		<ns1:produce_per_person>0.5</ns1:produce_per_person>
@@ -344,6 +362,7 @@
 	<ns1:repetative>
 		<ns1:name>stone hoe</ns1:name>
 		<ns1:description>stone hoe</ns1:description>
+		<ns1:LearningTip/>
 		<ns1:defaultX>-14.8</ns1:defaultX>
 		<ns1:defaultY>25.5</ns1:defaultY>
 		<ns1:produce_per_person>1</ns1:produce_per_person>
@@ -363,6 +382,7 @@
 	<ns1:repetative>
 		<ns1:name>prmitive harrow</ns1:name>
 		<ns1:description>prmitive harrow</ns1:description>
+		<ns1:LearningTip/>
 		<ns1:defaultX>-21.8</ns1:defaultX>
 		<ns1:defaultY>19</ns1:defaultY>
 		<ns1:produce_per_person>1</ns1:produce_per_person>
@@ -382,6 +402,7 @@
 	<ns1:repetative>
 		<ns1:name>ceramic figure</ns1:name>
 		<ns1:description>ceramic figure</ns1:description>
+		<ns1:LearningTip/>
 		<ns1:defaultX>-28.8</ns1:defaultX>
 		<ns1:defaultY>12.5</ns1:defaultY>
 		<ns1:produce_per_person>1</ns1:produce_per_person>
@@ -401,6 +422,7 @@
 	<ns1:repetative>
 		<ns1:name>-primitive arrow</ns1:name>
 		<ns1:description>primitive arrow</ns1:description>
+		<ns1:LearningTip/>
 		<ns1:defaultX>1</ns1:defaultX>
 		<ns1:defaultY>1</ns1:defaultY>
 		<ns1:produce_per_person>5</ns1:produce_per_person>

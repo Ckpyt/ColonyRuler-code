@@ -2,6 +2,7 @@
 	<ns1:repetative>
 		<ns1:name>stone cutting</ns1:name>
 		<ns1:description>stone cutting</ns1:description>
+		<ns1:LearningTip/>
 		<ns1:defaultX>-7.8</ns1:defaultX>
 		<ns1:defaultY>6</ns1:defaultY>
 		<ns1:produce_per_person>2</ns1:produce_per_person>
@@ -10,11 +11,11 @@
 		<ns1:final_cost>49.7403846153846</ns1:final_cost>
 		<ns1:opens>stone, stone axe, stone hummer, stone spear, advenced stone cutting, buildings, hand pottery, stone deposit</ns1:opens>
 		<ns1:closes/>
-		<ns1:tips/>
 	</ns1:repetative>
 	<ns1:repetative>
 		<ns1:name>hand pottery</ns1:name>
 		<ns1:description>hand pottery</ns1:description>
+		<ns1:LearningTip/>
 		<ns1:defaultX>-0.800000000000001</ns1:defaultX>
 		<ns1:defaultY>6</ns1:defaultY>
 		<ns1:produce_per_person>2</ns1:produce_per_person>
@@ -23,11 +24,11 @@
 		<ns1:final_cost>99.4807692307692</ns1:final_cost>
 		<ns1:opens>clay, rough plate, rough pot, ceramic figure, coocked food, clay deposit</ns1:opens>
 		<ns1:closes/>
-		<ns1:tips/>
 	</ns1:repetative>
 	<ns1:repetative>
 		<ns1:name>rod using</ns1:name>
 		<ns1:description>rod using</ns1:description>
+		<ns1:LearningTip>tip13</ns1:LearningTip>
 		<ns1:defaultX>-14.8</ns1:defaultX>
 		<ns1:defaultY>-0.5</ns1:defaultY>
 		<ns1:produce_per_person>2</ns1:produce_per_person>
@@ -36,11 +37,11 @@
 		<ns1:final_cost>150.642307692308</ns1:final_cost>
 		<ns1:opens>wicker basket, -celebrations, hunters, rods, hut of branches, swamp thing, farming</ns1:opens>
 		<ns1:closes/>
-		<ns1:tips>tip16</ns1:tips>
 	</ns1:repetative>
 	<ns1:repetative>
 		<ns1:name>advenced stone cutting</ns1:name>
 		<ns1:description>advenced stone cutting</ns1:description>
+		<ns1:LearningTip/>
 		<ns1:defaultX>-7.8</ns1:defaultX>
 		<ns1:defaultY>12.5</ns1:defaultY>
 		<ns1:produce_per_person>2</ns1:produce_per_person>
@@ -49,11 +50,11 @@
 		<ns1:final_cost>199.5</ns1:final_cost>
 		<ns1:opens>stone knife, stone statue, bone carving, leather working, farming</ns1:opens>
 		<ns1:closes/>
-		<ns1:tips/>
 	</ns1:repetative>
 	<ns1:repetative>
 		<ns1:name>leather working</ns1:name>
 		<ns1:description>leather working</ns1:description>
+		<ns1:LearningTip/>
 		<ns1:defaultX>-0.800000000000001</ns1:defaultX>
 		<ns1:defaultY>-13.5</ns1:defaultY>
 		<ns1:produce_per_person>2</ns1:produce_per_person>
@@ -62,11 +63,11 @@
 		<ns1:final_cost>189.480769230769</ns1:final_cost>
 		<ns1:opens>leather cloth, leather braslete, -celebrations, fur, leather</ns1:opens>
 		<ns1:closes/>
-		<ns1:tips/>
 	</ns1:repetative>
 	<ns1:repetative>
 		<ns1:name>leather cloth</ns1:name>
 		<ns1:description>leather cloth</ns1:description>
+		<ns1:LearningTip/>
 		<ns1:defaultX>6.2</ns1:defaultX>
 		<ns1:defaultY>-20</ns1:defaultY>
 		<ns1:produce_per_person>2</ns1:produce_per_person>
@@ -75,11 +76,11 @@
 		<ns1:final_cost>283.7</ns1:final_cost>
 		<ns1:opens>leather shirt, leather pants, leather shoe</ns1:opens>
 		<ns1:closes/>
-		<ns1:tips/>
 	</ns1:repetative>
 	<ns1:repetative>
 		<ns1:name>-celebrations</ns1:name>
 		<ns1:description>-celebrations</ns1:description>
+		<ns1:LearningTip/>
 		<ns1:defaultX>1</ns1:defaultX>
 		<ns1:defaultY>1</ns1:defaultY>
 		<ns1:produce_per_person>2</ns1:produce_per_person>
@@ -88,11 +89,11 @@
 		<ns1:final_cost>310.594230769231</ns1:final_cost>
 		<ns1:opens>basket drum, Long house</ns1:opens>
 		<ns1:closes/>
-		<ns1:tips/>
 	</ns1:repetative>
 	<ns1:repetative>
 		<ns1:name>bone carving</ns1:name>
 		<ns1:description>bone carving</ns1:description>
+		<ns1:LearningTip/>
 		<ns1:defaultX>-7.8</ns1:defaultX>
 		<ns1:defaultY>19</ns1:defaultY>
 		<ns1:produce_per_person>1</ns1:produce_per_person>
@@ -101,11 +102,11 @@
 		<ns1:final_cost>340</ns1:final_cost>
 		<ns1:opens>bone necklace, bone needle, bone, hunters</ns1:opens>
 		<ns1:closes/>
-		<ns1:tips/>
 	</ns1:repetative>
 	<ns1:repetative>
 		<ns1:name>buildings</ns1:name>
 		<ns1:description>buildings</ns1:description>
+		<ns1:LearningTip/>
 		<ns1:defaultX>13.2</ns1:defaultX>
 		<ns1:defaultY>6</ns1:defaultY>
 		<ns1:produce_per_person>1</ns1:produce_per_person>
@@ -114,11 +115,11 @@
 		<ns1:final_cost>399.9</ns1:final_cost>
 		<ns1:opens>log, log barraks, Long house, warehouse, family cabin, forest, primitive farming tools</ns1:opens>
 		<ns1:closes/>
-		<ns1:tips/>
 	</ns1:repetative>
 	<ns1:repetative>
 		<ns1:name>hunters</ns1:name>
 		<ns1:description>hunters</ns1:description>
+		<ns1:LearningTip/>
 		<ns1:defaultX>1</ns1:defaultX>
 		<ns1:defaultY>1</ns1:defaultY>
 		<ns1:produce_per_person>1</ns1:produce_per_person>
@@ -127,11 +128,11 @@
 		<ns1:final_cost>442</ns1:final_cost>
 		<ns1:opens>-spearman, -archer, bone armor, bow, -primitive arrow, -feather, rod shield</ns1:opens>
 		<ns1:closes/>
-		<ns1:tips/>
 	</ns1:repetative>
 	<ns1:repetative>
 		<ns1:name>farming</ns1:name>
 		<ns1:description>farming</ns1:description>
+		<ns1:LearningTip/>
 		<ns1:defaultX>-28.8</ns1:defaultX>
 		<ns1:defaultY>-13.5</ns1:defaultY>
 		<ns1:produce_per_person>1</ns1:produce_per_person>
@@ -140,11 +141,11 @@
 		<ns1:final_cost>500.846153846154</ns1:final_cost>
 		<ns1:opens>territory, empty field, farm field, harvest carrots, harvest wheat, grain, carrot, flour, wheat field, carrot field, primitive farming tools, coocked food</ns1:opens>
 		<ns1:closes/>
-		<ns1:tips/>
 	</ns1:repetative>
 	<ns1:repetative>
 		<ns1:name>primitive farming tools</ns1:name>
 		<ns1:description>primitive farming tools</ns1:description>
+		<ns1:LearningTip/>
 		<ns1:defaultX>-21.8</ns1:defaultX>
 		<ns1:defaultY>19</ns1:defaultY>
 		<ns1:produce_per_person>1</ns1:produce_per_person>
@@ -153,11 +154,11 @@
 		<ns1:final_cost>550</ns1:final_cost>
 		<ns1:opens>family cabin, prmitive harrow, stone hoe</ns1:opens>
 		<ns1:closes/>
-		<ns1:tips/>
 	</ns1:repetative>
 	<ns1:repetative>
 		<ns1:name>family cabin</ns1:name>
 		<ns1:description>family cabin</ns1:description>
+		<ns1:LearningTip/>
 		<ns1:defaultX>13.2</ns1:defaultX>
 		<ns1:defaultY>6</ns1:defaultY>
 		<ns1:produce_per_person>1</ns1:produce_per_person>
@@ -166,11 +167,11 @@
 		<ns1:final_cost>600</ns1:final_cost>
 		<ns1:opens>log cabin</ns1:opens>
 		<ns1:closes/>
-		<ns1:tips/>
 	</ns1:repetative>
 	<ns1:repetative>
 		<ns1:name>coocked food</ns1:name>
 		<ns1:description>coocked food</ns1:description>
+		<ns1:LearningTip/>
 		<ns1:defaultX>-0.800000000000001</ns1:defaultX>
 		<ns1:defaultY>6</ns1:defaultY>
 		<ns1:produce_per_person>1</ns1:produce_per_person>
@@ -179,11 +180,11 @@
 		<ns1:final_cost>760</ns1:final_cost>
 		<ns1:opens>smoked food, soup</ns1:opens>
 		<ns1:closes/>
-		<ns1:tips/>
 	</ns1:repetative>
 	<ns1:repetative>
 		<ns1:name>-brickwall</ns1:name>
 		<ns1:description>brickwall</ns1:description>
+		<ns1:LearningTip/>
 		<ns1:defaultX>1</ns1:defaultX>
 		<ns1:defaultY>1</ns1:defaultY>
 		<ns1:produce_per_person>1</ns1:produce_per_person>
@@ -192,6 +193,5 @@
 		<ns1:final_cost>280</ns1:final_cost>
 		<ns1:opens>brick</ns1:opens>
 		<ns1:closes/>
-		<ns1:tips/>
 	</ns1:repetative>
 </ns1:science>
