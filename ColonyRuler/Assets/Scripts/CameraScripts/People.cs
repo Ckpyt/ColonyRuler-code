@@ -242,9 +242,14 @@ public class People : MonoBehaviour
         if (year != m_lastYear)
         {
             m_lastYear = year;
+            if (_people < 10 && _people > 0) //for rising if population less than 10)
+            {
+                _people++;
+                return;
+            }
+
             long maxPopul = CalcMaxPopulation();
-            if ((m_maxHappy > 0 && m_happy > 4 * m_maxHappy / 5) ||
-                (_people < 10 && _people > 0)) //for rising if population less than 10
+            if (m_maxHappy > 0 && m_happy > 4 * m_maxHappy / 5)  
             {
                 long newPeople = _people / 10;
                 if (newPeople == 0) newPeople++; //for rising if population less than 10

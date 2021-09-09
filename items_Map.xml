@@ -62,7 +62,7 @@
 	<ns1:repetative>
 		<ns1:name>wicker basket</ns1:name>
 		<ns1:description>wicker basket</ns1:description>
-		<ns1:LearningTip>tip16;tip19</ns1:LearningTip>
+		<ns1:LearningTip>tip16;tip20</ns1:LearningTip>
 		<ns1:defaultX>-14.8</ns1:defaultX>
 		<ns1:defaultY>-7</ns1:defaultY>
 		<ns1:produce_per_person>1</ns1:produce_per_person>

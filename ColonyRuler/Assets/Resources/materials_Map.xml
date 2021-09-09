@@ -16,7 +16,7 @@
 	<ns1:repetative>
 		<ns1:name>wild vegetables</ns1:name>
 		<ns1:description>wild vegetables</ns1:description>
-		<ns1:LearningTip/>
+		<ns1:LearningTip>tip1</ns1:LearningTip>
 		<ns1:defaultX>-0.800000000000001</ns1:defaultX>
 		<ns1:defaultY>-7</ns1:defaultY>
 		<ns1:produce_per_person>1.3</ns1:produce_per_person>

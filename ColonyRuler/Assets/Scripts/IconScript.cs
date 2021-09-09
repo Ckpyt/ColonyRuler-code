@@ -58,7 +58,7 @@ public class IconScript : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
     /// <summary> 2 lines position </summary>
     const float CTwoLines = 0.46f;
 
-    bool IsTwoLinesEnabled = false;
+    //bool IsTwoLinesEnabled = false;
 
     #endregion
     /// <summary> all output arrows </summary>
@@ -380,7 +380,7 @@ public class IconScript : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
     /// Select current icon.
     /// All arrows should be displayed
     /// </summary>
-    void SelectIcon()
+   public void SelectIcon()
     {
         if (_sSelectedIcon != null)
             _sSelectedIcon.UnselectIcon();

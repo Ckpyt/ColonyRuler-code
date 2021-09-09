@@ -234,7 +234,7 @@ If the damaged stack has some damaged tools, it repears before producing somethi
 		<ns1:defaultY>6</ns1:defaultY>
 		<ns1:targetIcon>wicker basket</ns1:targetIcon>
 		<ns1:targetObject/>
-		<ns1:nextTip>tip20</ns1:nextTip>
+		<ns1:nextTip/>
 		<ns1:yellowPositionVector/>
 		<ns1:yellowSizeVector/>
 		<ns1:isItUI>false</ns1:isItUI>
@@ -265,7 +265,10 @@ If the damaged stack has some damaged tools, it repears before producing somethi
 	</ns1:repetative>
 	<ns1:repetative>
 		<ns1:name>tip22</ns1:name>
-		<ns1:description>It is your the first house. Houses are using for living some people and have squadre for some decorative items. Your people cannot afford statues and pictures if they have no houses</ns1:description>
+		<ns1:description>It is your the first house. 
+Houses are using for living some people and have squadre for some decorative items. 
+Your people cannot afford statues and pictures if they have no houses
+As tools, houses can be damaged and destroyed. Keep an eye on them!</ns1:description>
 		<ns1:defaultX>6.2</ns1:defaultX>
 		<ns1:defaultY>6</ns1:defaultY>
 		<ns1:targetIcon>hut of branches</ns1:targetIcon>
@@ -273,18 +276,19 @@ If the damaged stack has some damaged tools, it repears before producing somethi
 		<ns1:nextTip>tip23</ns1:nextTip>
 		<ns1:yellowPositionVector/>
 		<ns1:yellowSizeVector/>
-		<ns1:isItUI>true</ns1:isItUI>
+		<ns1:isItUI>false</ns1:isItUI>
 	</ns1:repetative>
 	<ns1:repetative>
 		<ns1:name>tip23</ns1:name>
-		<ns1:description>if you don't need some houses, you can destroy them. But you cannot destroy houses if someone is living in it.</ns1:description>
+		<ns1:description>if you don't need some houses, you can destroy them. 
+But you cannot destroy houses while someone is living in it.</ns1:description>
 		<ns1:defaultX>6.2</ns1:defaultX>
 		<ns1:defaultY>6</ns1:defaultY>
-		<ns1:targetIcon/>
-		<ns1:targetObject/>
+		<ns1:targetIcon>hut of branches</ns1:targetIcon>
+		<ns1:targetObject>Canvas\Button_up</ns1:targetObject>
 		<ns1:nextTip/>
 		<ns1:yellowPositionVector/>
 		<ns1:yellowSizeVector/>
-		<ns1:isItUI>true</ns1:isItUI>
+		<ns1:isItUI>false</ns1:isItUI>
 	</ns1:repetative>
 </ns1:AllTips>

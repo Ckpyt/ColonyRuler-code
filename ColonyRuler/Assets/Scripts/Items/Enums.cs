@@ -27,6 +27,18 @@ public enum ContainerType
 /// </summary>
 public static class ContainerTypeMethods
 {
+    const string living = "living";
+    const int living_length = 6;
+    const string light_storage = "light_storage";
+    const string heavy_storage = "heavy_storage";
+    const int light_storage_length = 13;
+    const string territory = "territory";
+    const int territory_length = 9;
+    const string big_animal = "big_animal";
+    const int big_animal_length = 10;
+    const string small_animal = "small_animal";
+    const int small_animal_length = 12;
+
     /// <summary>
     /// Convert Container type to string
     /// </summary>
@@ -36,17 +48,17 @@ public static class ContainerTypeMethods
         switch (type)
         {
             case ContainerType.people:
-                return "living";
+                return living;
             case ContainerType.light:
-                return "light_storage";
+                return light_storage;
             case ContainerType.heavy:
-                return "heavy_storage";
+                return heavy_storage;
             case ContainerType.territory:
-                return "territory";
+                return territory;
             case ContainerType.bigAnimals:
-                return "big_animal";
+                return big_animal;
             case ContainerType.smallAnimals:
-                return "small_animal";
+                return small_animal;
             default:
                 throw new Exception("ContainerType::ToString: unexpected value");
         }
@@ -60,11 +72,11 @@ public static class ContainerTypeMethods
     {
         switch (type.Length)
         {
-            case 6: return type == "living";
-            case 13: return type == "light_storage" || type == "heavy_storage";
-            case 12: return type == "small_animal";
-            case 10: return type == "big_animal";
-            case 9: return type == "territory";
+            case living_length: return type == living;
+            case light_storage_length: return type == light_storage || type == heavy_storage;
+            case small_animal_length: return type == small_animal;
+            case big_animal_length: return type == big_animal;
+            case territory_length: return type == territory;
             default: return false;
         }
     }
@@ -78,17 +90,17 @@ public static class ContainerTypeMethods
         type = type.ToLower();
         switch (type)
         {
-            case "living":
+            case living:
                 return ContainerType.people;
-            case "light_storage":
+            case light_storage:
                 return ContainerType.light;
-            case "heavy_storage":
+            case heavy_storage:
                 return ContainerType.heavy;
-            case "territory":
+            case territory:
                 return ContainerType.territory;
-            case "big_animal":
+            case big_animal:
                 return ContainerType.bigAnimals;
-            case "small_animal":
+            case small_animal:
                 return ContainerType.smallAnimals;
             default:
                 throw new Exception("ContainerType::parse: unexpected value:" + type);

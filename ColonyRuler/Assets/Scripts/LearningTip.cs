@@ -174,11 +174,13 @@ class LearningTip : MonoBehaviour
 
         if (_sCurrentTip != null)
         {
-            if (_sCurrentTip.name.CompareTo(name) < 0)
+            if (_sCurrentTip._data.m_name == name) 
+                return;
+            if (_sCurrentTip._data.m_name.CompareTo(name) > 0)
             {
                 var curData = _sCurrentTip._data;
                 _sNextTips.Add(curData.m_name);
-                _sCurrentTip.OnClose(false);
+                _sCurrentTip.OnClose(true);
                 curData.m_isItShown = false;
             }
             else
@@ -217,7 +219,7 @@ class LearningTip : MonoBehaviour
         if (depend != null)
         {
             coord += depend.m_thisObject.transform.position;
-            depend.m_thisObject.IconClick();
+            depend.m_thisObject.SelectIcon();
         }
 
         coord.z = -3; //learning tips should be higher then icons;
@@ -238,10 +240,10 @@ class LearningTip : MonoBehaviour
         var txt = txtObj.GetComponent<TextMeshProUGUI>();
         txt.text = data.m_text;
 
-
+        bool showNext = ((data.m_next != null && data.m_next.Length > 0) || _sNextTips.Count > 0);
         SetButton(Canvas, "PrevButton", thisObj.OnPrevious, data.m_previous != null);
-        SetButton(Canvas, "NextButton", thisObj.OnNext, data.m_next != null && data.m_next.Length > 0);
-        SetButton(Canvas, "OkButton", thisObj.OnClose, !(data.m_next != null && data.m_next.Length > 0));
+        SetButton(Canvas, "NextButton", thisObj.OnNext, showNext);
+        SetButton(Canvas, "OkButton", thisObj.OnClose, !(showNext));
 
         var toggle = thisObj.m_showTips.GetComponent<Toggle>();
         toggle.isOn = m_sCanShow;
@@ -288,10 +290,11 @@ class LearningTip : MonoBehaviour
         }
 
         _sCurrentTip = thisObj;
+        _sNextTips.Remove(data.m_name);
     }
 
     /// <summary> the Unity delegate for OnClose event </summary>
-    public void OnClose() { OnClose(true); }
+    public void OnClose() { OnClose(false); }
 
     /// <summary>
     /// Realization of closing event
@@ -301,21 +304,20 @@ class LearningTip : MonoBehaviour
     {
         _sCurrentTip = null;
         _data.m_isItShown = true;
+
+        if (_sNextTips.Count > 0 && !showNext)
+        {
+            _sNextTips.Clear();
+        }
+
         if (_data.m_outline != null)
         {
             Destroy(_data.m_outline.gameObject);
             //Destroy(_targetObject.GetComponent<Outline>());
         }
         gameObject.SetActive(false);
-        Destroy(gameObject);
 
-        if (_sNextTips.Count > 0 && showNext)
-        {
-            _sNextTips.Sort();
-            string name = _sNextTips[0];
-            _sNextTips.Remove(name);
-            CreateTip(name);
-        }
+        Destroy(gameObject);
     }
 
     /// <summary>
@@ -325,8 +327,16 @@ class LearningTip : MonoBehaviour
     {
         if (_isItUnclicked)
         {
-            OnClose(false);
-            CreateTip(_data.m_next, true);
+            OnClose(true);
+            if(_data.m_next != null && _data.m_next.Length > 0)
+                CreateTip(_data.m_next, true);
+            else
+            {
+                _sNextTips.Sort();
+                string name = _sNextTips[0];
+                _sNextTips.Remove(name);
+                CreateTip(name);
+            }
             _isItUnclicked = false;
         }
     }
@@ -338,7 +348,7 @@ class LearningTip : MonoBehaviour
     {
         if (_isItUnclicked)
         {
-            OnClose(false);
+            OnClose(true);
             CreateTip(_data.m_previous, true);
             _isItUnclicked = false;
         }
