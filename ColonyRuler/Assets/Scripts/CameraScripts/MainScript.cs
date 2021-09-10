@@ -219,7 +219,7 @@ public class MainScript : MonoBehaviour
         GameObject rightPanel = Instantiate(m_rightGamePanelPrefab);
         GameObject leftPanel = Instantiate(m_leftGamePanelPrefab);
         rightPanel.transform.SetParent(m_mainCanvas.transform);
-        GameObject rootRightPanel = rightPanel.transform.Find("Root").gameObject;
+        GameObject rootRightPanel = rightPanel.gameObject;
 
         leftPanel.transform.SetParent(m_mainCanvas.transform);
         m_toolTipText = leftPanel.transform.Find("TooltipText").gameObject.GetComponent<Text>();

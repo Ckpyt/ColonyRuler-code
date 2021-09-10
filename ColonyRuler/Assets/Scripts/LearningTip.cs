@@ -41,6 +41,8 @@ class LearningTip : MonoBehaviour
     static List<string> _sNextTips = new List<string>();
     static LearningTip _sCurrentTip = null;
 
+    /// <summary> property for checking is a learning tip shown or not </summary>
+    public static bool m_sIsSomethingShown { get { return !(_sCurrentTip == null); } }
 
     /// <summary> if a player does not want to see tooltips, they should not be shown</summary>
     public static bool m_sCanShow = true;

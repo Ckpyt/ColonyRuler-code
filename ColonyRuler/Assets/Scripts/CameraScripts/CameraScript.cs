@@ -40,11 +40,63 @@ public class CameraScript : MonoBehaviour
     /// <param name="value"></param>
     void ScaleCamera(float value)
     {
-        m_main.orthographicSize -= value;
-        if (m_main.orthographicSize < 2.0f)
-            m_main.orthographicSize = 2.0f;
-        if (m_main.orthographicSize > CLimitMax)
-            m_main.orthographicSize = CLimitMax;
+        if (!LearningTip.m_sIsSomethingShown)
+        {
+            m_main.orthographicSize -= value;
+            if (m_main.orthographicSize < 2.0f)
+                m_main.orthographicSize = 2.0f;
+            if (m_main.orthographicSize > CLimitMax)
+                m_main.orthographicSize = CLimitMax;
+        }
+    }
+
+    void MoveCamera()
+    {
+        if (Input.anyKey && !MainScript.m_sIsButtonPressed && !LearningTip.m_sIsSomethingShown)
+        {
+            if (!_isKeyPressed)
+            {
+                _isKeyPressed = true;
+                _mousePos = (Input.mousePosition);
+
+            }
+            else
+            {
+
+                float z = m_main.transform.position.z;
+#if UNITY_ANDROID
+                        if (Input.touches.Length > 1 || m_IsTwoKeyPressed)
+                        {
+                            ScaleCamera(-(Input.touches[0].deltaPosition.y / 20));
+                            m_IsTwoKeyPressed = true;
+                        }
+                        else
+                        {
+#endif
+                Vector3 newPos = ((Vector2)(Input.mousePosition));
+
+                _mouseShift = (_mousePos - newPos);
+                if (_mouseShift.magnitude > 0)
+                {
+                    _mouseShift = m_main.ScreenToWorldPoint(_mousePos) - m_main.ScreenToWorldPoint(newPos);
+                    _mouseShift.x += m_main.transform.position.x;
+                    _mouseShift.y += m_main.transform.position.y;
+                    _mouseShift.z = z;
+                    m_main.transform.position = _mouseShift;
+                    _mousePos = newPos;
+                }
+#if UNITY_ANDROID
+                        }
+#else
+
+#endif
+            }
+        }
+        else
+        {
+            _isKeyPressed = false;
+            m_isTwoKeyPressed = false;
+        }
     }
 
     /// <summary>
@@ -57,51 +109,7 @@ public class CameraScript : MonoBehaviour
         {
             if (!TimeScript.m_isItPaused && !m_isItPaused)
             {
-                if (Input.anyKey && !MainScript.m_sIsButtonPressed)
-                {
-                    if (!_isKeyPressed)
-                    {
-                        _isKeyPressed = true;
-                        _mousePos = (Input.mousePosition);
-
-                    }
-                    else
-                    {
-
-                        float z = m_main.transform.position.z;
-#if UNITY_ANDROID
-                        if (Input.touches.Length > 1 || m_IsTwoKeyPressed)
-                        {
-                            ScaleCamera(-(Input.touches[0].deltaPosition.y / 20));
-                            m_IsTwoKeyPressed = true;
-                        }
-                        else
-                        {
-#endif
-                        Vector3 newPos = ((Vector2)(Input.mousePosition));
-
-                        _mouseShift = (_mousePos - newPos);
-                        if (_mouseShift.magnitude > 0)
-                        {
-                            _mouseShift = m_main.ScreenToWorldPoint(_mousePos) - m_main.ScreenToWorldPoint(newPos);
-                            _mouseShift.x += m_main.transform.position.x;
-                            _mouseShift.y += m_main.transform.position.y;
-                            _mouseShift.z = z;
-                            m_main.transform.position = _mouseShift;
-                            _mousePos = newPos;
-                        }
-#if UNITY_ANDROID
-                        }
-#else
-
-#endif
-                    }
-                }
-                else
-                {
-                    _isKeyPressed = false;
-                    m_isTwoKeyPressed = false;
-                }
+                MoveCamera();
 
                 if (Input.mouseScrollDelta.y != 0)
                 {

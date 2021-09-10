@@ -191,7 +191,7 @@ You can find this information on the color legend</ns1:description>
 	</ns1:repetative>
 	<ns1:repetative>
 		<ns1:name>tip16</ns1:name>
-		<ns1:description>It is your tool. Tools are using for increasing the speed of production or decreasing the consumtion of source materials. </ns1:description>
+		<ns1:description>It is your tool. Tools are using for increasing the speed of production or decreasing the consumption of source materials. </ns1:description>
 		<ns1:defaultX>6.2</ns1:defaultX>
 		<ns1:defaultY>6</ns1:defaultY>
 		<ns1:targetIcon>wicker basket</ns1:targetIcon>
@@ -203,7 +203,8 @@ You can find this information on the color legend</ns1:description>
 	</ns1:repetative>
 	<ns1:repetative>
 		<ns1:name>tip17</ns1:name>
-		<ns1:description>If a worker get a tool, he/she don't return it and holds  on his working place.</ns1:description>
+		<ns1:description>By clicking on the icon, you can see how many productions need it.
+If a worker get a tool, he/she don't return it and holds  on his working place.</ns1:description>
 		<ns1:defaultX>6.2</ns1:defaultX>
 		<ns1:defaultY>6</ns1:defaultY>
 		<ns1:targetIcon>wicker basket</ns1:targetIcon>
@@ -241,15 +242,15 @@ If the damaged stack has some damaged tools, it repears before producing somethi
 	</ns1:repetative>
 	<ns1:repetative>
 		<ns1:name>tip20</ns1:name>
-		<ns1:description>A wicker backet is using as a light storage also. If you have enough light storage space, it could be used for increasing the production warehouse size. It also striks your backet's stock size</ns1:description>
+		<ns1:description>A wicker basket is using as a light items storage also. If you have enough light storage space, it could be used for increasing the production warehouse size. It also strikes your basket's stock size</ns1:description>
 		<ns1:defaultX>6.2</ns1:defaultX>
 		<ns1:defaultY>6</ns1:defaultY>
-		<ns1:targetIcon>wicker basket</ns1:targetIcon>
+		<ns1:targetIcon>LightStorageValue</ns1:targetIcon>
 		<ns1:targetObject/>
 		<ns1:nextTip/>
 		<ns1:yellowPositionVector/>
 		<ns1:yellowSizeVector/>
-		<ns1:isItUI>false</ns1:isItUI>
+		<ns1:isItUI>true</ns1:isItUI>
 	</ns1:repetative>
 	<ns1:repetative>
 		<ns1:name>tip21</ns1:name>
@@ -267,8 +268,10 @@ If the damaged stack has some damaged tools, it repears before producing somethi
 		<ns1:name>tip22</ns1:name>
 		<ns1:description>It is your the first house. 
 Houses are using for living some people and have squadre for some decorative items. 
-Your people cannot afford statues and pictures if they have no houses
-As tools, houses can be damaged and destroyed. Keep an eye on them!</ns1:description>
+Your people cannot afford statues and pictures if they have no houses.
+Houses require some territory for building.
+As tools, houses can be damaged and destroyed. Keep an eye on them!
+Damaged houses cannot be used for living, but still using territory</ns1:description>
 		<ns1:defaultX>6.2</ns1:defaultX>
 		<ns1:defaultY>6</ns1:defaultY>
 		<ns1:targetIcon>hut of branches</ns1:targetIcon>
