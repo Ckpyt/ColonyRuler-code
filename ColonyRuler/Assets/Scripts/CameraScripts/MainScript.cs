@@ -80,6 +80,7 @@ public class MainScript : MonoBehaviour
     {
         _leftPanel.gameObject.SetActive(true);
         _rightPanel.gameObject.SetActive(true);
+        _arrowPanel.gameObject.SetActive(true);
         m_gameMenuPanel.gameObject.SetActive(false);
         Camera.main.GetComponent<TimeScript>().Pause();
         transform.position = _savedPos;
@@ -190,6 +191,7 @@ public class MainScript : MonoBehaviour
     {
         _leftPanel.gameObject.SetActive(false);
         _rightPanel.gameObject.SetActive(false);
+        _arrowPanel.gameObject.SetActive(false);
         m_gameMenuPanel.gameObject.SetActive(true);
         Camera.main.GetComponent<TimeScript>().Pause();
         var pos = new Vector3(1000, 1000) { z = transform.position.z };

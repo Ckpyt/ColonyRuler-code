@@ -26,6 +26,15 @@ mergeInto(LibraryManager.library, {
     return buffer;
   },
 
+  SessionIDReturnValueFunction: function () {
+	
+    var returnStr = parent.GetSessionID();
+    var bufferSize = lengthBytesUTF8(returnStr) + 1;
+    var buffer = _malloc(bufferSize);
+    stringToUTF8(returnStr, buffer, bufferSize);
+    return buffer;
+  },
+
   BindWebGLTexture: function (texture) {
     GLctx.bindTexture(GLctx.TEXTURE_2D, GL.textures[texture]);
   },

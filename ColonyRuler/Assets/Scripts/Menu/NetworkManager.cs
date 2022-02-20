@@ -182,7 +182,7 @@ public class NetworkManager : SubMenu
     }
 
     /// <summary>
-    /// waiting for recive an answer and closing menu
+    /// waiting for receive an answer and closing menu
     /// Update is called once per frame
     /// </summary>
     public override void Update()

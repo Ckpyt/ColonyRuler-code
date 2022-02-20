@@ -1,6 +1,15 @@
 ﻿
 using UnityEngine;
 
+#if UNITY_WEBGL && !UNITY_EDITOR
+using System.Runtime.InteropServices;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+#endif
+
 /// <summary>
 /// Get username from website javascript
 /// </summary>
@@ -22,15 +31,25 @@ public class NewBehaviourScript : MonoBehaviour
     /// <summary>  </summary>
     [DllImport("__Internal")]
     private static extern string StringReturnValueFunction();
+
+    [DllImport("__Internal")]
+    private static extern string SessionIDReturnValueFunction();
 #else
     /// <summary>  </summary>
     private static string StringReturnValueFunction() { return "Ckpyt"; }
+
+    private static string SessionIDReturnValueFunction() { return "0"; }
 #endif
 
 
     public static string GetUserName()
     {
         return StringReturnValueFunction();
+    }
+
+    public static int GetSessionID()
+    {
+        return int.Parse( SessionIDReturnValueFunction());
     }
 
     //[DllImport("__Internal")]
